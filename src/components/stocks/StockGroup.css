@@ -1,0 +1,17 @@
+.group__head{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    /* background-color: aqua; */
+    padding: 1.5rem 0;
+    width: 80%;
+    margin-left: 214px;
+}
+
+.group__body{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    /* background-color: bisque; */
+}

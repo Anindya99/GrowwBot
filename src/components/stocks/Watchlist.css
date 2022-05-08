@@ -1,0 +1,34 @@
+.watchlist{
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 3px 1px 1px rgb(228 , 227 , 227);
+    border: 0.1px;
+    box-shadow: 5px 5px 10px;
+    margin: 40px 30px;
+    font-size: large;
+    padding: 0px 20px;
+}
+
+.watchlist__item{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border-bottom: 1px solid rgb(237, 235, 235);
+}
+
+.watchlist__item p{
+    margin: 0px 10px;
+}
+
+.watchlist__item:last-child{
+    border: none;
+}
+.watchlist__item:first-child{
+    border: none;
+}

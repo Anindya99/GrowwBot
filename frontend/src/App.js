@@ -5,7 +5,9 @@ import Footer from './components/footer';
 import { Routes, Route } from 'react-router-dom';
 import MutualFundGroup from './components/mutualFunds/mutualFundGroups';
 import FixedDepositGroup from './components/fixedDeposit/FixedDepositGroup';
+import StockDetails from './components/stocks/StockDetails';
 import './App.css';
+import { Watch } from '@material-ui/icons';
 
 function App() {
     return (
@@ -30,6 +32,9 @@ function App() {
                         path="/deposits/user/explore"
                         element={<FixedDepositGroup />}
                     />
+                    <Route path="/stocks/:id" element={<StockDetails />} />
+                    <Route path="/mutual-funds/:id" element={<Watchlist />} />
+                    <Route path="/deposits/:id" element={<Watchlist />} />
                 </Routes>
             </div>
             <Footer />

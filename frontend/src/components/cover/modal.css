@@ -1,0 +1,63 @@
+
+.modal-container{
+    display: flex;
+    flex-direction: row;
+}
+.div-left{
+    height: 370px;
+    width: 400px;
+    padding-top: 50px;
+    color: white;
+    background-image: url(https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/patternImg.0edf5760.svg);
+}
+.icon{
+    padding-left: 375px;
+    padding-top: 7px;
+    padding-right: 7px;
+}
+.close-icon:hover{
+    cursor: pointer;
+}
+.div-right p{
+    font-size: xx-large;
+    padding-left: 23px;
+    padding-top: 50px;
+
+}
+
+.buttongoogle {
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    box-sizing: content-box;
+    margin-left: 25px !important;
+    margin-top: 65px;
+    width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border-color:rgb(219, 205, 205);
+    background-color: rgb(255, 255, 255) !important; 
+  
+    color: #000 !important;
+    box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.08);
+    position: relative;
+    
+  }
+  .buttongText {
+    
+    color: black;
+    font-weight:lighter;
+  }
+  
+  .icong {
+    height: 25px;
+    width: 23px;
+    left: 25px;
+    position: absolute;
+    align-items: center;
+  }
+  .terms{
+    font-size: 15px !important;
+    margin-top: 6em !important;
+    
+  }

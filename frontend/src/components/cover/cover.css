@@ -1,0 +1,44 @@
+.stock-cover{
+    width: 180px;
+    height: 130px;
+    border-radius: 7px;
+    border: 0.1px solid rgb(211, 209, 209);
+    /* background-color: rgb(194, 180, 180); */
+    padding: 14px;
+    box-shadow: 1px 1px 1px 1px rgb(228 , 227 , 227);
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 15px;
+}
+.product__title-cover{
+    padding-top: 10%;
+}
+.stock-cover img{
+    width: 50px;
+    height: 50px;
+    border: none;
+}
+.start{
+    text-transform: capitalize !important;
+    font-size: 16px !important;
+    letter-spacing: 0.3px !important;
+    color: #ffffff !important;
+    margin-top: 15px !important;
+    background-color: #45ce7e !important;
+    height: 2.5rem;
+    width: 8rem;
+}
+.leftcover{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    /* background-color: aqua; */
+    padding: 1.5rem 0;
+    width: 50%;
+    margin-left: 300px;
+    justify-content: center;
+}
+.rightcover{
+    margin-top: 50px;
+    margin-bottom: 150px;
+}

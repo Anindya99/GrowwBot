@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, IconButton, Input } from '@material-ui/core';
+import LoginModal from './cover/loginmodal'
+import { Button, IconButton } from '@material-ui/core';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import AccountBalanceWalletOutlinedIcon from '@material-ui/icons/AccountBalanceWalletOutlined';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import AuthStore from '../middleware/authstore';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
 //import css
 import './Header.css';
 import { SearchOutlined } from '@material-ui/icons';
 
-const Header = () => {
+const Header = ({loggedin}) => {
     const navigate = useNavigate();
+    const [showModal,setShowModal]= useState(false);
+
+    const logout=()=>{
+        AuthStore.clearJWT()
+        window.location.href = "/";
+    }
+
     return (
         <div className="header">
             <div className="header__one">
@@ -20,7 +29,7 @@ const Header = () => {
                     src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/logo-dark-groww.83f43714.svg"
                     alt=""
                 />
-                <div className="buttons">
+                {loggedin && <div className="buttons">
                     <Button
                         className="header_explore"
                         onClick={() => navigate('/stocks/user/explore')}
@@ -33,7 +42,7 @@ const Header = () => {
                     >
                         Investments
                     </Button>
-                </div>
+                </div>}
                 <div className="header__searchbar">
                     <SearchOutlined className="header_searchicon" />
                     <input
@@ -41,7 +50,14 @@ const Header = () => {
                         placeholder="Search mutual funds and stocks"
                     />
                 </div>
-                <div className="buttons">
+
+
+                {
+                    !loggedin && <Button variant="contained" className='login' onClick={()=>setShowModal(true)}>Login/Register</Button>
+                }
+                 { !loggedin && showModal && <LoginModal close={()=>setShowModal(false)}/> } 
+
+                {loggedin && <div className="buttons">
                     <IconButton>
                         <NotificationsNoneIcon className="actionicons" />
                     </IconButton>
@@ -52,11 +68,11 @@ const Header = () => {
                         <ShoppingCartOutlinedIcon className="actionicons" />
                     </IconButton>
                     <IconButton>
-                        <AccountCircleOutlinedIcon className="actionicons" />
+                        <AccountCircleOutlinedIcon className="actionicons" onClick={logout}/>
                     </IconButton>
-                </div>
+                </div>}
             </div>
-            <div className="header__two">
+            {loggedin && <div className="header__two">
                 <Button
                     className="header_explore"
                     onClick={() => navigate('/stocks/user/explore')}
@@ -75,9 +91,11 @@ const Header = () => {
                 >
                     Fixed Deposits{' '}
                 </Button>
-            </div>
+            </div>}
         </div>
     );
 };
-
+Header.defaultProps={
+    loggedin:true
+}
 export default Header;

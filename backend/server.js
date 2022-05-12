@@ -1,19 +1,28 @@
-const express = require("express");
-const dotenv = require("dotenv");
-dotenv.config({ path: "./config.env" });
-const mongoose = require("mongoose");
+const express= require('express');
+const mongoose= require('mongoose');
+const { db_link} = require("./config");
+const cors = require("cors");
 
-const app = require("./app");
+const app = express();
+//body parser middleware
+app.use(express.json());
+app.use(cors());
 
 mongoose
-    .connect(process.env.LOCAL_DB, {})
-    .then(() => {
-        console.log("DB connection successful...");
+    .connect(db_link,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
     })
-    .catch((err) => {
-        console.log("Error while connecting to the database..");
-    });
+    .then(()=> console.log('Mongoose connected...'))
+    .catch(err=> console.log(err));
 
-app.listen(3000, () => {
-    console.log("Server is running at port 3000...");
+
+app.use('/api/Oauth',require('./routes/Oauth.route.js'));  
+
+//Invalid route's error handling
+app.use('*', function(req, res){
+     res.status(404).json({ msg: 'PAGE NOT FOUND' });
 });
+
+const port = process.env.PORT || 5000;
+app.listen(port, ()=>console.log(`server started at port ${port}`));

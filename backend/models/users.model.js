@@ -21,6 +21,18 @@ const UserSchema = new Schema({
     type:String,
     description: "Password for local user"
   },
+  kyc:{
+    type: Boolean,
+    default: false,
+    description: "if KYC is done or not"
+  },
+  limit:{
+    type: Number,
+    default: 1000000000,
+    max: 1000000000,
+    min: 0,
+    description: "stores any limit of transaction set by the user"
+  },
   register_date:{
      type:Date,
      default:Date.now, 

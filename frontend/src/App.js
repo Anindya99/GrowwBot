@@ -11,6 +11,7 @@ import { Watch } from '@material-ui/icons';
 import Cover from './components/cover/cover';
 import Getstart from './components/cover/getstart';
 import AuthStore from './middleware/authstore'
+import Chatbot from './components/chatbot/chatbot';
 
 function App() {
     const loggedin= AuthStore.isAuthenticated()? true:false;
@@ -27,6 +28,7 @@ function App() {
                                 :<>
                                     <Getstart />
                                     <Cover />
+                                    
                                 </>
                         }
                     ></Route>
@@ -65,6 +67,9 @@ function App() {
                     <Route path="/mutual-funds/:id" element={<Watchlist />} />
                     <Route path="/deposits/:id" element={<Watchlist />} />
                 </Routes>
+            </div>
+            <div>
+                <Chatbot />
             </div>
             <Footer />
         </div>

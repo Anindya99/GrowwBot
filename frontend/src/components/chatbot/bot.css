@@ -1,11 +1,11 @@
 .react-chatbot-kit-chat-container {
-    position: fixed; bottom: 6%; left: 70%;
-    width: 22%;
+    position: fixed; bottom: 6vw; left: 65vw;
+    width: 19.5em;
 }
 
 .react-chatbot-kit-chat-inner-container {
-    /* background-color: rgb(169, 231, 107); */
-    background-color: rgb(205, 241, 150);
+     background-color: rgb(169, 231, 107); 
+   /*  background-color: rgb(205, 241, 150); */
 }
 
 .react-chatbot-kit-chat-header {
@@ -15,9 +15,9 @@
 }
 
 .react-chatbot-kit-chat-input-container {
-    left: -2.5%;
-    bottom: -4%;
-    width: 105%;
+    right: -0.5em;
+    bottom: -0.8em;
+    width: 20.5em;
     
 }
 
@@ -30,8 +30,8 @@
     min-width: 0;
     background-color: rgb(251, 237, 237);
    
-    cursor: not-allowed !important;
-    pointer-events: none ;
+    /* cursor: not-allowed !important;
+     pointer-events: none ;  */
 }
 
 .react-chatbot-kit-chat-input-form {
@@ -47,10 +47,10 @@
 .react-chatbot-kit-chat-btn-send {
     min-width: 0;
     background-color: rgb(122, 164, 231);
-    width: 13%;
+    width: 3vw;
     border-radius: 4px;
-    pointer-events: none;
-    cursor: not-allowed !important; 
+    /* pointer-events: none;
+    cursor: not-allowed !important;  */
 }
 
 .react-chatbot-kit-chat-btn-send-icon {
@@ -79,7 +79,7 @@
 }
 
 .react-chatbot-kit-chat-bot-message {
-    left: -29%;
+    left: -4.9em;
     background-color: white;
     color: black;
 }

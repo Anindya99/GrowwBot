@@ -20,7 +20,7 @@ const stockSchema = new mongoose.Schema({
     dividendYield: Number,
     industryPriceToIncome: Number,
     bookValue: Number,
-    DebtToEquity: Number,
+    debtToEquity: Number,
     faceValue: Number,
     about: {
         type: String,
@@ -38,8 +38,8 @@ const stockSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
-    nseSymbol: string,
-    images: [string],
+    nseSymbol: String,
+    images: [],
 });
 
 const Stock = mongoose.model("Stock", stockSchema);

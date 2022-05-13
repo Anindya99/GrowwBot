@@ -1,14 +1,11 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 function Footer() {
     return (
         <div className="footer">
             <div className="footer__inner">
                 <div className="footer__col1">
-                    <img
-                        src="https://assets-netstorage.groww.in/website-assets/prod/1.2.1/build/client/images/logo-light-groww.1815ad63.svg"
-                        alt=""
-                    />
+                    <img src="#" alt="" />
                     <div className="footer__address">
                         1st Floor, Proms Complex, SBI Colony 1A Koramangala,
                         560034
@@ -18,32 +15,32 @@ function Footer() {
                         <div className="footer__socialicons">
                             <img
                                 className="footer__socialicon"
-                                src="https://assets-netstorage.groww.in/website-assets/prod/1.2.1/build/client/images/fb_icon_groww.1c94e937.svg"
+                                src="#"
                                 alt=""
                             />
                             <img
                                 className="footer__socialicon"
-                                src="https://assets-netstorage.groww.in/website-assets/prod/1.2.1/build/client/images/twitter_icon_groww.4cb988f6.svg"
+                                src="#"
                                 alt=""
                             />
                             <img
                                 className="footer__socialicon"
-                                src="https://assets-netstorage.groww.in/website-assets/prod/1.2.1/build/client/images/yt_icon_groww.ec96b677.svg"
+                                src="#"
                                 alt=""
                             />
                             <img
                                 className="footer__socialicon"
-                                src="https://assets-netstorage.groww.in/website-assets/prod/1.2.1/build/client/images/instagram_icon_groww.0454c1a2.svg"
+                                src="#"
                                 alt=""
                             />
                             <img
                                 className="footer__socialicon"
-                                src="https://assets-netstorage.groww.in/website-assets/prod/1.2.1/build/client/images/linkedin_icon_groww.b15f8240.svg"
+                                src="#"
                                 alt=""
                             />
                             <img
                                 className="footer__socialicon"
-                                src="https://assets-netstorage.groww.in/website-assets/prod/1.2.1/build/client/images/telegram_icon_groww.f6524497.svg"
+                                src="#"
                                 alt=""
                             />
                         </div>
@@ -136,16 +133,8 @@ function Footer() {
                         ❤️ by Manish Kumar
                     </h4>
                     <div className="footer__download">
-                        <img
-                            className="footer__downloadicon"
-                            src="https://assets-netstorage.groww.in/website-assets/prod/1.2.1/build/client/images/app-store-logo.060773ea.svg"
-                            alt=""
-                        />
-                        <img
-                            className="footer__downloadicon"
-                            src="https://assets-netstorage.groww.in/website-assets/prod/1.2.1/build/client/images/google-play-badge.0547a72f.svg"
-                            alt=""
-                        />
+                        <img className="footer__downloadicon" src="#" alt="" />
+                        <img className="footer__downloadicon" src="#" alt="" />
                     </div>
                 </div>
             </div>

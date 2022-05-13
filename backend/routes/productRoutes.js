@@ -1,6 +1,7 @@
 const express = require("express");
 const productController = require("../controller/productController");
 const router = express.Router();
+// const auth = require("../middleware/auth");
 
 // /api/v1/:category/:id
 
@@ -12,31 +13,31 @@ router
 router
     .route("/api/v1/stocks/:id")
     .get(productController.getStockById)
-    .update(productController.updateStock)
+    .patch(productController.updateStock)
     .delete(productController.deleteStock);
 
-// Mutual Funds routes
-router
-    .route("/api/v1/mutual-funds")
-    .get(productController.getAllMututalFunds)
-    .post(productController.createMutualFunds);
+// // Mutual Funds routes
+// router
+//     .route("/api/v1/mutual-funds")
+//     .get(productController.getAllMututalFunds)
+//     .post(productController.createMutualFunds);
 
-router
-    .route("/api/v1/mutual-funds/:id")
-    .get(productController.getMutualFundById)
-    .update(productController.updateMutualFund)
-    .delete(productController.deleteMutualFund);
+// router
+//     .route("/api/v1/mutual-funds/:id")
+//     .get(productController.getMutualFundById)
+//     .update(productController.updateMutualFund)
+//     .delete(productController.deleteMutualFund);
 
-// Fixed deposites routes
-router
-    .route("/api/v1/fixed-deposits")
-    .get(productController.getAllFixedDeposits)
-    .post(productController.createFixedDeposits);
+// // Fixed deposites routes
+// router
+//     .route("/api/v1/fixed-deposits")
+//     .get(productController.getAllFixedDeposits)
+//     .post(productController.createFixedDeposits);
 
-router
-    .route("/api/v1/fixed-deposists/:id")
-    .get(productController.getFixedDepositById)
-    .update(productController.updateFixedDeposit)
-    .delete(productController.deleteFixedDeposit);
+// router
+//     .route("/api/v1/fixed-deposists/:id")
+//     .get(productController.getFixedDepositById)
+//     .update(productController.updateFixedDeposit)
+//     .delete(productController.deleteFixedDeposit);
 
 module.exports = router;

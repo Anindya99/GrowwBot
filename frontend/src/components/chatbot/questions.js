@@ -1,3 +1,5 @@
+//This currently has no use. Later try putting everything in one file rather than using levels(questionlevel) for each message    
+
 import React, { useEffect,useState } from 'react'
 import {  useLocation } from 'react-router-dom';
 import { getDefault,getAllbyId } from '../../api/questions.api';

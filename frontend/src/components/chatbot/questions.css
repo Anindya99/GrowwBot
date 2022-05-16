@@ -1,0 +1,40 @@
+
+.question-list {
+    text-align: left;
+    font-size: 0.9rem;
+    padding: 8px;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 6px;
+    box-shadow: 2px 2px 4px rgba(150, 149, 149, 0.4);
+    background-color: rgb(255, 255, 19);
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .questions-container {
+    padding: 0;
+    list-style: none;
+    
+  }
+  
+
+  .learning-options-container {
+    padding: 0;
+    list-style: none;
+    
+  }
+  
+  .learning-option-button {
+    text-align: left;
+    font-size: 0.9rem;
+    padding: 8px;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 6px;
+    box-shadow: 2px 2px 4px rgba(150, 149, 149, 0.4);
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }

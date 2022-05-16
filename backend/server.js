@@ -20,6 +20,7 @@ mongoose
     .catch((err) => console.log(err));
 
 app.use("/api/Oauth", require("./routes/Oauth.route.js"));
+app.use("/api/questions", require("./routes/questions.route.js"));
 app.use(productRoutes);
 
 //Invalid route's error handling

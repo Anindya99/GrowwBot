@@ -1,8 +1,9 @@
+import React, { useState,useEffect } from 'react'
 import Header from './components/Header';
 import StockPage from './components/stocks/StockPage';
 import Watchlist from './components/stocks/Watchlist';
 import Footer from './components/footer';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import MutualFundGroup from './components/mutualFunds/mutualFundGroups';
 import FixedDepositGroup from './components/fixedDeposit/FixedDepositGroup';
 import StockDetails from './components/stocks/StockDetails';
@@ -12,9 +13,24 @@ import Cover from './components/cover/cover';
 import Getstart from './components/cover/getstart';
 import AuthStore from './middleware/authstore'
 import Chatbot from './components/chatbot/chatbot';
+//import SmartToyIcon from '@mui/icons-material/SmartToy';
+import AndroidIcon from '@mui/icons-material/Android';
+
+import ActionProvider from './components/chatbot/ActionProvider';
+import MessageParser from './components/chatbot/MessageParser';
+import config from './components/chatbot/config';
 
 function App() {
     const loggedin= AuthStore.isAuthenticated()? true:false;
+    const [showBot,setshowBot]= useState(false);
+    const location = useLocation();
+    
+    useEffect(()=>{
+        setshowBot(false);
+        console.log(location.pathname);
+        
+    },[location])
+    
     return (
         <div>
             <Header loggedin={loggedin}/> 
@@ -69,7 +85,12 @@ function App() {
                 </Routes>
             </div>
             <div>
-                <Chatbot />
+                <AndroidIcon className='boticon' 
+                onClick={()=>{
+                    setshowBot(!showBot);
+                }
+                }/>
+                {showBot && <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />}
             </div>
             <Footer />
         </div>

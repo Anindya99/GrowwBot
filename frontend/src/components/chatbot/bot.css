@@ -1,5 +1,7 @@
 .react-chatbot-kit-chat-container {
-    position: fixed; bottom: 6vw; left: 65vw;
+    position: fixed; 
+    /* bottom: 6vw; left: 65vw; */
+    right: 35px;bottom: 100px;
     width: 19.5em;
 }
 

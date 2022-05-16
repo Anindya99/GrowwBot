@@ -10,4 +10,16 @@
 .content{
   display: flex;
 }
-
+.boticon{
+  position: fixed; 
+  /* right: 8.5vw;
+  bottom: 5.5vh; */
+  right: 55px;bottom: 40px;
+  transform: scale(2.2);
+  color: white;
+  cursor: pointer;
+  /* border:2px solid red; */
+  background: rgb(2, 35, 224);
+  border-radius: 500px;
+  
+}

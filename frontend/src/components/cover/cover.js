@@ -7,7 +7,7 @@ const Cover = () => {
           <div className="stock-cover">
             <div className="product__head">
                       <img
-                          class="product__logo"
+                          className="product__logo"
                           src="icons/mutual.svg"
                           alt="mutual-funds"
                       />
@@ -17,7 +17,7 @@ const Cover = () => {
           <div className="stock-cover">
             <div className="product__head">
                       <img
-                          class="product__logo"
+                          className="product__logo"
                           src="icons/stocks.svg"
                           alt="stocks"
                       />
@@ -27,7 +27,7 @@ const Cover = () => {
           <div className="stock-cover">
             <div className="product__head">
                       <img
-                          class="product__logo"
+                          className="product__logo"
                           src="icons/fixed.svg"
                           alt="fixed-deposits"
                       />

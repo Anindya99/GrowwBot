@@ -15,9 +15,9 @@ const Levelzero = (props) => {
       kyc= true;//this need to be changed, fetch user info 
   }
 
-  
   const [qlist,setqlist]= useState([]);//store questions and corresponding answer and their children filled using 
   const [load,setload]= useState(false);
+  const[showList,setshowList]= useState(true);
 
   useEffect(()=>{
    
@@ -56,6 +56,8 @@ const Levelzero = (props) => {
       key={ques._id}
       onClick={()=>{
         setState(state=>({...state,currentQues:[],ques_id:ques._id}))
+        setshowList(false)
+        props.actionProvider.handleClientmsg(ques.question)
         props.actionProvider.handleLevelzero(ques.answer)
       }}
       
@@ -64,7 +66,11 @@ const Levelzero = (props) => {
     </li>
   ));
 
-  return <ul className="questions-container" >{questionsMarkup}</ul>;  
+  return (
+    <>
+      {showList && <ul className="questions-container" >{questionsMarkup}</ul> }
+    </>
+  ); 
 };
 
 export default Levelzero;

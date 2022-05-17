@@ -9,7 +9,7 @@ const config = {
   initialMessages: [createChatBotMessage(`Hello, I am GrowwBot. I am here to help you with
                    FAQs. Questions will be displayed based on the page you are browsing. 
                    After you select an option, answer will be displayed and questions similar to selected 
-                   question will be followed.`,
+                   option will be followed.`,
                                         {
                                           widget: "levelzero",
                                         }),
@@ -27,6 +27,7 @@ const config = {
                     "ques_id"
                   ]
                 }, */
+                
                 {
                       widgetName: "levelzero",
                       widgetFunc: (props) => <Levelzero {...props} />,

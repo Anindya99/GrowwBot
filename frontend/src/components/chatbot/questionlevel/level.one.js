@@ -18,6 +18,7 @@ const Levelone = (props) => {
   
   const [qlist,setqlist]= useState([]);//store questions and corresponding answer and their children filled using 
   const [load,setload]= useState(false);
+  const[showList,setshowList]= useState(true);
 
   useEffect(()=>{
    
@@ -50,6 +51,8 @@ const Levelone = (props) => {
       key={ques._id}
       onClick={()=>{
         setState(state=>({...state,currentQues:[],ques_id:ques._id}))
+        setshowList(false)
+        props.actionProvider.handleClientmsg(ques.question)
         props.actionProvider.handleLevelone(ques.answer)
       }}
       
@@ -58,7 +61,11 @@ const Levelone = (props) => {
     </li>
   ));
 
-  return <ul className="questions-container" >{questionsMarkup}</ul>;  
+  return (
+    <>
+      {showList && <ul className="questions-container" >{questionsMarkup}</ul> }
+    </>
+  );  
 };
 
 export default Levelone;

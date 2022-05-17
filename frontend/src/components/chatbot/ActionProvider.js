@@ -2,9 +2,11 @@ class ActionProvider {
   constructor(
    createChatBotMessage,
    setStateFunc,
+   createClientMessage,
  ) {
    this.createChatBotMessage = createChatBotMessage;
    this.setState = setStateFunc;
+   this.createClientMessage= createClientMessage;
  }
 
  /* handleQuestion = (answer) => {
@@ -26,7 +28,12 @@ updateChatbotState(message) {
     messages: [...prevState.messages, message],
   }));
 }
-
+handleClientmsg= (question)=>{
+  const message= this.createClientMessage(
+    `${question}`
+  );
+  this.updateChatbotState(message);
+}
 
 handleLevelzero = (answer) => {
   const message = this.createChatBotMessage(

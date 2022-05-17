@@ -23,17 +23,18 @@ const Levelzero = (props) => {
    
           //console.log(location.pathname)
           getDefault().then( data=>{
-                console.log(data);
+                //console.log(data);
                 const quesidList= data.filter((d)=>{
-                    console.log(d)
+                    //console.log(d)
                     return d['routeName']===location.pathname && d['kyc']===kyc 
                 });
-                setState(state=>({...state,currentQues:quesidList[0]['qlist']})) //setState is a member of the props  
-                
+                if(quesidList.length) setState(state=>({...state,currentQues:quesidList[0]['qlist']})) 
+                //setState is a member of the props 
+
           })
           
   },[]);
-  console.log(props.currentQues);
+  //console.log(props.currentQues);
   if(props.currentQues.length && !load) setload(true);
 
  useEffect(()=>{
@@ -45,7 +46,8 @@ const Levelzero = (props) => {
         setqlist(oldqlist=>[...oldqlist,data]);
       })
       return qid;
-    }) 
+    })
+    setqlist(qlist.sort()); 
   },[load]);
   //console.log(qlist);
 

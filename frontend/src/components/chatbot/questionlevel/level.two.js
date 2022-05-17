@@ -41,6 +41,7 @@ const Leveltwo = (props) => {
       })
       return qid;
     }) 
+    setqlist(qlist.sort()); 
   },[load]);
   //console.log(qlist);
 

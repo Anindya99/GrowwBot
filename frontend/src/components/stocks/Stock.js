@@ -8,7 +8,7 @@ const Stock = () => {
         <div className="stock">
             <div className="product__head">
                 <img
-                    class="product__logo"
+                    className="product__logo"
                     src="https://assets-netstorage.groww.in/stock-assets/logos/INE481Y01014.png"
                 />
                 <IconButton className="add__icon">

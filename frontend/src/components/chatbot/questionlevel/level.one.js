@@ -40,7 +40,8 @@ const Levelone = (props) => {
         setqlist(oldqlist=>[...oldqlist,data]);
       })
       return qid;
-    }) 
+    })
+    setqlist(qlist.sort());  
   },[load]);
   //console.log(qlist);
 

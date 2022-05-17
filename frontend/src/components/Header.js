@@ -67,8 +67,8 @@ const Header = ({loggedin}) => {
                     <IconButton>
                         <ShoppingCartOutlinedIcon className="actionicons" />
                     </IconButton>
-                    <IconButton>
-                        <AccountCircleOutlinedIcon className="actionicons" onClick={logout}/>
+                    <IconButton onClick={logout}>
+                        <AccountCircleOutlinedIcon className="actionicons" />
                     </IconButton>
                 </div>}
             </div>

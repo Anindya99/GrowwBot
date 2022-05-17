@@ -6,7 +6,7 @@ const mutualFund = () => {
         <div className="mutualFund">
             <div className="product__head">
                 <img
-                    class="product__logo"
+                    className="product__logo"
                     src="https://groww.in/images/partners/icici_groww.svg"
                 />
             </div>

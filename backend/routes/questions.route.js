@@ -15,7 +15,7 @@ const questionController = require("../controller/questions.controller");
 
   /**
  * @route   POST api/questions/default
- * @desc    Post default questions
+ * @desc    Post all default questions
  * @access  Public
  */
  router.post(

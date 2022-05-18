@@ -47,12 +47,23 @@ const Levelzero = (props) => {
       })
       return qid;
     })
-    setqlist(qlist.sort()); 
+
   },[load]);
   //console.log(qlist);
 
   //set the currentQues when default has been added its length greater than zero and create the ques answer list with id
-    const questionsMarkup = qlist.map((ques) => (
+    const questionsMarkup = qlist.sort((a, b) => {
+
+                  let fa= a.question.toLowerCase(),
+                      fb= b.question.toLowerCase();
+              
+                  if(fa<fb) return -1;
+                  if(fa>fb) return 1;
+                  return 0; 
+              }   
+
+    )
+    .map((ques) => (
     <li
       className="question-list"
       key={ques._id}

@@ -40,7 +40,7 @@ exports.editDefaultQuestions = async (req, res, next) => {
 
     try {
         await defaultQues.findOneAndUpdate(
-            {routeName: req.body.routeName, kyc: req.body.kyc},
+            {_id:req.params.id},
             {routeName:newQues.routeName,kyc:newQues.kyc,qlist:newQues.qlist});
             return res.status(200).json(newQues.qlist);
         }catch (e) {

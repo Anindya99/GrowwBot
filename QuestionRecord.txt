@@ -1,0 +1,28 @@
+*****This is just for record of the questions*****
+{
+        {
+            "_id": "628001bd50e58055f12b97e3",
+            "routeName": "/",
+            "kyc": false,
+            "qlist": [
+                "627ff737031e0bd34a9851c6",
+                "627ffb46da253de68c6e7535",
+                "6284ff174e4b4d7d8360d715"
+            ]
+        }
+}
+{
+    627ff737031e0bd34a9851c6 - Can I invest using a credit/debit card?{
+        627ff92cda253de68c6e752f - Why do I need to add a bank account?
+        627ffadbda253de68c6e7533 - How can I delete my bank account?
+        627ff995da253de68c6e7531 - What payment methods are supported on Groww?
+    }
+    627ffb46da253de68c6e7535 - Are there any charges for Mandates?{
+        6284c880815b8f1411229232 - What does AutoPay/Mandate limit mean?
+    }
+    6284ff174e4b4d7d8360d715 - How do referrals work?{
+        628501c1822941b8d7ecce83 - Does Groww referral work on the app only?
+        62850300822941b8d7ecce85 - Am I eligible for Groww referral rewards?
+    }
+    
+}

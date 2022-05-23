@@ -8,13 +8,6 @@ const Levelone = (props) => {
   
   //console.log(props);  
   const {setState}= props;
-  const location = useLocation();  
-  const loggedin= AuthStore.isAuthenticated()? true:false;
-  let kyc= false;
-  if(loggedin){
-      kyc= true;//this need to be changed, fetch user info 
-  }
-
   
   const [qlist,setqlist]= useState([]);//store questions and corresponding answer and their children filled using 
   const [load,setload]= useState(false);

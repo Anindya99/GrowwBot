@@ -33,6 +33,16 @@ const questionController = require("../controller/questions.controller");
     questionController.editDefaultQuestions
   );
 
+  /**
+ * @route   DELETE api/questions/default/:id
+ * @desc    Delete default question
+ * @access  Public
+ */
+ router.delete(
+  "/default/:id",
+  questionController.deletedefaultbyId
+);
+
 /**
  * @route   GET api/questions/all
  * @desc    Get all question

@@ -1,7 +1,7 @@
 *****This is just for record of the questions*****
 {
         {
-            "_id": "628001bd50e58055f12b97e3",
+            "_id": "62893ca27adf7f823f6c35e8",
             "routeName": "/",
             "kyc": false,
             "qlist": [
@@ -9,6 +9,29 @@
                 "627ffb46da253de68c6e7535",
                 "6284ff174e4b4d7d8360d715"
             ]
+        }
+        {
+            "routeName": "/stocks/user/explore",
+            "kyc": false,
+            "_id": "628766ae9c5d7802a811cf9f",
+            "qlist": [
+                "6287736cbea1fe4ea1156c12",
+                "62876c61bea1fe4ea1156c09",
+                "62876ea1bea1fe4ea1156c0b",
+                "62877158bea1fe4ea1156c0d",
+                "6287a2a7bca045cc8d7ffd0a"
+            ],
+        }
+        {
+            "routeName": "/stocks/user/explore",
+            "kyc": true,
+            "_id": "6287e1f74e0dd1b328476cb2",
+            "qlist": [
+                "62876c61bea1fe4ea1156c09",
+                "62876ea1bea1fe4ea1156c0b",
+                "62877158bea1fe4ea1156c0d",
+                "6287a2a7bca045cc8d7ffd0a"
+            ],
         }
 }
 {
@@ -24,5 +47,47 @@
         628501c1822941b8d7ecce83 - Does Groww referral work on the app only?
         62850300822941b8d7ecce85 - Am I eligible for Groww referral rewards?
     }
-    
+
+    6287736cbea1fe4ea1156c12 - My KYC is showing pending.Is KYC necressary?{
+        628767e29c5d7802a811cfa1 - How can I get my full KYC done?
+        62876a0c71dc460063f651da - Do you charge for processing KYC?
+    }
+    62876c61bea1fe4ea1156c09 - Show my orders in stocks.
+    62876ea1bea1fe4ea1156c0b - How much does Groww charge for stocks?{
+
+        6287805cbea1fe4ea1156c16 - Why is my buy/sell disabled for certain stocks?
+    }
+    62877158bea1fe4ea1156c0d - How will off market transactions show up in my holding?{
+        628780e7bea1fe4ea1156c18 - How much does Groww charge for stocks?
+        62878171bea1fe4ea1156c1a - When will corporate action reflect in my holdings?
+        628781dabea1fe4ea1156c1c - Why do I see NULL Holdings while selling?
+        6287823dbea1fe4ea1156c1e - What is the difference between realised and unrealised returns?
+    }
+
+    6287a2a7bca045cc8d7ffd0a - Questions regarding IPO and UPI mandate.{
+        62879b5dbca045cc8d7ffcf4 - I have cancelled my IPO order. When will my amount get unblocked?
+
+        62879d6fbca045cc8d7ffcfa - Questions regarding UPI mandate.{
+            62879ae1bca045cc8d7ffcf2 - How can I find the IPO mandate on my UPI app?
+            62879ce9bca045cc8d7ffcf6 - I have not received a UPI mandate request till now. What should I do?
+            62879d3abca045cc8d7ffcf8 - The UPI mandate request failed on my UPI app. What should I do?
+        }
+        62879dd7bca045cc8d7ffcfc - I did not get IPO allotment and my money is still blocked.
+
+        62877259bea1fe4ea1156c0f - What is IPO?{
+            62879f49bca045cc8d7ffcfe - How to invest in IPO?{
+                6287a0c6bca045cc8d7ffd04 - What is price range, lot size and cutoff price in an IPO?{
+                    6287a075bca045cc8d7ffd02 - What is the maximum amount which I can invest in an IPO? 
+                }
+                6287a1e8bca045cc8d7ffd08 - How many bids can I place?{
+                    62879ff2bca045cc8d7ffd00 - Can I apply for same IPO on multiple platforms?
+                }
+            }
+            
+            6287a17fbca045cc8d7ffd06 - Can I use my Groww Balance or Net Banking for IPO application?
+        }
+
+    }
+
+
 }

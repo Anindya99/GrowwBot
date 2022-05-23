@@ -8,6 +8,9 @@ const allQuesSchema = new Schema({
     answer:{
         type: String,
     },
+    action:{
+      type: String
+    },
     children:[{
         type: mongoose.Schema.Types.ObjectId,
     }]

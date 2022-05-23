@@ -4,6 +4,7 @@ import Levelzero from "./questionlevel/level.zero";
 import Levelone from "./questionlevel/level.one";
 import Leveltwo from "./questionlevel/level.two";
 
+
 const config = {
   botName: "LearningBot",
   initialMessages: [createChatBotMessage(`Hello, I am GrowwBot. I am here to help you with
@@ -52,6 +53,7 @@ const config = {
                     "ques_id"
                   ]
                 },
+                
            ],
   customComponents:{
             header: () => <div style={{ backgroundColor: 'rgb(255, 179, 58)',color:'black',height:'35px',

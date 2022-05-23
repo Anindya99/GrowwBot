@@ -57,9 +57,9 @@ handleLevelone = (answer) => {
 handleLeveltwo = (answer) => {
   const message = this.createChatBotMessage(
     `${answer}`,
-    /* {
-      widget: "level-two",
-    } */
+     {
+      widget: "levelone",
+    } 
   );
   this.updateChatbotState(message);
 };

@@ -1,16 +1,25 @@
-import React from 'react';
-import './mutualFund.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./mutualFund.css";
 
-const mutualFund = () => {
+const MutualFund = (props) => {
+    const navigate = useNavigate();
+    const refToMfDetail = () => {
+        navigate(`/mutual-funds/${props.id}`);
+    };
+
     return (
-        <div className="mutualFund">
+        <div className="mutualFund" onClick={refToMfDetail}>
             <div className="product__head">
                 <img
                     className="product__logo"
-                    src="https://groww.in/images/partners/icici_groww.svg"
+                    src={
+                        props.image ||
+                        "https://groww.in/images/partners/icici_groww.svg"
+                    }
                 />
             </div>
-            <p className="product__title">Axis Small Cap</p>
+            <p className="product__title">{props.title}</p>
             <p className="mutualFund__type product__title">
                 Fund Direct Growth
             </p>
@@ -21,4 +30,4 @@ const mutualFund = () => {
     );
 };
 
-export default mutualFund;
+export default MutualFund;

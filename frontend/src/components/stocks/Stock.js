@@ -1,27 +1,31 @@
-import React from 'react';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import { IconButton, Button } from '@material-ui/core';
-import './Stock.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import { IconButton, Button } from "@material-ui/core";
+import "./Stock.css";
 
-const Stock = () => {
+const Stock = (props) => {
+    const navigate = useNavigate();
+    const redirectToStockPage = () => {
+        navigate(`/stocks/${props.id}`);
+    };
     return (
-        <div className="stock">
+        <div className="stock" onClick={redirectToStockPage}>
             <div className="product__head">
                 <img
                     className="product__logo"
-                    src="https://assets-netstorage.groww.in/stock-assets/logos/INE481Y01014.png"
+                    src={
+                        props.imageUrl ||
+                        "https://assets-netstorage.groww.in/stock-assets/logos/INE481Y01014.png"
+                    }
                 />
-                <IconButton className="add__icon">
-                    <AddCircleOutlineIcon
-                        style={{ color: '#00d09c' }}
-                        fontSize="large"
-                    />
-                </IconButton>
             </div>
-            <p className="product__title">Indusland Bank</p>
-            <div className="product__footer">
-                <p>$4343.544</p>
-                <p>39.55 (4.54 %)</p>
+            <p className="product__title">{props.title}</p>
+            <div className="lower">
+                <div className="product__footer">
+                    <p>$4343.544</p>
+                    <p>39.55 (4.54 %)</p>
+                </div>
             </div>
         </div>
     );

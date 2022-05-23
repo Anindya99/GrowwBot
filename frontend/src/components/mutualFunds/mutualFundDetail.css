@@ -1,0 +1,38 @@
+.mutual_fund {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 200px;
+    padding: 1rem;
+    border: 1px solid rgb(242, 234, 234);
+}
+
+.mf__title {
+    width: 100%;
+    text-align: left;
+}
+
+h2 {
+    margin-left: 0;
+    color: rgb(76, 74, 74);
+}
+
+.mf__tags {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mf__tags button {
+    background-color: rgb(218, 222, 222);
+    padding: 0.5rem;
+    margin: 0.8rem;
+    margin-left: 0;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(114, 109, 109);
+}

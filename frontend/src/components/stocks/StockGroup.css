@@ -1,4 +1,4 @@
-.group__head{
+.group__head {
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -8,9 +8,10 @@
     margin-left: 214px;
 }
 
-.group__body{
+.group__body {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     margin: 0;
     /* background-color: bisque; */

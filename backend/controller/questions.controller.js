@@ -48,6 +48,20 @@ exports.editDefaultQuestions = async (req, res, next) => {
        }
 };
 
+exports.deletedefaultbyId = async (req,res,next)=>{
+    try {
+        const ques = await defaultQues.findById(req.params.id);
+        if (!ques) throw Error('No item found');
+        const removed = await ques.remove();
+        if (!removed)
+          throw Error('Something went wrong while trying to delete the item');
+      
+        return res.status(200).json({ success: true });
+       }catch (e) {
+        return res.status(400).json({ msg: e.message }); 
+       }
+};
+
 exports.getAll = async (req, res, next) => {
     try {
         const ques = await allQues.find();
@@ -89,13 +103,14 @@ exports.editAllbyId = async (req, res, next) => {
     const newQues = new allQues({
         question: req.body.question,
         answer: req.body.answer,
+        action: req.body.action,
         children: req.body.children,
       });
 
     try {
         await allQues.findOneAndUpdate(
             {_id:req.params.id},
-            {question:newQues.question,answer:newQues.answer,children:newQues.children});
+            {question:newQues.question,answer:newQues.answer,action: newQues.action,children:newQues.children});
             return res.status(200).json(newQues);
         }catch (e) {
             return res.status(400).json({ msg: e.message }); 

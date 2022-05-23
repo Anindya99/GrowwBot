@@ -1,7 +1,7 @@
 const express = require("express");
 const productController = require("../controller/productController");
 const router = express.Router();
-// const auth = require("../middleware/auth");
+const auth = require("../middleware/auth");
 
 // /api/v1/:category/:id
 
@@ -17,14 +17,14 @@ router
     .delete(productController.deleteStock);
 
 // // Mutual Funds routes
-// router
-//     .route("/api/v1/mutual-funds")
-//     .get(productController.getAllMututalFunds)
-//     .post(productController.createMutualFunds);
+router
+    .route("/api/v1/mutual-funds")
+    .get(productController.getAllMutualFunds)
+    .post(productController.createMutualFund);
 
-// router
-//     .route("/api/v1/mutual-funds/:id")
-//     .get(productController.getMutualFundById)
+router
+    .route("/api/v1/mutual-funds/:id")
+    .get(productController.getMutualFundById);
 //     .update(productController.updateMutualFund)
 //     .delete(productController.deleteMutualFund);
 

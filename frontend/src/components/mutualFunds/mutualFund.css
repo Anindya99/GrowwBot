@@ -1,16 +1,17 @@
-.mutualFund{
-    width: 140px;
-    height: 140px;
+.mutualFund {
+    width: 180px;
+    height: 170px;
     border-radius: 7px;
     border: 0.1px solid rgb(211, 209, 209);
     /* background-color: rgb(194, 180, 180); */
     padding: 14px;
-    box-shadow: 1px 1px 1px 1px rgb(228 , 227 , 227);
+    box-shadow: 1px 1px 1px 1px rgb(228, 227, 227);
     margin: 1rem;
     margin-left: 0;
+    cursor: pointer;
 }
 
-.product__logo{
+.product__logo {
     width: 30px;
     height: 30px;
     padding: 4px;
@@ -19,17 +20,17 @@
     margin-bottom: 5px;
 }
 
-.product__head{
+.product__head {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.product__title{
+.product__title {
     font-weight: 500;
-    margin:2px;
+    margin: 2px;
 }
-.mutualFund__type{
+.mutualFund__type {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -37,7 +38,7 @@
     margin-bottom: 25px;
 }
 
-.product__footer{
+.product__footer {
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -45,6 +46,6 @@
     font-weight: 500;
 }
 
-.product__footer p:last-child{
+.product__footer p:last-child {
     color: #00d09c;
 }

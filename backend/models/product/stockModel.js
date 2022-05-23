@@ -14,7 +14,7 @@ const stockSchema = new mongoose.Schema({
     },
     marketCap: Number,
     ROE: Number,
-    priceToIncome: Number,
+    priceToIncome: { type: Number, required: false },
     earningPerShare: Number,
     priceToBook: Number,
     dividendYield: Number,

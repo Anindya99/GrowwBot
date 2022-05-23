@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const { db_link } = require("./config");
 const cors = require("cors");
 const morgan = require("morgan");
+const cookieParser = require("cookie-parser");
 const productRoutes = require("./routes/productRoutes");
 
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
+app.use(cookieParser());
 
 mongoose
     .connect(db_link, {

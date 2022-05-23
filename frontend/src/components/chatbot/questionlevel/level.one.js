@@ -5,28 +5,12 @@ import AuthStore from "../../../middleware/authstore";
 import "../questions.css";
 
 const Levelone = (props) => {
-<<<<<<< HEAD
     //console.log(props);
     const { setState } = props;
-    const location = useLocation();
-    const loggedin = AuthStore.isAuthenticated() ? true : false;
-    let kyc = false;
-    if (loggedin) {
-        kyc = true; //this need to be changed, fetch user info
-    }
 
     const [qlist, setqlist] = useState([]); //store questions and corresponding answer and their children filled using
     const [load, setload] = useState(false);
     const [showList, setshowList] = useState(true);
-=======
-  
-  //console.log(props);  
-  const {setState}= props;
-  
-  const [qlist,setqlist]= useState([]);//store questions and corresponding answer and their children filled using 
-  const [load,setload]= useState(false);
-  const[showList,setshowList]= useState(true);
->>>>>>> 457f61db875775d127a168e9ee8fa9c9a3eb9226
 
     useEffect(() => {
         getAllbyId(props.ques_id).then((data) => {

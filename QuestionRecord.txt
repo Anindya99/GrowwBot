@@ -1,9 +1,8 @@
 *****This is just for record of the questions*****
 {
         {
-            "_id": "62893ca27adf7f823f6c35e8",
+            "_id": "628c7ccb550334965ed5bfb1",
             "routeName": "/",
-            "kyc": false,
             "qlist": [
                 "627ff737031e0bd34a9851c6",
                 "627ffb46da253de68c6e7535",
@@ -12,10 +11,8 @@
         }
         {
             "routeName": "/stocks/user/explore",
-            "kyc": false,
-            "_id": "628766ae9c5d7802a811cf9f",
+            "_id": "628c7d06550334965ed5bfb3",
             "qlist": [
-                "6287736cbea1fe4ea1156c12",
                 "62876c61bea1fe4ea1156c09",
                 "62876ea1bea1fe4ea1156c0b",
                 "62877158bea1fe4ea1156c0d",
@@ -23,15 +20,13 @@
             ],
         }
         {
-            "routeName": "/stocks/user/explore",
-            "kyc": true,
-            "_id": "6287e1f74e0dd1b328476cb2",
+            "routeName": "/kyc",
+            "_id": "628c81c1b2f5a8655b18e167",
             "qlist": [
-                "62876c61bea1fe4ea1156c09",
-                "62876ea1bea1fe4ea1156c0b",
-                "62877158bea1fe4ea1156c0d",
-                "6287a2a7bca045cc8d7ffd0a"
+                "6287736cbea1fe4ea1156c12",
+                "628c7f2301c8e0c01495c1e8"
             ],
+            "__v": 0
         }
 }
 {
@@ -50,8 +45,19 @@
 
     6287736cbea1fe4ea1156c12 - My KYC is showing pending.Is KYC necressary?{
         628767e29c5d7802a811cfa1 - How can I get my full KYC done?              *******action kyc
-        62876a0c71dc460063f651da - Do you charge for processing KYC?{628767e29c5d7802a811cfa1}
+        62876a0c71dc460063f651da - Do you charge for processing KYC?{
+            628767e29c5d7802a811cfa1
+            }
     }
+    628c7f2301c8e0c01495c1e8 - Why can't I invest?{
+        628767e29c5d7802a811cfa1 - How can I get my full KYC done?              *******action kyc
+        62876a0c71dc460063f651da - Do you charge for processing KYC?{
+            628767e29c5d7802a811cfa1
+            }
+    }
+
+
+
     62876c61bea1fe4ea1156c09 - Show my orders in stocks.                        *******action orders stocks
     62876ea1bea1fe4ea1156c0b - How much does Groww charge for stocks?{
 

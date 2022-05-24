@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import {  useLocation } from 'react-router-dom';
-import { getDefault,getAllbyId } from '../../../api/questions.api';
+import { getDefaultQlist,getAllbyId } from '../../../api/questions.api';
 import { getUser } from '../../../api/users.api';
 import AuthStore from '../../../middleware/authstore';
 import "../questions.css";
@@ -17,7 +17,7 @@ const Levelzero = (props) => {
   
 
   const [qlist,setqlist]= useState([]);//store questions and corresponding answer and their children filled using 
-  const [load,setload]= useState(false);
+  //const [load,setload]= useState(false);
   const[showList,setshowList]= useState(true);
 
   useEffect(()=>{
@@ -26,6 +26,7 @@ const Levelzero = (props) => {
         getUser(token,loggedin._id).then(val=>{
           //console.log(val);
           setUser({...val});
+          //setload(true);
         }) 
       }
       else {setUser({kyc:false});}
@@ -33,24 +34,22 @@ const Levelzero = (props) => {
 
   useEffect(()=>{
    
-          //console.log(location.pathname)
-          getDefault().then( data=>{
-                //console.log(data);
-                const quesidList= data.filter((d)=>{
-                    //console.log(d)
-                    return d['routeName']===location.pathname && d['kyc']=== currUser.kyc 
-                });
-                if(quesidList.length) setState(state=>({...state,currentQues:quesidList[0]['qlist']})) 
-                //setState is a member of the props 
+         
+      if (typeof currUser.kyc !== 'undefined') {
+                getDefaultQlist(location.pathname,currUser.kyc).then( data=>{
+                  //console.log(data);
+                  setState(state=>({...state,currentQues:data}));
+                  //setState is a member of the props 
 
-          })
+            })
+      }
           
   },[currUser]);
   //console.log(props.currentQues);
-  if(props.currentQues.length && !load) setload(true);
+  //if(props.currentQues.length && !load) setload(true);
 
  useEffect(()=>{
-   
+    setqlist([]);
     const flaglist= props.currentQues.map((qid)=>{
       //console.log(qid);
       getAllbyId(qid).then(data=>{
@@ -60,7 +59,7 @@ const Levelzero = (props) => {
       return qid;
     })
 
-  },[load]);
+  },[props.currentQues]);
   //console.log(qlist);
 
   //set the currentQues when default has been added its length greater than zero and create the ques answer list with id

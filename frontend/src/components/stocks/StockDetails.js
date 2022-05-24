@@ -7,10 +7,14 @@ import TextField from "@mui/material/TextField";
 import InputUnstyled from "@mui/base/InputUnstyled";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
+import {  useLocation } from 'react-router-dom';
 
 import "./StockDetails.css";
 
 const StockDetails = () => {
+    const location = useLocation();  
+    console.log(location);
+
     const [stock, setStock] = useState({});
     const { id } = useParams();
     console.log(id);
@@ -202,7 +206,7 @@ const StockDetails = () => {
                         <Button
                             variant="contained"
                             style={{ backgroundColor: "rgb(46, 221, 136)" }}
-                            fullWidth="yes"
+                            fullWidth={true}
                             size="large"
                         >
                             BUY

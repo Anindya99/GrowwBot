@@ -88,6 +88,7 @@ exports.postAll = async (req, res, next) => {
     const newQues = new allQues({
         question: req.body.question,
         answer: req.body.answer,
+        action: req.body.action,
         children: req.body.children,
       });
 

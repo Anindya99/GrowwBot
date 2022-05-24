@@ -7,7 +7,7 @@ const jwtSecret = process.env.JWTSECRET;
 const auth = async (req, res, next) => {
     try {
         const token =
-            req.cookies.jwt || req.headers["x-auth-token"].split(" ")[1];
+            req.headers["authtoken"].split(" ")[1];
         // Check for token
         if (!token)
             return res

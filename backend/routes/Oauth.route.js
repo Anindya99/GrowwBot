@@ -69,11 +69,11 @@ router.post("/google", async (req, res) => {
                     { expiresIn: 3600 }
                 );
                 if (!token) throw Error("Couldnt sign the token");
-                res.cookie("jwt", token, {
+                /* res.cookie("jwt", token, {
                     httpOnly: true,
                     domain: null,
                     expiresIn: 3600,
-                });
+                }); */
                 res.status(200).json({
                     token,
                     user: {

@@ -80,6 +80,7 @@
 .actionicons {
     color: #1a1a1a;
     opacity: 0.7;
+    cursor: pointer ;
 }
 
 .header__two {
@@ -96,4 +97,5 @@
     width: 30px;
     height: 30px;
     border-radius: 1.4rem;
+    cursor: pointer;
 }

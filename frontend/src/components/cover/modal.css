@@ -1,14 +1,17 @@
 
 .modal-container{
-    display: flex;
-    flex-direction: row;
+    display: flex ;
+    flex-direction: row ;
 }
 .div-left{
     height: 370px;
     width: 400px;
-    padding-top: 50px;
-    color: white;
+    padding-top: 50px ;
+    padding-left: 25px;
     background-image: url(https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/patternImg.0edf5760.svg);
+}
+.div-left h2{
+  color: white !important;
 }
 .icon{
     padding-left: 375px;
@@ -42,6 +45,10 @@
     box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.08);
     position: relative;
     
+  }
+  .buttongoogle:hover {
+    box-shadow: rgba(209, 209, 223, 0.25) 0px 30px 60px -12px inset,
+    rgba(180, 173, 173, 0.3) 0px 18px 36px -18px inset;
   }
   .buttongText {
     

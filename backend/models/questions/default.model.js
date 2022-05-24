@@ -6,11 +6,6 @@ const defaultQuesSchema = new Schema({
       type: String,
       required: true,
     },
-    kyc:{
-      type: Boolean,
-      description: 'default questions will based on KYC status. Each page will have two sets of questions(KYC=true and KYC=false.)',
-      default: false
-    },
     qlist:[{
         type: mongoose.Schema.Types.ObjectId,
     }]

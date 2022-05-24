@@ -14,10 +14,32 @@ exports.getDefaultQuestions = async (req, res, next) => {
        }
 };
 
+exports.getDefaultQlist= async(req,res)=>{
+    try{
+        const route= req.headers["info"].split(" ")[0];
+        const kyc= req.headers["info"].split(" ")[1];
+        let q1= await defaultQues.find({routeName:route});
+        if(!q1) throw Error('No data in the given route');
+
+        q1= q1[0]['qlist'];
+        if(kyc==='false' && route!=='/'){
+            const q2= await defaultQues.find({routeName:'/kyc'});
+            if(!q2) throw Error('No data in /kyc, enter default questions when kyc is not done.');
+
+            q1= q1.concat(q2[0]['qlist']);
+        }
+        
+        //console.log(q3);
+        return res.status(200).json(q1);
+        
+    }catch(e){
+        return res.status(400).json({msg: e.message});
+    }
+}
+
 exports.postDefaultQuestions = async (req, res, next) => {
     const newQues = new defaultQues({
         routeName: req.body.routeName,
-        kyc: req.body.kyc,
         qlist: req.body.qlist,
       });
 
@@ -34,14 +56,13 @@ exports.editDefaultQuestions = async (req, res, next) => {
 
     const newQues = new defaultQues({
         routeName: req.body.routeName,
-        kyc: req.body.kyc,
         qlist: req.body.qlist,
       });
 
     try {
         await defaultQues.findOneAndUpdate(
             {_id:req.params.id},
-            {routeName:newQues.routeName,kyc:newQues.kyc,qlist:newQues.qlist});
+            {routeName:newQues.routeName,qlist:newQues.qlist});
             return res.status(200).json(newQues.qlist);
         }catch (e) {
             return res.status(400).json({ msg: e.message }); 
@@ -86,8 +107,11 @@ exports.getAllbyId = async (req, res, next) => {
 
 exports.postAll = async (req, res, next) => {
     const newQues = new allQues({
+        routeName: req.body.routeName,
         question: req.body.question,
         answer: req.body.answer,
+        action: req.body.action,
+        freq: req.body.freq,
         children: req.body.children,
       });
 
@@ -101,16 +125,18 @@ exports.postAll = async (req, res, next) => {
 
 exports.editAllbyId = async (req, res, next) => {
     const newQues = new allQues({
+        routeName: req.body.routeName,
         question: req.body.question,
         answer: req.body.answer,
         action: req.body.action,
+        freq: req.body.freq,
         children: req.body.children,
       });
 
     try {
         await allQues.findOneAndUpdate(
             {_id:req.params.id},
-            {question:newQues.question,answer:newQues.answer,action: newQues.action,children:newQues.children});
+            {routeName:newQues.routeName,question:newQues.question,answer:newQues.answer,action: newQues.action,freq:newQues.freq,children:newQues.children});
             return res.status(200).json(newQues);
         }catch (e) {
             return res.status(400).json({ msg: e.message }); 

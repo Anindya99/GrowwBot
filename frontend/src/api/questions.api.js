@@ -16,6 +16,23 @@ const getDefault= async()=>{
       }     
 };
 
+const getDefaultQlist= async(route,kyc)=>{
+    
+  try {
+      let response= await fetch(`/api/questions/default/qlist`,{
+        method: "GET",
+        headers:{
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          info:`${route} ${kyc}`
+        },
+      });
+      return await response.json();
+    } catch(err){
+      console.log(err);
+    }     
+};
+
 const getAllbyId= async(id)=>{
   try {
     let response= await fetch(`/api/questions/all/${id}`,{
@@ -31,4 +48,4 @@ const getAllbyId= async(id)=>{
   }     
 }
 
-export {getDefault,getAllbyId};
+export {getDefault,getDefaultQlist,getAllbyId};

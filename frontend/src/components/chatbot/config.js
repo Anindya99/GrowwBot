@@ -2,7 +2,6 @@ import { createChatBotMessage } from "react-chatbot-kit";
 //import Questions from "./questions";
 import Levelzero from "./questionlevel/level.zero";
 import Levelone from "./questionlevel/level.one";
-import Leveltwo from "./questionlevel/level.two";
 
 const config = {
     botName: "LearningBot",
@@ -41,11 +40,7 @@ const config = {
             widgetFunc: (props) => <Levelone {...props} />,
             mapStateToProps: ["currentQues", "ques_id"],
         },
-        {
-            widgetName: "leveltwo",
-            widgetFunc: (props) => <Leveltwo {...props} />,
-            mapStateToProps: ["currentQues", "ques_id"],
-        },
+        
     ],
     customComponents: {
         header: () => (

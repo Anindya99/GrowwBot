@@ -83,7 +83,15 @@ function App() {
                             )
                         }
                     />
-                    <Route path="/stocks/:id" element={<StockDetails />} />
+                    <Route path="/stocks/:id" element={
+                        loggedin ? (
+                            <>
+                                <StockDetails />
+                            </>
+                        ) : (
+                            <Navigate replace to="/" />
+                        )
+                    } />
                     <Route
                         path="/mutual-funds/:id"
                         element={<MutualFundDetail />}

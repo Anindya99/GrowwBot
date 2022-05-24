@@ -1,5 +1,5 @@
 import decode from "jwt-decode";
-import Cookies from "js-cookie";
+//import Cookies from "js-cookie";
 
 const AuthStore = {
     isAuthenticated() {
@@ -9,11 +9,11 @@ const AuthStore = {
     },
     storeJWT(jwtToken) {
         localStorage.setItem("jwtToken", JSON.stringify(jwtToken));
-        Cookies.remove("jwt");
+        //Cookies.remove("jwt");
     },
     clearJWT() {
         localStorage.removeItem("jwtToken");
-        console.log(localStorage);
+        //console.log(localStorage);
     },
     getUserDetail() {
         return decode(localStorage.jwtToken);

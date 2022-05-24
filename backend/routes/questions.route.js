@@ -14,6 +14,16 @@ const questionController = require("../controller/questions.controller");
   );
 
   /**
+ * @route   GET api/questions/default/:route/:kyc
+ * @desc    Get default questions by route name and kyc status
+ * @access  Public
+ */
+ router.get(
+  "/default/qlist",
+  questionController.getDefaultQlist
+);
+
+  /**
  * @route   POST api/questions/default
  * @desc    Post all default questions
  * @access  Public

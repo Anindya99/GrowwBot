@@ -13,7 +13,7 @@ const Levelzero = (props) => {
   const {setState}= props;
   const location = useLocation();  
   const loggedin= AuthStore.isAuthenticated();
-  const token = localStorage.getItem("jwtToken");
+  const token = localStorage.getItem("jwToken");
   
 
   const [qlist,setqlist]= useState([]);//store questions and corresponding answer and their children filled using 

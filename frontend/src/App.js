@@ -19,15 +19,23 @@ import AndroidIcon from "@mui/icons-material/Android";
 import ActionProvider from "./components/chatbot/ActionProvider";
 import MessageParser from "./components/chatbot/MessageParser";
 import config from "./components/chatbot/config";
+import { verify } from "./api/verify.api";
 
 function App() {
-    const loggedin = AuthStore.isAuthenticated() ? true : false;
+    const [loggedin,setLoggedin] = useState(AuthStore.isAuthenticated() ? true : false);
+    //console.log(AuthStore.isAuthenticated())
     const [showBot, setshowBot] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
         setshowBot(false);
-        console.log(location.pathname);
+        verify(localStorage.getItem("jwToken")).then(res=>{
+            //console.log(res.msg);
+            if(res.msg==='verified') setLoggedin( true);
+            else setLoggedin( false);
+        });
+        
+        //console.log(location.pathname);
     }, [location]);
     return (
         <div>

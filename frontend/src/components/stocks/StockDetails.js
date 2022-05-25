@@ -13,7 +13,7 @@ import "./StockDetails.css";
 
 const StockDetails = () => {
     const location = useLocation();  
-    console.log(location);
+    //console.log(location);
 
     const [stock, setStock] = useState({});
     const { id } = useParams();

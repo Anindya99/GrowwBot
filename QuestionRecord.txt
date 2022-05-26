@@ -44,13 +44,13 @@
     }
 
     6287736cbea1fe4ea1156c12 - My KYC is showing pending.Is KYC necressary?{
-        628767e29c5d7802a811cfa1 - How can I get my full KYC done?              *******action kyc
+        628767e29c5d7802a811cfa1 - How can I get my full KYC done?              *******action kyc(must be leaf)
         62876a0c71dc460063f651da - Do you charge for processing KYC?{
             628767e29c5d7802a811cfa1
             }
     }
     628c7f2301c8e0c01495c1e8 - Why can't I invest?{
-        628767e29c5d7802a811cfa1 - How can I get my full KYC done?              *******action kyc
+        628767e29c5d7802a811cfa1 - How can I get my full KYC done?              *******action kyc(must be leaf)
         62876a0c71dc460063f651da - Do you charge for processing KYC?{
             628767e29c5d7802a811cfa1
             }
@@ -58,7 +58,7 @@
 
 
 
-    62876c61bea1fe4ea1156c09 - Show my orders in stocks.                        *******action orders stocks
+    62876c61bea1fe4ea1156c09 - Show my orders in stocks.                        *******action orders stocks(must be leaf)
     62876ea1bea1fe4ea1156c0b - How much does Groww charge for stocks?{
 
         6287805cbea1fe4ea1156c16 - Why is my buy/sell disabled for certain stocks?

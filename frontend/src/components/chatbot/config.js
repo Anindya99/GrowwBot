@@ -2,6 +2,7 @@ import { createChatBotMessage } from "react-chatbot-kit";
 //import Questions from "./questions";
 import Levelzero from "./questionlevel/level.zero";
 import Levelone from "./questionlevel/level.one";
+import Kyc from "./action/Kyc";
 
 const config = {
     botName: "LearningBot",
@@ -40,7 +41,10 @@ const config = {
             widgetFunc: (props) => <Levelone {...props} />,
             mapStateToProps: ["currentQues", "ques_id"],
         },
-        
+        {
+            widgetName: "Kyc",
+            widgetFunc: (props)=> <Kyc {...props}/>
+        },
     ],
     customComponents: {
         header: () => (

@@ -83,6 +83,10 @@ const Levelzero = (props) => {
         setshowList(false)
         props.actionProvider.handleClientmsg(ques.question)
         props.actionProvider.handleLevelzero(ques.answer)
+        
+        if(ques.hasOwnProperty('action')) {
+          if(ques.action==='kyc') props.actionProvider.handleKyc();
+        }
       }}
       
     >

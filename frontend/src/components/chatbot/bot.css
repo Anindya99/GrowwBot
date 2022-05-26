@@ -48,7 +48,7 @@
 
 .react-chatbot-kit-chat-btn-send {
     min-width: 0;
-    background-color: rgb(122, 164, 231);
+    
     width: 3vw;
     border-radius: 4px;
     /* pointer-events: none;
@@ -81,15 +81,14 @@
 }
 
 .react-chatbot-kit-chat-bot-message {
-    left: -4.9em;
+    left: -5.6em;
     background-color: white;
     color: black;
 }
 
 .react-chatbot-kit-chat-bot-message-arrow {
     min-width: 0;
-    
-    
+   
 }
 
 .react-chatbot-kit-chat-bot-loading-icon-container {

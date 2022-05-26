@@ -9,7 +9,7 @@ const auth = async (req, res, next) => {
         const token =
             req.headers["authtoken"].split(" ")[1];
         // Check for token
-        if (!token)
+        if (!token )
             return res
                 .status(401)
                 .json({ msg: "No token, authorization denied" });

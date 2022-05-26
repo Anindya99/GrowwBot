@@ -30,9 +30,9 @@ function App() {
     useEffect(() => {
         setshowBot(false);
         verify(localStorage.getItem("jwToken")).then(res=>{
-            //console.log(res.msg);
+            //if(!res.ok) {AuthStore.clearJWT();setLoggedin( false);}
             if(res.msg==='verified') setLoggedin( true);
-            else setLoggedin( false);
+            else {AuthStore.clearJWT();setLoggedin( false);}
         });
         
         //console.log(location.pathname);

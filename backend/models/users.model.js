@@ -27,6 +27,16 @@ const UserSchema = new Schema({
         default: false,
         description: "if KYC is done or not",
     },
+    acc_no:{
+        type: Number,
+        default: 0,
+        description: "store account number to complete kyc" 
+    },
+    phone_no:{
+       type: Number,
+       default: 0,
+       description: "store phone number to complete kyc" 
+    },
     limit: {
         type: Number,
         default: 1000000000,

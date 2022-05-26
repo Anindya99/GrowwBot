@@ -15,4 +15,15 @@ const userController = require("../controller/users.controller");
     userController.getUser
   );
 
+  /**
+ * @route   PUT api/users/:id
+ * @desc    Edit user info
+ * @access  Private
+ */
+ router.put(
+  "/:id",
+  auth,
+  userController.editUser
+);
+
 module.exports = router;  

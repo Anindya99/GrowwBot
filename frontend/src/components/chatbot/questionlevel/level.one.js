@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getDefault, getAllbyId } from "../../../api/questions.api";
 import AuthStore from "../../../middleware/authstore";
+import Kyc from "../action/Kyc";
 import "../questions.css";
 
 const Levelone = (props) => {
@@ -57,6 +58,10 @@ const Levelone = (props) => {
                     setshowList(false);
                     props.actionProvider.handleClientmsg(ques.question);
                     props.actionProvider.handleLevelone(ques.answer);
+
+                    if(ques.hasOwnProperty('action')) {
+                        if(ques.action==='kyc') props.actionProvider.handleKyc();
+                    }
                 }}
             >
                 {ques.question}

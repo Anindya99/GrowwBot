@@ -55,9 +55,9 @@ handleLevelone = (answer) => {
   this.updateChatbotState(message);
 };
 
-handleKyc= ()=>{
+handleKyc= (answer)=>{
   const message = this.createChatBotMessage(
-    "The details cannot be changed after submission. So, please fill carefully.",
+    `${answer}`,
     {
       widget: "Kyc",
     }

@@ -6,6 +6,7 @@ import { getUser } from '../../../api/users.api';
 import AuthStore from '../../../middleware/authstore';
 import { Button } from '@material-ui/core';
 import { editUser } from '../../../api/users.api';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import './kyc.css'
 
 const Kyc = (props) => {
@@ -40,8 +41,8 @@ const Kyc = (props) => {
     const handleSubmit=(values,errors)=>{
         editUser(token,currUser._id,true,values.acc_no,values.phone_no,currUser.limit).then(data=>{
             setShowForm(false);
-        })
-        
+        }) 
+
     }
     if(showForm) {
             return (
@@ -69,7 +70,7 @@ const Kyc = (props) => {
                             return(
                                 <form onSubmit={handleSubmit}>
                                     <div className='input-container'>
-                                        <label>Account Number</label>
+                                        <label>Bank Account Number</label>
                                         <input
                                             placeholder='Enter account number'
                                             value={values.acc_no}
@@ -105,6 +106,7 @@ const Kyc = (props) => {
     }
     else {return(
         <div style={{ backgroundColor:'white',fontSize:'small' }} className='success'>
+            <CheckCircleIcon className='success-icon'/>
             <h5>You have successfully completed your KYC.</h5>
         </div>
     )}

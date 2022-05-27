@@ -57,11 +57,11 @@ const Levelone = (props) => {
                     }));
                     setshowList(false);
                     props.actionProvider.handleClientmsg(ques.question);
-                    props.actionProvider.handleLevelone(ques.answer);
-
                     if(ques.hasOwnProperty('action')) {
-                        if(ques.action==='kyc') props.actionProvider.handleKyc();
+                        if(ques.action==='kyc') props.actionProvider.handleKyc(ques.answer);
                     }
+                    else props.actionProvider.handleLevelone(ques.answer);
+
                 }}
             >
                 {ques.question}

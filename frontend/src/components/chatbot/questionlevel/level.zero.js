@@ -82,11 +82,11 @@ const Levelzero = (props) => {
         setState(state=>({...state,currentQues:[],ques_id:ques._id}))
         setshowList(false)
         props.actionProvider.handleClientmsg(ques.question)
-        props.actionProvider.handleLevelzero(ques.answer)
-        
         if(ques.hasOwnProperty('action')) {
-          if(ques.action==='kyc') props.actionProvider.handleKyc();
+          if(ques.action==='kyc') props.actionProvider.handleKyc(ques.answer);
         }
+        else props.actionProvider.handleLevelzero(ques.answer)
+      
       }}
       
     >

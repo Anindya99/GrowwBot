@@ -8,11 +8,15 @@
 }
 .submit-button{
     padding-top: 5px;
-    background-color: rgb(195, 67, 56) !important;
+    background-color: rgb(221, 86, 74) !important;
 }
 .success{
-    height:35px;
+    height:60px;
     padding-left: 20px;
-    padding-top: 15px;
+    padding-top: 10px;
     background-color: antiquewhite;
+    
+}
+.success-icon{
+    padding-left: 40%;
 }

@@ -31,12 +31,12 @@ const Kyc = (props) => {
             .required("Account no. is required")
             .min(11, "Account no. must be at least 11 digits.")
             .max(16,"Account no. must be at most 16 digits.")
-            .matches(phoneRegExp, 'Acc no. is not valid'),
+            .matches(phoneRegExp, 'Acc no. must contain numbers only.'),
             phone_no: Yup.string()
             .required("Phone no. is required")
             .min(10, "Phone no. must have 10 digits.")
             .max(10, "Phone no. must have 10 digits.")
-            .matches(phoneRegExp, 'Phone no. is not valid'),
+            .matches(phoneRegExp, 'Phone no. is not valid.'),
     });
     const handleSubmit=(values,errors)=>{
         editUser(token,currUser._id,true,values.acc_no,values.phone_no,currUser.limit).then(data=>{

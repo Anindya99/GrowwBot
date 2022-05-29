@@ -3,12 +3,17 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import Levelzero from "./questionlevel/level.zero";
 import Levelone from "./questionlevel/level.one";
 import Kyc from "./action/Kyc";
+import Avatar from "./Avatar";
 
+const botName = "GrowwBot";
 const config = {
-    botName: "LearningBot",
+    botName: botName,
     initialMessages: [
         createChatBotMessage(
-            `Hello, I am GrowwBot. I am here to help you with
+            `Hello, I am ${botName}.`
+        ),
+        createChatBotMessage(
+                   `I am here to help you with
                    FAQs. Questions will be displayed based on the page you are browsing. 
                    After you select an option, answer will be displayed and questions similar to selected 
                    option will be followed.`,
@@ -59,6 +64,9 @@ const config = {
             >
                 GrowwBot
             </div>
+        ),
+        botAvatar: (props) => (
+            <Avatar {...props}/>
         ),
     },
 };

@@ -29,13 +29,19 @@ function App() {
 
     useEffect(() => {
         setshowBot(false);
-        verify(localStorage.getItem("jwToken")).then(res=>{
-            //if(!res.ok) {AuthStore.clearJWT();setLoggedin( false);}
-            if(res.msg==='verified') setLoggedin( true);
-            else {AuthStore.clearJWT();setLoggedin( false);}
-        });
         
         //console.log(location.pathname);
+        if(localStorage.getItem("jwToken")){
+            verify(localStorage.getItem("jwToken")).then(res=>{
+                //if(!res.ok) {AuthStore.clearJWT();setLoggedin( false);}
+                if(res.msg==='verified') setLoggedin( true);
+                else{
+                    AuthStore.clearJWT();
+                    window.location.href = "/";
+                }
+            });
+        }
+        else setLoggedin( false);
     }, [location]);
     return (
         <div>

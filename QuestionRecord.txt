@@ -45,6 +45,7 @@
 
     6287736cbea1fe4ea1156c12 - My KYC is showing pending.Is KYC necressary?{
         628767e29c5d7802a811cfa1 - How can I get my full KYC done?              *******action kyc(must be leaf)
+        (to change it change in kyc.js after from submission, check if any children is then and then handle it in actionprovider)
         62876a0c71dc460063f651da - Do you charge for processing KYC?{
             628767e29c5d7802a811cfa1
             }

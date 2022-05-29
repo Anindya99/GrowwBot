@@ -3,6 +3,7 @@ import {  useLocation } from 'react-router-dom';
 import { getDefaultQlist,getAllbyId } from '../../../api/questions.api';
 import { getUser } from '../../../api/users.api';
 import AuthStore from '../../../middleware/authstore';
+import { verify } from '../../../api/verify.api';
 import "../questions.css";
 
 const Levelzero = (props) => {
@@ -21,15 +22,25 @@ const Levelzero = (props) => {
   const[showList,setshowList]= useState(true);
 
   useEffect(()=>{
-      if(loggedin){
-        //console.log(token);
-        getUser(token,loggedin._id).then(val=>{
-          //console.log(val);
-          setUser({...val});
-          //setload(true);
-        }) 
+    if(localStorage.getItem("jwToken")){
+      verify(localStorage.getItem("jwToken")).then(res=>{
+          if(res.msg==='verified'){
+              getUser(token,loggedin._id).then(val=>{
+                //console.log(val);
+                setUser({...val});
+                //setload(true);
+              }) 
+          }
+          else{
+            AuthStore.clearJWT();
+            window.location.href = "/";
+          }
+        })
+        
+      } 
+      else {
+        setUser({kyc:false});
       }
-      else {setUser({kyc:false});}
   },[]);
 
   useEffect(()=>{
@@ -38,7 +49,7 @@ const Levelzero = (props) => {
       if (typeof currUser.kyc !== 'undefined') {
                 getDefaultQlist(location.pathname,currUser.kyc).then( data=>{
                   //console.log(data);
-                  setState(state=>({...state,currentQues:data}));
+                  if(!data.hasOwnProperty('msg')) setState(state=>({...state,currentQues:data}));
                   //setState is a member of the props 
 
             })

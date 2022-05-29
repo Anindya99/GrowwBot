@@ -1,3 +1,4 @@
+
 .react-chatbot-kit-chat-container {
     position: fixed; 
     /* bottom: 6vw; left: 65vw; */
@@ -134,4 +135,9 @@
 .react-chatbot-kit-error-docs {
     min-width: 0;
 
+}
+.growwLogo{
+    width: 42px !important;
+    height: 43px !important;
+    
 }

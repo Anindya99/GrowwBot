@@ -69,6 +69,7 @@
     
   }
   .newLogin{
-    margin-left: 56px !important;
-    margin-top: 65px;
+    padding-left: 53px !important;
+    padding-top: 65px !important;
+    /* background-color: aqua; */
 }

@@ -21,6 +21,8 @@ import MessageParser from "./components/chatbot/MessageParser";
 import config from "./components/chatbot/config";
 import { verify } from "./api/verify.api";
 
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 function App() {
     const [loggedin,setLoggedin] = useState(AuthStore.isAuthenticated() ? true : false);
     //console.log(AuthStore.isAuthenticated())
@@ -44,7 +46,8 @@ function App() {
         else setLoggedin( false);
     }, [location]);
     return (
-        <div>
+        <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENTID}>
+            <div>
             <Header loggedin={loggedin} />
             <div className="content">
                 <Routes>
@@ -134,6 +137,7 @@ function App() {
             </div>
             <Footer />
         </div>
+        </GoogleOAuthProvider>
     );
 }
 

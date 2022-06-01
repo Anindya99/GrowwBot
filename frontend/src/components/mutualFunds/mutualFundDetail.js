@@ -7,6 +7,7 @@ import "./mutualFundDetail.css";
 import { useParams } from "react-router-dom";
 
 const MutualFundDetail = () => {
+    localStorage.setItem("route","mutual-funds-user-invest");
     const [mf, setMf] = useState({});
     const { id } = useParams();
     useEffect(() => {

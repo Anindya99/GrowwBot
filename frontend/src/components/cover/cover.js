@@ -8,21 +8,21 @@ const Cover = () => {
             <div className="product__head">
                       <img
                           className="product__logo"
-                          src="icons/mutual.svg"
-                          alt="mutual-funds"
-                      />
-                  </div>
-                  <p className="product__title-cover">Mutual Funds</p>
-          </div>
-          <div className="stock-cover">
-            <div className="product__head">
-                      <img
-                          className="product__logo"
                           src="icons/stocks.svg"
                           alt="stocks"
                       />
                   </div>
                   <p className="product__title-cover">Stocks</p>
+          </div>
+          <div className="stock-cover">
+            <div className="product__head">
+                      <img
+                          className="product__logo"
+                          src="icons/mutual.svg"
+                          alt="mutual-funds"
+                      />
+                  </div>
+                  <p className="product__title-cover">Mutual Funds</p>
           </div>
           <div className="stock-cover">
             <div className="product__head">

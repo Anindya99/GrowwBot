@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import {  useLocation } from 'react-router-dom';
+//import {  useLocation } from 'react-router-dom';
 import { getDefaultQlist,getAllbyId } from '../../../api/questions.api';
 import { getUser } from '../../../api/users.api';
 import AuthStore from '../../../middleware/authstore';
@@ -12,7 +12,7 @@ const Levelzero = (props) => {
   
   //console.log(props);  
   const {setState}= props;
-  const location = useLocation();  
+  const location = localStorage.route;  
   const loggedin= AuthStore.isAuthenticated();
   const token = localStorage.getItem("jwToken");
   
@@ -47,7 +47,7 @@ const Levelzero = (props) => {
    
          
       if (typeof currUser.kyc !== 'undefined') {
-                getDefaultQlist(location.pathname,currUser.kyc).then( data=>{
+                getDefaultQlist(location,currUser.kyc).then( data=>{
                   //console.log(data);
                   if(!data.hasOwnProperty('msg')) setState(state=>({...state,currentQues:data}));
                   //setState is a member of the props 

@@ -19,12 +19,12 @@ const getDefault= async()=>{
 const getDefaultQlist= async(route,kyc)=>{
     
   try {
-      let response= await fetch(`/api/questions/default/qlist`,{
+      let response= await fetch(`/api/questions/default/${route}/${kyc}`,{
         method: "GET",
         headers:{
           Accept: "application/json",
           "Content-Type": "application/json",
-          info:`${route} ${kyc}`
+          //info:`${route} ${kyc}`
         },
       });
       return await response.json();

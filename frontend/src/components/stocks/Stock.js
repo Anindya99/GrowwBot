@@ -5,6 +5,7 @@ import { IconButton, Button } from "@material-ui/core";
 import "./Stock.css";
 
 const Stock = (props) => {
+    localStorage.setItem("route","stocks-user-explore");
     const navigate = useNavigate();
     const redirectToStockPage = () => {
         navigate(`/stocks/${props.id}`);

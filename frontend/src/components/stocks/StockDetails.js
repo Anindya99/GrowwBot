@@ -12,8 +12,7 @@ import {  useLocation } from 'react-router-dom';
 import "./StockDetails.css";
 
 const StockDetails = () => {
-    const location = useLocation();  
-    //console.log(location);
+    localStorage.setItem("route","stocks-user-invest");
 
     const [stock, setStock] = useState({});
     const { id } = useParams();

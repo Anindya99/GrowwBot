@@ -2,7 +2,7 @@
 {
         {
             "_id": "628c7ccb550334965ed5bfb1",
-            "routeName": "/",
+            "routeName": "login-none",  
             "qlist": [
                 "627ff737031e0bd34a9851c6",
                 "627ffb46da253de68c6e7535",
@@ -10,7 +10,25 @@
             ]
         }
         {
-            "routeName": "/stocks/user/explore",
+            "routeName": "kyc-invest", 
+            "_id": "628c81c1b2f5a8655b18e167",
+            "qlist": [
+                "6287736cbea1fe4ea1156c12",
+                "628c7f2301c8e0c01495c1e8"
+            ],
+            "__v": 0
+        }
+        {
+            "routeName": "kyc-explore", **kyc/explore, invest, none store route in localstorage
+            "_id": "629711cd4975f0783e0e9c74",
+            "qlist": [
+                "6287736cbea1fe4ea1156c12",
+                "628767e29c5d7802a811cfa1"
+            ],
+            "__v": 0
+        }
+        {
+            "routeName": "stocks-user-explore",
             "_id": "628c7d06550334965ed5bfb3",
             "qlist": [
                 "62876c61bea1fe4ea1156c09",
@@ -19,15 +37,7 @@
                 "6287a2a7bca045cc8d7ffd0a"
             ],
         }
-        {
-            "routeName": "/kyc",
-            "_id": "628c81c1b2f5a8655b18e167",
-            "qlist": [
-                "6287736cbea1fe4ea1156c12",
-                "628c7f2301c8e0c01495c1e8"
-            ],
-            "__v": 0
-        }
+        
 }
 {
     627ff737031e0bd34a9851c6 - Can I invest using a credit/debit card?{

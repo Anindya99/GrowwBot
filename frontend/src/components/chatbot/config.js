@@ -15,7 +15,7 @@ const config = {
         createChatBotMessage(
                    `I am here to help you with
                    FAQs. Questions will be displayed based on the page you are browsing. 
-                   After you select an option, answer will be displayed and questions similar to selected 
+                   After you select an option, answer will be displayed and questions similar to the selected 
                    option will be followed.`,
             {
                 widget: "levelzero",

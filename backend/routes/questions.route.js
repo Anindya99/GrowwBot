@@ -19,7 +19,7 @@ const questionController = require("../controller/questions.controller");
  * @access  Public
  */
  router.get(
-  "/default/qlist",
+  "/default/:route/:kyc",
   questionController.getDefaultQlist
 );
 

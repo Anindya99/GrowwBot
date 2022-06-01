@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./mutualFund.css";
 
 const MutualFund = (props) => {
+    localStorage.setItem("route","mutual-funds-user-explore");
     const navigate = useNavigate();
     const refToMfDetail = () => {
         navigate(`/mutual-funds/${props.id}`);

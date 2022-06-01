@@ -2,6 +2,7 @@ import React from 'react';
 import Box from './Box';
 
 const FixedDeposit = () => {
+    localStorage.setItem("route","deposits-user-explore");
     return (
         <div className="group__head">
             <div

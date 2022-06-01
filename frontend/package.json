@@ -10,6 +10,7 @@
     "@mui/base": "^5.0.0-alpha.79",
     "@mui/icons-material": "^5.6.2",
     "@mui/material": "^5.6.4",
+    "@react-oauth/google": "^0.2.5",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",

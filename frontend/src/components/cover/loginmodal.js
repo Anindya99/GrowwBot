@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import CloseIcon from '@mui/icons-material/Close';
 import Modal from '@mui/material/Modal';
-import GoogleLogin from 'react-google-login'
+import { GoogleLogin } from '@react-oauth/google';
+//import { useGoogleLogin } from '@react-oauth/google';
 import AuthStore from '../../middleware/authstore'
 import Axios from 'axios'
 import './modal.css'
@@ -30,7 +31,7 @@ const Loginmodal = ({close}) => {
     //dont send something directly in the body, send as object here key is sendToken(can be anything) 
     //and the token is res.tokenId
        Axios
-      .post('/api/Oauth/google',{sendToken:response.tokenId})
+      .post('/api/Oauth/google',{sendToken:response.credential})
       .then(res=>{
         AuthStore.storeJWT(res.data.token)    
         window.location.href = "/stocks/user/explore";
@@ -51,6 +52,9 @@ const Loginmodal = ({close}) => {
             }
       }) 
   }
+  /* const login = useGoogleLogin({
+    onSuccess: codeResponse => responseGoogle(codeResponse),
+  }); */
   return (
     <div>
       <Modal
@@ -69,9 +73,9 @@ const Loginmodal = ({close}) => {
                 <div className='icon'><CloseIcon className='close-icon' style={{ fontSize: 22 }} onClick={handleClose}/></div>
                 <p>Welcome to Groww</p>
                 
-                <GoogleLogin
-                    clientId={process.env.REACT_APP_GOOGLE_CLIENTID}
-                    cookiePolicy='single_host_origin'
+               {/*  <GoogleLogin
+                    //clientId={process.env.REACT_APP_GOOGLE_CLIENTID}
+                    //cookiePolicy='single_host_origin'
                     render={renderProps=>(
                       <button onClick={renderProps.onClick}
                       disabled={renderProps.disabled} className="buttongoogle">
@@ -82,7 +86,23 @@ const Loginmodal = ({close}) => {
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle} 
                     >
-                </GoogleLogin> 
+                </GoogleLogin>  */}
+                <div className='newLogin'>
+                    <GoogleLogin
+                      onSuccess={credentialResponse => {
+                        responseGoogle(credentialResponse);
+                      }}
+                      onError={() => {
+                        console.log('Login Failed');
+                      }}
+                    />
+                </div>
+
+                      {/* <button onClick={()=>login()}
+                       className="buttongoogle">
+                      <img src="icons/google.svg" alt="google-icon" className="icong"></img>
+                      <span className="buttongText">Continue with Google</span>
+                      </button> */}
 
                 <p className='terms'>By proceeding, I agree to <b>T&C</b> and <b>Privacy policy.</b></p>
             </div>

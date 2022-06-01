@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { Button } from '@material-ui/core';
 import LoginModal from './loginmodal'
 import './cover.css'
+
 const Getstart = () => {
     localStorage.setItem("route","login-none");
     const [showModal,setShowModal]= useState(false);
+    
   return (
     <div className='leftcover'>
         

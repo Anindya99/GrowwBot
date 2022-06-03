@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const allQuesSchema = new Schema({
   routeName:{
     type: String,
-    default: "/stocks/user/explore"
+    default: "stocks-user-explore"
     },
     question:{
       type: String,

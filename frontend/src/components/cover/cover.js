@@ -1,5 +1,6 @@
 import React from 'react'
 import './cover.css'
+
 const Cover = () => {
   
   return (
@@ -34,6 +35,8 @@ const Cover = () => {
                   </div>
                   <p className="product__title-cover">Fixed Deposits</p>
           </div>
+
+          
     </div>
   )
 }

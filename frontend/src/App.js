@@ -23,6 +23,8 @@ import { verify } from "./api/verify.api";
 
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
+
+
 function App() {
     const [loggedin,setLoggedin] = useState(AuthStore.isAuthenticated() ? true : false);
     //console.log(AuthStore.isAuthenticated())
@@ -45,6 +47,7 @@ function App() {
         }
         else setLoggedin( false);
     }, [location]);
+    
     return (
         <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENTID}>
             <div>

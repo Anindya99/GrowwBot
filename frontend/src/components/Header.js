@@ -7,7 +7,6 @@ import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceW
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import AuthStore from "../middleware/authstore";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
-
 //import css
 import "./Header.css";
 import { SearchOutlined } from "@material-ui/icons";
@@ -21,6 +20,8 @@ const Header = ({ loggedin }) => {
     };
     let user = null;
     if (loggedin) user = AuthStore.getUserDetail();
+    
+
     return (
         <div className="header">
             <div className="header__one">
@@ -87,7 +88,7 @@ const Header = ({ loggedin }) => {
                                 onClick={logout}
                                 className="user_image"
                                 src={user.picture}
-                                alt="user image"
+                                alt="user"
                             />
                         )}
                     </div>
@@ -115,6 +116,7 @@ const Header = ({ loggedin }) => {
                     </Button>
                 </div>
             )}
+            
         </div>
     );
 };

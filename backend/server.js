@@ -5,6 +5,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const productRoutes = require("./routes/productRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
 //body parser middleware
@@ -14,22 +15,23 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 mongoose
-    .connect(db_link, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => console.log("Mongoose connected..."))
-    .catch((err) => console.log(err));
+  .connect(db_link, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Mongoose connected..."))
+  .catch((err) => console.log(err));
 
 app.use("/api/Oauth", require("./routes/Oauth.route.js"));
-app.use("/api/verify",require("./routes/verifyJWT.route.js"));
+app.use("/api/verify", require("./routes/verifyJWT.route.js"));
 app.use("/api/questions", require("./routes/questions.route.js"));
 app.use("/api/users", require("./routes/users.route.js"));
 app.use(productRoutes);
+app.use(orderRoutes);
 
 //Invalid route's error handling
 app.use("*", function (req, res) {
-    res.status(404).json({ msg: "PAGE NOT FOUND" });
+  res.status(404).json({ msg: "PAGE NOT FOUND" });
 });
 
 const port = process.env.PORT || 5000;

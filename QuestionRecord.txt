@@ -86,10 +86,8 @@
             628767e29c5d7802a811cfa1
             }
     }
-
-
-
-    62876c61bea1fe4ea1156c09 - Show my orders in stocks.                        *******action orders stocks(must be leaf)
+   
+    62876c61bea1fe4ea1156c09 - Show my investments in stocks.                        *******action investments stocks(must be leaf)
     62876ea1bea1fe4ea1156c0b - How much does Groww charge for stocks?{
 
         6287805cbea1fe4ea1156c16 - Why is my buy/sell disabled for certain stocks?
@@ -125,7 +123,11 @@
         }
 
     }
-    
+     629b2d1c793de3751df9cb95 - What is the market price of the stock? *****action get price{
+
+     }
+     629b39e0793de3751df9cc23 - What is the market capital of the stock?   
+
 
 
     62998f4b6a3a6c5dc64fe8ed - How to start a SIP on Groww?{
@@ -158,7 +160,7 @@
           62999ad76a3a6c5dc64fe912 - If I cancel my track request, will my imported funds be removed from my dashboard?
        }
     }
-    6299b2a41b08520f2d5f846a - Show my orders in mutual-funds. *******action orders mutual-funds(must be leaf)
+    6299b2a41b08520f2d5f846a - Show my investments in mutual-funds. *******action orders mutual-funds(must be leaf)
 
 
 

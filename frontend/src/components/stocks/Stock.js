@@ -24,8 +24,8 @@ const Stock = (props) => {
             <p className="product__title">{props.title}</p>
             <div className="lower">
                 <div className="product__footer">
-                    <p>$4343.544</p>
-                    <p>39.55 (4.54 %)</p>
+                    <p>₹{props.price}</p>
+                    {/* <p>39.55 (4.54 %)</p> */}
                 </div>
             </div>
         </div>

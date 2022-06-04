@@ -105,7 +105,7 @@ function App() {
               }
             />
             <Route
-              path="/orders/user/explore"
+              path="/user/investments"
               element={
                 loggedin ? (
                   <>

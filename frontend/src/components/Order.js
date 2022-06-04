@@ -38,6 +38,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 // ];
 
 export default function OrderTable() {
+  localStorage.setItem("route","investments-user-invest");
   const [rows, setRows] = useState([]);
   useEffect(() => {
     const apiCall = async () => {

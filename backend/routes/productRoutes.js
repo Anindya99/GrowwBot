@@ -13,7 +13,7 @@ router
 router
     .route("/api/v1/stocks/:id")
     .get(productController.getStockById)
-    .patch(productController.updateStock)
+    .put(productController.updateStock)
     .delete(productController.deleteStock);
 
 // // Mutual Funds routes

@@ -129,8 +129,7 @@ function Footer() {
                 <div className="footer__div"></div>
                 <div className="footer__inner22">
                     <h4 className="footer__copyright">
-                        ⓒ2022-2025 Groww Clone. All,rights reserved, Built with
-                        ❤️ by Manish Kumar
+                        ⓒ2022 Groww Clone. All rights reserved.
                     </h4>
                     <div className="footer__download">
                         <img className="footer__downloadicon" src="#" alt="" />

@@ -10,6 +10,8 @@ const MutualFundDetail = () => {
     localStorage.setItem("route","mutual-funds-user-invest");
     const [mf, setMf] = useState({});
     const { id } = useParams();
+    localStorage.setItem("productID",id);
+    localStorage.setItem("productType","mutual-funds");
     useEffect(() => {
         const apiCall = async () => {
             try {

@@ -17,9 +17,9 @@ const StockGroup = () => {
         apiCall();
     }, []);
     console.log(stocks);
-    const fun = () => {
+    /* const fun = () => {
         console.log("sfdsdfsf");
-    };
+    }; */
     return (
         <div className="group__head">
             <h3>Top Stocks</h3>
@@ -29,6 +29,7 @@ const StockGroup = () => {
                         key={stock._id}
                         id={stock._id}
                         title={stock.name}
+                        price={stock.price}
                         imageUrl={stock.imageUrl}
                     />
                 ))}

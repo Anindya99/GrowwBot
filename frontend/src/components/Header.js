@@ -114,9 +114,9 @@ const Header = ({ loggedin }) => {
           </Button>
           <Button
             className="header_explore"
-            onClick={() => navigate("/orders/user/explore")}
+            onClick={() => navigate("/user/investments")}
           >
-            Orders{" "}
+            Investments{" "}
           </Button>
         </div>
       )}

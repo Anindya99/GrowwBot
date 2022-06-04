@@ -13,10 +13,13 @@ import "./StockDetails.css";
 
 const StockDetails = () => {
     localStorage.setItem("route","stocks-user-invest");
-
     const [stock, setStock] = useState({});
+
     const { id } = useParams();
-    console.log(id);
+    //console.log(id);
+    localStorage.setItem("productID",id);
+    localStorage.setItem("productType","stocks");
+    
     useEffect(() => {
         const apiCall = async () => {
             try {
@@ -24,7 +27,7 @@ const StockDetails = () => {
                     `http://localhost:3000/api/v1/stocks/${id}`
                 );
                 const stockData = await apiData.json();
-                setStock((stock) => stockData);
+                setStock(stockData);
             } catch (err) {
                 setStock(null);
             }
@@ -64,7 +67,7 @@ const StockDetails = () => {
                 </div>
                 <p className="product__Title">{stock.name}</p>
                 <p className="product__rate">
-                    $25553.43 <span>+51.43(2.47%)</span>
+                    ₹{stock.price}
                 </p>
                 <div className="fundamental">
                     <div className="fundamental__box">
@@ -199,7 +202,7 @@ const StockDetails = () => {
                     </div>
                     <div className="form__controls">
                         <p>Price Market</p>
-                        <p className="p__dark">$2,453,433</p>
+                        <p className="p__dark">₹{stock.price}</p>
                     </div>
                     <div className="form__controls">
                         <Button

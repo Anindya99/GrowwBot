@@ -102,11 +102,14 @@ const Levelzero = (props) => {
           if(ques.action==='kyc') props.actionProvider.handleKyc(ques.answer);
           else if(ques.action.split(" ")[0]==='get'){
             
-            getStock(localStorage.getItem("productID"),localStorage.getItem("productType")).then(val=>{
-               //console.log(val[`${ques.action.split(" ")[1]}`]);
-               const updAns= ques.answer.replace(`{${ques.action.split(" ")[1]}}`,val[`${ques.action.split(" ")[1]}`]);
-               props.actionProvider.handleLevelzero(updAns);
-            })
+              getStock(localStorage.getItem("productID"),localStorage.getItem("productType")).then(val=>{
+                //console.log(val[`${ques.action.split(" ")[1]}`]);
+                const updAns= ques.answer.replace(`{${ques.action.split(" ")[1]}}`,val[`${ques.action.split(" ")[1]}`]);
+                props.actionProvider.handleLevelzero(updAns);
+              })
+          }
+          else if(ques.action.split(" ")[0]==='investments'){
+             props.actionProvider.handleLevelInvestments(ques.answer); 
           }
           else props.actionProvider.handleLevelzero(ques.answer);
         }

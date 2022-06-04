@@ -4,6 +4,7 @@ import Levelzero from "./questionlevel/level.zero";
 import Levelone from "./questionlevel/level.one";
 import Kyc from "./action/Kyc";
 import Avatar from "./Avatar";
+import OrderStock from "./action/OrderStock"
 
 const botName = "GrowwBot";
 const config = {
@@ -49,6 +50,10 @@ const config = {
         {
             widgetName: "Kyc",
             widgetFunc: (props)=> <Kyc {...props}/>
+        },
+        {
+            widgetName: "investments",
+            widgetFunc: ()=> <OrderStock />
         },
     ],
     customComponents: {

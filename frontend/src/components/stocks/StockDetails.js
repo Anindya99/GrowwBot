@@ -8,14 +8,23 @@ import InputUnstyled from "@mui/base/InputUnstyled";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import {  useLocation } from 'react-router-dom';
-
+import Snackbars from '../Snackbars'
+import AuthStore from "../../middleware/authstore";
+import { getUser } from "../../api/users.api";
+import { investStock } from "../../api/investment.api";
 import "./StockDetails.css";
 
 const StockDetails = () => {
     localStorage.setItem("route","stocks-user-invest");
     const [stock, setStock] = useState({});
+    const [snackopen,setsnack]=useState(false);
+    const [snackmsg,setsnackmsg]=useState('');
+    const [snacktype,setsnacktype]= useState('success');
+    const [quantity,setquantity]= useState(1);
 
     const { id } = useParams();
+    const userId= AuthStore.getUserDetail()._id;
+    const token= localStorage.jwToken;
     //console.log(id);
     localStorage.setItem("productID",id);
     localStorage.setItem("productType","stocks");
@@ -34,6 +43,53 @@ const StockDetails = () => {
         };
         apiCall();
     }, []);
+
+    const checkUser=()=>{
+        if(quantity>=1){
+            getUser(token,userId).then(data=>{
+                if(data.hasOwnProperty('msg')){
+                    AuthStore.clearJWT();
+                    window.location.href = "/";
+                }
+                else{
+                    if(!data.kyc){
+    
+                        setsnacktype("error");
+                        setsnackmsg("Sorry, you cannot invest in the stock now as your KYC is incomplete.");
+                        setsnack(true);
+                    }
+                    else{
+                        buyStocks();
+                    }
+                }
+            }) 
+        }
+        else{
+            setsnacktype("error");
+            setsnackmsg("Share quantity cannot be zero.");
+            setsnack(true);
+        }
+    }
+    const buyStocks= ()=>{
+        
+        investStock(token,userId,id,quantity,quantity*stock.price).then(data=>{
+            
+             if(data.hasOwnProperty('msg') && data['msg']==='Success'){
+                setquantity(1);
+                setsnacktype("success");
+                setsnackmsg("Your investment is successful.");
+                setsnack(true);
+            }
+            else{
+                setsnacktype("error");
+                setsnackmsg("Investment failed.");
+                setsnack(true);
+            } 
+            //console.log(data);
+        })
+    }
+
+
     if (stock.message) {
         return (
             <div className="product__baap">
@@ -194,8 +250,10 @@ const StockDetails = () => {
                         <label>Shares NSE</label>
                         <input
                             type="number"
-                            min="0"
+                            min="1"
                             step="1"
+                            value={quantity}
+                            onChange={(e)=>{setquantity(e.target.value)}}
                             className="form__input"
                             required
                         />
@@ -205,11 +263,16 @@ const StockDetails = () => {
                         <p className="p__dark">₹{stock.price}</p>
                     </div>
                     <div className="form__controls">
+                        <p>Total</p>
+                        <p className="p__dark">₹{quantity*stock.price}</p>
+                    </div>
+                    <div className="form__controls">
                         <Button
                             variant="contained"
                             style={{ backgroundColor: "rgb(46, 221, 136)" }}
                             fullWidth={true}
                             size="large"
+                            onClick={checkUser}
                         >
                             BUY
                         </Button>
@@ -217,6 +280,9 @@ const StockDetails = () => {
                     <p className="foot">100% SAFE AND SECURE</p>
                 </form>
             </div>
+            {snackopen && <Snackbars msg={snackmsg} type={snacktype} close={()=>{
+                          setsnack(false)}
+                          }/>}
         </div>
     );
 };

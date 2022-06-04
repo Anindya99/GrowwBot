@@ -7,7 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import AuthStore from "../middleware/authstore";
+import AuthStore from "../../../middleware/authstore";
 const moment = require("moment");
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -54,9 +54,10 @@ export default function OrderTable() {
   return (
     <div
       style={{
-        marginLeft: "220px",
-        marginTop: "30px",
-        width: "50%",
+        marginLeft: "0px",
+        marginTop: "2px",
+        marginBottom:"20px",
+        width: "345px",
       }}
     >
       <TableContainer component={Paper}>

@@ -12,6 +12,11 @@ const stockSchema = new mongoose.Schema({
         required: [true, "Stock type must be mentioned.."],
         minlength: [3, "Stock type length error.."],
     },
+    price:{
+        type: Number,
+        required: true,
+        default: 1000
+    },
     marketCap: Number,
     ROE: Number,
     priceToIncome: { type: Number, required: false },

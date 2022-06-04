@@ -48,4 +48,19 @@ const getAllbyId= async(id)=>{
   }     
 }
 
-export {getDefault,getDefaultQlist,getAllbyId};
+const getStock= async(id,type)=>{
+  try {
+    let response= await fetch(`/api/v1/${type}/${id}`,{
+      method: "GET",
+      headers:{
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    return await response.json();
+  } catch(err){
+    console.log(err);
+  }     
+}
+
+export {getDefault,getDefaultQlist,getAllbyId,getStock};

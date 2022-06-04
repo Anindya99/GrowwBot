@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react'
-//import {  useLocation } from 'react-router-dom';
-import { getDefaultQlist,getAllbyId } from '../../../api/questions.api';
+//import {  useParams } from 'react-router-dom';
+import { getDefaultQlist,getAllbyId,getStock } from '../../../api/questions.api';
 import { getUser } from '../../../api/users.api';
 import AuthStore from '../../../middleware/authstore';
 import { verify } from '../../../api/verify.api';
@@ -9,8 +9,8 @@ import "../questions.css";
 const Levelzero = (props) => {
   
   const [currUser,setUser]=useState({})
-  
-  //console.log(props);  
+  //const { id } = useParams();
+  //console.log(id);  
   const {setState}= props;
   const location = localStorage.route;  
   const loggedin= AuthStore.isAuthenticated();
@@ -95,11 +95,20 @@ const Levelzero = (props) => {
         props.actionProvider.handleClientmsg(ques.question)
         if(ques.hasOwnProperty('action')) {
           //if kyc, then handleKyc
-          //if orders stocks/mutual-fund/fixed-deposit/all, then handleOrders(react component that will call respective orders)
+          //if investments stocks/mutual-fund/fixed-deposit/all, then handleInvestments(react component that will call respective orders)
           //if get item, modify the answer by use the current stock id(stored in localstorage)- send answer and stock id 
           //and get the relevant answer from backend then handlezero
           //else handlezero
           if(ques.action==='kyc') props.actionProvider.handleKyc(ques.answer);
+          else if(ques.action.split(" ")[0]==='get'){
+            
+            getStock(localStorage.getItem("productID"),localStorage.getItem("productType")).then(val=>{
+               //console.log(val[`${ques.action.split(" ")[1]}`]);
+               const updAns= ques.answer.replace(`{${ques.action.split(" ")[1]}}`,val[`${ques.action.split(" ")[1]}`]);
+               props.actionProvider.handleLevelzero(updAns);
+            })
+          }
+          else props.actionProvider.handleLevelzero(ques.answer);
         }
         else props.actionProvider.handleLevelzero(ques.answer)
       

@@ -22,7 +22,7 @@
             "routeName": "kyc-explore", **kyc/explore, invest, none store route in localstorage
             "_id": "629711cd4975f0783e0e9c74",
             "qlist": [
-                "6287736cbea1fe4ea1156c12",
+                "629984cf6a3a6c5dc64fe8b0",
                 "628767e29c5d7802a811cfa1"
             ],
             "__v": 0
@@ -36,6 +36,26 @@
                 "62877158bea1fe4ea1156c0d",
                 "6287a2a7bca045cc8d7ffd0a"
             ],
+        }
+        {
+            "routeName": "stocks-user-invest",
+            "qlist": [
+                "62876c61bea1fe4ea1156c09"
+            ],
+            "_id": "629986616a3a6c5dc64fe8d1",
+            "__v": 0
+        }
+        {
+            "routeName": "mututal-funds-user-explore",
+            "qlist": [],
+            "_id": "62997c4592bc558cc49dd909",
+            "__v": 0
+        }
+        {
+            "routeName": "deposits-user-explore",
+            "qlist": [],
+            "_id": "6299b73ce0590ac5e94a8d79",
+            "__v": 0
         }
         
 }
@@ -53,7 +73,7 @@
         62850300822941b8d7ecce85 - Am I eligible for Groww referral rewards?
     }
 
-    6287736cbea1fe4ea1156c12 - My KYC is showing pending.Is KYC necressary?{
+    6287736cbea1fe4ea1156c12, 629984cf6a3a6c5dc64fe8b0 (explore) - My KYC is showing pending.Is KYC necressary?{
         628767e29c5d7802a811cfa1 - How can I get my full KYC done?              *******action kyc(must be leaf)
         (to change it change in kyc.js after from submission, check if any children is then and then handle it in actionprovider)
         62876a0c71dc460063f651da - Do you charge for processing KYC?{
@@ -66,10 +86,8 @@
             628767e29c5d7802a811cfa1
             }
     }
-
-
-
-    62876c61bea1fe4ea1156c09 - Show my orders in stocks.                        *******action orders stocks(must be leaf)
+   
+    62876c61bea1fe4ea1156c09 - Show my investments in stocks.                        *******action investments stocks(must be leaf)
     62876ea1bea1fe4ea1156c0b - How much does Groww charge for stocks?{
 
         6287805cbea1fe4ea1156c16 - Why is my buy/sell disabled for certain stocks?
@@ -105,6 +123,85 @@
         }
 
     }
+     629b2d1c793de3751df9cb95 - What is the market price of the stock? *****action get price{
 
+     }
+     629b39e0793de3751df9cc23 - What is the market capital of the stock?   
+
+
+
+    62998f4b6a3a6c5dc64fe8ed - How to start a SIP on Groww?{
+        629990ca6a3a6c5dc64fe8f2 - How to change SIP date or amount?
+        629991676a3a6c5dc64fe8f4 - How to cancel an ongoing SIP?
+        629991fb6a3a6c5dc64fe8f6 - How do monthly installments get paid automatically?
+        629998876a3a6c5dc64fe908 - How to select a time period for SIP?{
+            629998f56a3a6c5dc64fe90a - Why am I not able to edit my SIP?
+        }
+    }
+    629993226a3a6c5dc64fe8f8 - SIP installment was deducted but the order is not reflected on the dashboard.{
+       6299938a6a3a6c5dc64fe8fa - My amount got debited but the transaction shows as failed. When will I get the refund?{
+           629995286a3a6c5dc64fe8fe - How do I pay for my SIP installment if the autopay debit has failed?{
+               629997636a3a6c5dc64fe906 - How do I pay a missed SIP installment?
+           }
+       }
+       629994286a3a6c5dc64fe8fc - How do I continue investing in my SIP from Groww Balance?
+    }
+    629995ef6a3a6c5dc64fe900 - How to skip an SIP installment?{
+        629996b46a3a6c5dc64fe904 - Why is my SIP installment skipping the 1st month?
+        629997636a3a6c5dc64fe906 - How do I pay a missed SIP installment?
+        629994286a3a6c5dc64fe8fc - How do I continue investing in my SIP from Groww Balance?
+        629998876a3a6c5dc64fe908 - How to select a time period for SIP?{
+            629998f56a3a6c5dc64fe90a - Why am I not able to edit my SIP?
+        }
+    }
+    629999c36a3a6c5dc64fe90c - Why are my external funds missing from my dashboard?{
+       62999a146a3a6c5dc64fe90e - Why was my external SIP not imported automatically?
+       62999a8b6a3a6c5dc64fe910 - Can I redeem from/invest more in my imported funds on I Groww?{
+          62999ad76a3a6c5dc64fe912 - If I cancel my track request, will my imported funds be removed from my dashboard?
+       }
+    }
+    6299b2a41b08520f2d5f846a - Show my investments in mutual-funds. *******action orders mutual-funds(must be leaf)
+
+
+
+    6299b9d0e0590ac5e94a8d8a - How to access to FD investing on Groww?(add action get phone number of people who wants FD) {
+        6299ba63e0590ac5e94a8d8c - How much time does it take to open a fixed deposit?{
+            6299baafe0590ac5e94a8d8e - Do I need a savings account with the bank for opening a fixed deposit?
+            6299bba8e0590ac5e94a8d96 - Can I register nominee for my FD?
+        }
+        6299baafe0590ac5e94a8d8e - Do I need a savings account with the bank for opening a fixed deposit?{
+            6299bba8e0590ac5e94a8d96 - Can I register nominee for my FD?
+            6299c00ee0590ac5e94a8da9 - Can I withdraw my fixed deposit before maturity?
+        }
+        6299bb18e0590ac5e94a8d90 - Can I import my external fixed deposits into Groww? 
+    }
+    6299bc96e0590ac5e94a8d98 - What is the minimum/maximum amount for opening a fixed deposit?{
+        6299bce9e0590ac5e94a8d9a - What is the minimum/maximum tenure for opening a fixed deposit?{
+            6299bd8ee0590ac5e94a8d9e - How many fixed deposits can I open?
+            6299bdd5e0590ac5e94a8da0 - The bank has changed the interest rates. Will that be applicable to my existing deposit?
+        }
+        6299bfbbe0590ac5e94a8da7 - What is the tax implication on FD?{
+             6299bd39e0590ac5e94a8d9c - What are tax-saver deposits?
+        }
+        6299bd8ee0590ac5e94a8d9e - How many fixed deposits can I open?{
+            6299bd39e0590ac5e94a8d9c - What are tax-saver deposits?
+            6299c00ee0590ac5e94a8da9 - Can I withdraw my fixed deposit before maturity?
+        }
+        6299bdd5e0590ac5e94a8da0 - The bank has changed the interest rates. Will that be applicable to my existing deposit?{
+            6299bf27e0590ac5e94a8da3 - What is the eligibility for senior citizens fixed deposits?
+        }
+    }
+    6299bf27e0590ac5e94a8da3 - What is the eligibility for senior citizens fixed deposits?{
+        6299bf6fe0590ac5e94a8da5 - Who is eligible to invest in FDs through Groww? 
+        6299bfbbe0590ac5e94a8da7 - What is the tax implication on FD?{
+             6299bd39e0590ac5e94a8d9c - What are tax-saver deposits?
+        }
+    }
+    
+    6299c00ee0590ac5e94a8da9 - Can I withdraw my fixed deposit before maturity?{
+        6299c06ee0590ac5e94a8dab - How to withdraw/redeem my fixed deposit?
+        6299c0e6e0590ac5e94a8dad - Can I withdraw a tax-saver FD before the maturity date?
+    }
+    6299c2b9e0590ac5e94a8dcd - Show my orders in fixed-deposits. *******action orders deposits(must be leaf)
 
 }

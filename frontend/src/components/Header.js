@@ -7,7 +7,6 @@ import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceW
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import AuthStore from "../middleware/authstore";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
-
 //import css
 import "./Header.css";
 import { SearchOutlined } from "@material-ui/icons";
@@ -29,7 +28,7 @@ const Header = ({ loggedin }) => {
           src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/logo-dark-groww.83f43714.svg"
           alt=""
         />
-        {loggedin && (
+        {/* {loggedin && (
           <div className="buttons">
             <Button
               className="header_explore"
@@ -44,7 +43,7 @@ const Header = ({ loggedin }) => {
               Investments
             </Button>
           </div>
-        )}
+        )} */}
         <div className="header__searchbar">
           <SearchOutlined className="header_searchicon" />
           <input
@@ -115,9 +114,9 @@ const Header = ({ loggedin }) => {
           </Button>
           <Button
             className="header_explore"
-            onClick={() => navigate("/orders/user/explore")}
+            onClick={() => navigate("/user/investments")}
           >
-            Orders{" "}
+            Investments{" "}
           </Button>
         </div>
       )}

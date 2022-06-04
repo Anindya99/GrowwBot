@@ -24,6 +24,8 @@ import { verify } from "./api/verify.api";
 
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
+
+
 function App() {
   const [loggedin, setLoggedin] = useState(
     AuthStore.isAuthenticated() ? true : false
@@ -103,7 +105,7 @@ function App() {
               }
             />
             <Route
-              path="/orders/user/explore"
+              path="/user/investments"
               element={
                 loggedin ? (
                   <>

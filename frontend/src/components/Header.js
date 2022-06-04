@@ -28,7 +28,7 @@ const Header = ({ loggedin }) => {
           src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/logo-dark-groww.83f43714.svg"
           alt=""
         />
-        {loggedin && (
+        {/* {loggedin && (
           <div className="buttons">
             <Button
               className="header_explore"
@@ -43,7 +43,7 @@ const Header = ({ loggedin }) => {
               Investments
             </Button>
           </div>
-        )}
+        )} */}
         <div className="header__searchbar">
           <SearchOutlined className="header_searchicon" />
           <input

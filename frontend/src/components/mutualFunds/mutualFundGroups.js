@@ -10,7 +10,7 @@ const StockGroup = () => {
         const apiCall = async () => {
             try {
                 const data = await fetch(
-                    "http://localhost:3000/api/v1/mutual-funds"
+                    "/api/v1/mutual-funds"
                 );
                 const mfData = await data.json();
                 setMfs((mfs) => mfData.mfs);

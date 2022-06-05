@@ -33,7 +33,7 @@ const StockDetails = () => {
         const apiCall = async () => {
             try {
                 const apiData = await fetch(
-                    `http://localhost:3000/api/v1/stocks/${id}`
+                    `/api/v1/stocks/${id}`
                 );
                 const stockData = await apiData.json();
                 setStock(stockData);
@@ -72,7 +72,7 @@ const StockDetails = () => {
     }
     const buyStocks= ()=>{
         
-        investStock(token,userId,id,quantity,quantity*stock.price).then(data=>{
+        investStock(token,userId,id,stock.name,'Stock',`${quantity} shares`,quantity*stock.price).then(data=>{
             
              if(data.hasOwnProperty('msg') && data['msg']==='Success'){
                 setquantity(1);

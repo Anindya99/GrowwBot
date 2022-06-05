@@ -16,7 +16,7 @@ const MutualFundDetail = () => {
         const apiCall = async () => {
             try {
                 const data = await fetch(
-                    `http://localhost:3000/api/v1/mutual-funds/${id}`
+                    `/api/v1/mutual-funds/${id}`
                 );
                 const mfData = await data.json();
                 setMf((mf) => mfData.mf);

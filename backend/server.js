@@ -5,7 +5,6 @@ const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const productRoutes = require("./routes/productRoutes");
-const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
 //body parser middleware
@@ -26,8 +25,8 @@ app.use("/api/Oauth", require("./routes/Oauth.route.js"));
 app.use("/api/verify", require("./routes/verifyJWT.route.js"));
 app.use("/api/questions", require("./routes/questions.route.js"));
 app.use("/api/users", require("./routes/users.route.js"));
+app.use("/api/v1/invest", require("./routes/investment.route.js"));
 app.use(productRoutes);
-app.use(orderRoutes);
 
 //Invalid route's error handling
 app.use("*", function (req, res) {

@@ -8,6 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import AuthStore from "../../../middleware/authstore";
+import { getInvestments } from "../../../api/investment.api";
 const moment = require("moment");
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -41,13 +42,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function OrderTable() {
   localStorage.setItem("route","investments-user-invest");
   const userId= AuthStore.getUserDetail()._id;
-  //const token= localStorage.jwToken;
+  const token= localStorage.jwToken;
   const [rows, setRows] = useState([]);
   useEffect(() => {
     const apiCall = async () => {
-      const data = await fetch(`http://localhost:5000/api/v1/orders/${userId}`);
-      const orderObj = await data.json();
-      setRows(orderObj.orders);
+      getInvestments(token,userId,"Stock").then(data=>{
+        if(!data.hasOwnProperty('message')) setRows(data.orders);
+      });
     };
     apiCall();
   }, []);
@@ -61,24 +62,22 @@ export default function OrderTable() {
       }}
     >
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
-          <TableHead>
+        <Table sx={{ minWidth: 70 }} aria-label="customized table">
+        <TableHead>
             <TableRow>
-              <StyledTableCell align="">Order Date</StyledTableCell>
-              <StyledTableCell align="">Stock Name</StyledTableCell>
-              <StyledTableCell align="">Quantity</StyledTableCell>
-              <StyledTableCell align="">Price</StyledTableCell>
+              <StyledTableCell >Stock Info</StyledTableCell>
+              <StyledTableCell >Price</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {rows.map((row) => (
               <StyledTableRow key={row._id}>
                 <StyledTableCell component="th" scope="row">
-                  {moment(row.date).format("DD/MM/YY")}
+                  {moment(row.date).format("DD/MM/YY")}<br/>
+                  {row.name}<br/>
+                  {row.quantity}<br/>
                 </StyledTableCell>
-                <StyledTableCell align="">{row.stock.name}</StyledTableCell>
-                <StyledTableCell align="">{row.quantity}</StyledTableCell>
-                <StyledTableCell align="">{row.total}</StyledTableCell>
+                <StyledTableCell >₹{row.total}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

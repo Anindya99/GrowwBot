@@ -1,15 +1,19 @@
-const Order = require("../models/orderModel");
+const Order = require("../models/investmentModel");
 
 exports.getAllOrders = async (req, res, next) => {
   try {
-    const orders = await Order.find({user:req.params.userId}).sort({date:-1});
+     const orders = req.params.type==='all'? 
+                        await  Order.find({user:req.params.userId}).sort({date:-1}):
+                        await  Order.find({user:req.params.userId,type:req.params.type}).sort({date:-1});
+    //console.log(req.params.type);   
+    //const orders= await Order.find({user:req.params.userId}).sort({date:-1});                  
     return res.status(200).json({
       msg: "Success",
-      orders,
+      orders
     });
   } catch (err) {
     return res.status(404).json({
-      message: "Error while geeting resposne",
+      message: err.message,
       err,
     });
   }

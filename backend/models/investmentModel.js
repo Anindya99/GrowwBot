@@ -1,20 +1,28 @@
 const mongoose = require("mongoose");
-const User = require("./users.model");
-const Stock = require("./product/stockModel");
+//const User = require("./users.model");
+//const Stock = require("./product/stockModel");
 const moment = require("moment");
 
 const orderSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.ObjectId,
-    ref: "User",
+    /* ref: "User", */
   },
   stock: {
     type: mongoose.Schema.ObjectId,
-    ref: "Stock",
+    /* ref: "Stock", */
+  },
+  name:{
+    type: String,
+    description: "name of the company",
+  },
+  type:{
+    type: String,
+    description: "stock/mututal-fund/fixed-deposit",
   },
   quantity: {
-    type: Number,
-    default: 0,
+    type: String,
+    description: "no. of shares for stocks,rate of interest for mutual-fund/FD",
   },
   total: {
     type: Number,
@@ -26,10 +34,10 @@ const orderSchema = new mongoose.Schema({
   },
 });
 
-orderSchema.pre(/^find/, function (next) {
+/* orderSchema.pre(/^find/, function (next) {
   this.populate("stock user", "name email");
   next();
-});
+}); */
 
 const Order = mongoose.model("Order", orderSchema);
 module.exports = Order;

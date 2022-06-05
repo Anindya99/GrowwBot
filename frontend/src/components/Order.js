@@ -8,7 +8,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import AuthStore from "../middleware/authstore";
+import { getInvestments } from "../api/investment.api";
 const moment = require("moment");
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -41,13 +43,15 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function OrderTable() {
   localStorage.setItem("route","investments-user-invest");
   const userId= AuthStore.getUserDetail()._id;
-  //const token= localStorage.jwToken;
+  const token= localStorage.jwToken;
   const [rows, setRows] = useState([]);
   useEffect(() => {
     const apiCall = async () => {
-      const data = await fetch(`http://localhost:5000/api/v1/orders/${userId}`);
-      const orderObj = await data.json();
-      setRows(orderObj.orders);
+      
+      getInvestments(token,userId,"all").then(data=>{
+        if(!data.hasOwnProperty('message')) setRows(data.orders);
+      });
+      
     };
     apiCall();
   }, []);
@@ -63,10 +67,11 @@ export default function OrderTable() {
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell align="">Order Date</StyledTableCell>
-              <StyledTableCell align="">Stock Name</StyledTableCell>
-              <StyledTableCell align="">Quantity</StyledTableCell>
-              <StyledTableCell align="">Price</StyledTableCell>
+              <StyledTableCell >Order Date</StyledTableCell>
+              <StyledTableCell >Stock Name</StyledTableCell>
+              <StyledTableCell >Type</StyledTableCell>
+              <StyledTableCell >Quantity/ROI</StyledTableCell>
+              <StyledTableCell >Price</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -75,9 +80,10 @@ export default function OrderTable() {
                 <StyledTableCell component="th" scope="row">
                   {moment(row.date).format("DD/MM/YY")}
                 </StyledTableCell>
-                <StyledTableCell align="">{row.stock.name}</StyledTableCell>
-                <StyledTableCell align="">{row.quantity}</StyledTableCell>
-                <StyledTableCell align="">{row.total}</StyledTableCell>
+                <StyledTableCell /* align="" */>{row.name}</StyledTableCell>
+                <StyledTableCell >{row.type}</StyledTableCell>
+                <StyledTableCell >{row.quantity}</StyledTableCell>
+                <StyledTableCell >₹{row.total}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

@@ -4,9 +4,14 @@ const router = express.Router();
 const auth = require('../middleware/auth')
 
 router.get(
-  "/user/:type/:userId",
+  "/productbyType/:type/:userId",
   auth,
   investmentController.getAllOrders
+);
+router.get(
+  "/productbyId/:productId/:userId",
+  auth,
+  investmentController.getIdOrders
 );
 router
   .route("/")

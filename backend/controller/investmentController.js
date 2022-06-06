@@ -19,6 +19,24 @@ exports.getAllOrders = async (req, res, next) => {
   }
 };
 
+exports.getIdOrders = async (req, res, next) => {
+  try {
+     const orders = await  Order.find({user:req.params.userId,stock:req.params.productId}).sort({date:-1});
+    //console.log(req.params.productId);   
+    //const orders= await Order.find({user:req.params.userId}).sort({date:-1});                  
+    return res.status(200).json({
+      msg: "Success",
+      orders
+    });
+  } catch (err) {
+    return res.status(404).json({
+      message: err.message,
+      err,
+    });
+  }
+};
+
+
 exports.createOrder = async (req, res, next) => {
   try {
     const order = await Order.create(req.body);

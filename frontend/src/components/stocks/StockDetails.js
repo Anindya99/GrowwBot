@@ -11,7 +11,7 @@ import {  useLocation } from 'react-router-dom';
 import Snackbars from '../Snackbars'
 import AuthStore from "../../middleware/authstore";
 import { getUser } from "../../api/users.api";
-import { investStock } from "../../api/investment.api";
+import { makeInvestment } from "../../api/investment.api";
 import "./StockDetails.css";
 
 const StockDetails = () => {
@@ -55,7 +55,7 @@ const StockDetails = () => {
                     if(!data.kyc){
     
                         setsnacktype("error");
-                        setsnackmsg("Sorry, you cannot invest in the stock now as your KYC is incomplete.");
+                        setsnackmsg("Sorry, you cannot invest in the stock now, as your KYC is incomplete.");
                         setsnack(true);
                     }
                     else{
@@ -66,13 +66,13 @@ const StockDetails = () => {
         }
         else{
             setsnacktype("error");
-            setsnackmsg("Share quantity cannot be zero.");
+            setsnackmsg("Quantity of shares must be greater than zero.");
             setsnack(true);
         }
     }
     const buyStocks= ()=>{
-        
-        investStock(token,userId,id,stock.name,'Stock',`${quantity} shares`,quantity*stock.price).then(data=>{
+        //here the type must be equal to the type description in investment model Stock/Mutual-Fund/Fixed-Deposit
+        makeInvestment(token,userId,id,stock.name,'Stock',`${quantity} shares`,quantity*stock.price).then(data=>{
             
              if(data.hasOwnProperty('msg') && data['msg']==='Success'){
                 setquantity(1);
@@ -129,7 +129,7 @@ const StockDetails = () => {
                     <div className="fundamental__box">
                         <div className="fundamental_item">
                             <p className="field">Market Cap</p>
-                            <p className="value">${stock.marketCap}Cr</p>
+                            <p className="value">₹{stock.marketCap}Cr</p>
                         </div>
                         <div className="fundamental_item">
                             <p className="field">P/E Ratio</p>
@@ -147,7 +147,7 @@ const StockDetails = () => {
                         </div>
                         <div className="fundamental_item">
                             <p className="field">Debt to Equity</p>
-                            <p className="value">${stock.debtToEquity}Cr</p>
+                            <p className="value">₹{stock.debtToEquity}Cr</p>
                         </div>
                     </div>
                     <div className="fundamental__box">

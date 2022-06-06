@@ -10,6 +10,7 @@ const orderSchema = new mongoose.Schema({
   },
   stock: {
     type: mongoose.Schema.ObjectId,
+    description: "store the productId, named stock but for mutual-fund and FD also.",
     /* ref: "Stock", */
   },
   name:{
@@ -18,7 +19,8 @@ const orderSchema = new mongoose.Schema({
   },
   type:{
     type: String,
-    description: "stock/mututal-fund/fixed-deposit",
+    description: "Stock/Mutual-Fund/Fixed-Deposit",
+
   },
   quantity: {
     type: String,

@@ -117,10 +117,7 @@ exports.getMutualFundById = async (req, res, next) => {
     try {
         const mfId = req.params.id;
         const mf = await MutualFund.findById(mfId);
-        res.status(200).json({
-            message: "Success..",
-            mf,
-        });
+        res.status(200).json(mf);
     } catch (err) {
         res.status(404).json({
             message: "error",
@@ -198,10 +195,7 @@ exports.getFixedDepositById = async (req, res, next) => {
     try {
         const fdId = req.params.id;
         const FD = await FixedDeposit.findById(fdId);
-        res.status(200).json({
-            message: "Success..",
-            FD,
-        });
+        res.status(200).json(FD);
     } catch (err) {
         res.status(404).json({
             message: "error",

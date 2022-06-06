@@ -19,7 +19,7 @@ const MutualFundDetail = () => {
                     `/api/v1/mutual-funds/${id}`
                 );
                 const mfData = await data.json();
-                setMf((mf) => mfData.mf);
+                setMf((mf) => mfData);
             } catch (err) {
                 setMf((mf) => {});
             }
@@ -64,11 +64,11 @@ const MutualFundDetail = () => {
                 <div className="fundamental__box">
                     <div className="fundamental_item">
                         <p className="field">Nav: 20 May 2022</p>
-                        <p className="value">${mf.nav}</p>
+                        <p className="value">₹{mf.nav}</p>
                     </div>
                     <div className="fundamental_item">
                         <p className="field">Min SIP amount</p>
-                        <p className="value">${mf.minSipAmount}</p>
+                        <p className="value">₹{mf.minSipAmount}</p>
                     </div>
                 </div>
                 <div className="fundamental__box">
@@ -78,7 +78,7 @@ const MutualFundDetail = () => {
                     </div>
                     <div className="fundamental_item">
                         <p className="field">Fund Size</p>
-                        <p className="value">${mf.fundSize}</p>
+                        <p className="value">₹{mf.fundSize}Cr</p>
                     </div>
                 </div>
             </div>

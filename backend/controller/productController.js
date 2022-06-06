@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Stock = require("./../models/product/stockModel");
 const MutualFund = require("./../models/product/mutualFund");
+const FixedDeposit = require("./../models/product/fixedDeposit");
 
 exports.getAllStocks = async (req, res, next) => {
     try {
@@ -125,4 +126,113 @@ exports.getMutualFundById = async (req, res, next) => {
             message: "error",
         });
     }
+};
+
+exports.updateMutualFund = async (req, res, next) => {
+    const newFund = new MutualFund({
+        title: req.body.title,
+        roi: req.body.roi,
+        time: req.body.time,
+        nav: req.body.nav,
+        rating: req.body.rating,
+        minSipAmount: req.body.minSipAmount,
+        fundSize: req.body.fundSize,
+        tags: req.body.tags,
+        image: req.body.image
+      });
+
+    try {
+        await MutualFund.findOneAndUpdate(
+            {_id:req.params.id},
+            {title:newFund.title,
+            roi:newFund.roi,
+            time:newFund.time,
+            nav: newFund.nav,
+            rating:newFund.rating,
+            minSipAmount:newFund.minSipAmount,
+            fundSize:newFund.fundSize,
+            tags:newFund.tags,
+            image: newFund.image,
+        });
+            return res.status(200).json(newFund);
+        }catch (e) {
+            return res.status(400).json({ msg: e.message }); 
+       }
+};
+
+
+// Fixed deposits controllers
+
+exports.getAllFixedDeposits = async (req, res, next) => {
+    try {
+        const FD = await FixedDeposit.find();
+        res.status(200).json({
+            message: "success",
+            length: FD.length,
+            FD,
+        });
+    } catch (err) {
+        res.status(500).json({
+            message: "Error...",
+            error: err,
+        });
+    }
+};
+
+exports.createFixedDeposits = async (req, res, next) => {
+    try {
+        const FD = await FixedDeposit.create(req.body);
+        res.status(201).json({
+            message: "Created a FD...",
+            FD,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Error...",
+            error,
+        });
+    }
+};
+
+exports.getFixedDepositById = async (req, res, next) => {
+    try {
+        const fdId = req.params.id;
+        const FD = await FixedDeposit.findById(fdId);
+        res.status(200).json({
+            message: "Success..",
+            FD,
+        });
+    } catch (err) {
+        res.status(404).json({
+            message: "error",
+        });
+    }
+};
+
+exports.updateFixedDeposit = async (req, res, next) => {
+    const newFd = new FixedDeposit({
+        title: req.body.title,
+        roi: req.body.roi,
+        time: req.body.time,
+        minAmt: req.body.minAmt,
+        compounding: req.body.compounding,
+        withdrawal: req.body.withdrawal,
+        image: req.body.image
+      });
+
+    try {
+        await FixedDeposit.findOneAndUpdate(
+            {_id:req.params.id},
+            {title:newFd.title,
+            roi:newFd.roi,
+            time:newFd.time,
+            minAmt: newFd.minAmt,
+            compounding:newFd.compounding,
+            withdrawal:newFd.withdrawal,
+            image: newFd.image,
+        });
+            return res.status(200).json(newFd);
+        }catch (e) {
+            return res.status(400).json({ msg: e.message }); 
+       }
 };

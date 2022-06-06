@@ -24,20 +24,20 @@ router
 
 router
     .route("/api/v1/mutual-funds/:id")
-    .get(productController.getMutualFundById);
-//     .update(productController.updateMutualFund)
+    .get(productController.getMutualFundById)
+    .put(productController.updateMutualFund)
 //     .delete(productController.deleteMutualFund);
 
 // // Fixed deposites routes
-// router
-//     .route("/api/v1/fixed-deposits")
-//     .get(productController.getAllFixedDeposits)
-//     .post(productController.createFixedDeposits);
+ router
+     .route("/api/v1/fixed-deposits")
+     .get(productController.getAllFixedDeposits)
+     .post(productController.createFixedDeposits);
 
-// router
-//     .route("/api/v1/fixed-deposists/:id")
-//     .get(productController.getFixedDepositById)
-//     .update(productController.updateFixedDeposit)
+ router
+     .route("/api/v1/fixed-deposists/:id")
+     .get(productController.getFixedDepositById)
+     .put(productController.updateFixedDeposit)
 //     .delete(productController.deleteFixedDeposit);
 
 module.exports = router;

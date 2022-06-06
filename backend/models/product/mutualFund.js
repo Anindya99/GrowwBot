@@ -3,8 +3,16 @@ const mongoose = require("mongoose");
 const mutualFundSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: [true, "title is required for mf"],
-        unique: [true, "Mfs name cannot be same"],
+        required: [true, "title is required for mutual funds"],
+        unique: [true, "Mutual funds name cannot be same"],
+    },
+    roi:{
+        type: Number,
+        description: "stores the return percentage"
+    },
+    time:{
+        type: Number,
+        description: "stores the time for which investment is made"
     },
     nav: {
         type: Number,

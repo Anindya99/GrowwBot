@@ -8,7 +8,7 @@ const MutualFund = (props) => {
     const refToMfDetail = () => {
         navigate(`/mutual-funds/${props.id}`);
     };
-
+    //console.log(props)
     return (
         <div className="mutualFund" onClick={refToMfDetail}>
             <div className="product__head">
@@ -21,11 +21,11 @@ const MutualFund = (props) => {
                 />
             </div>
             <p className="product__title">{props.title}</p>
-            <p className="mutualFund__type product__title">
+            {/* <p className="mutualFund__type product__title">
                 Fund Direct Growth
-            </p>
+            </p> */}
             <div className="product__footer">
-                <p>34.6% (3Y)</p>
+                <p>{props.roi}% ({props.time}Y)</p>
             </div>
         </div>
     );

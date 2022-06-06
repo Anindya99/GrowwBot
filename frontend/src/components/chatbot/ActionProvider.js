@@ -64,11 +64,20 @@ handleKyc= (answer)=>{
   );
   this.updateChatbotState(message);
 };
-handleLevelInvestments= (answer)=>{
+handleInvestments= (answer)=>{
   const message = this.createChatBotMessage(
     `${answer}`,
     {
       widget: "investments",
+    }
+  );
+  this.updateChatbotState(message);
+};
+handleInvestmentsbyID=(answer)=>{
+  const message= this.createChatBotMessage(
+    `${answer}`,
+    {
+      widget: "investmentsId",
     }
   );
   this.updateChatbotState(message);

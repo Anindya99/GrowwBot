@@ -31,7 +31,7 @@
             "routeName": "stocks-user-explore",
             "_id": "628c7d06550334965ed5bfb3",
             "qlist": [
-                "62876c61bea1fe4ea1156c09",
+                "629ded73559c11ee4931b925",
                 "62876ea1bea1fe4ea1156c0b",
                 "62877158bea1fe4ea1156c0d",
                 "6287a2a7bca045cc8d7ffd0a"
@@ -40,21 +40,46 @@
         {
             "routeName": "stocks-user-invest",
             "qlist": [
-                "62876c61bea1fe4ea1156c09"
+                "629b2d1c793de3751df9cb95",
+                "629b39e0793de3751df9cc23",
+                "62876c61bea1fe4ea1156c09",
+                "629dda4248455ed9cbcac2ef"
             ],
             "_id": "629986616a3a6c5dc64fe8d1",
             "__v": 0
         }
         {
-            "routeName": "mututal-funds-user-explore",
+            "routeName": "mutual-funds-user-explore",
             "qlist": [],
             "_id": "62997c4592bc558cc49dd909",
+            "__v": 0
+        }
+        {
+            "routeName": "mutual-funds-user-invest",
+            "qlist": [
+                "629e1b258777fa8ba56ef5fb",
+                "629e1be88777fa8ba56ef60a",
+                "629e1d4a8777fa8ba56ef60e",
+                "629e20ca8777fa8ba56ef628"
+            ],
+            "_id": "629e213a8777fa8ba56ef62b",
             "__v": 0
         }
         {
             "routeName": "deposits-user-explore",
             "qlist": [],
             "_id": "6299b73ce0590ac5e94a8d79",
+            "__v": 0
+        }
+        {
+            "routeName": "deposits-user-invest",
+            "qlist": [
+                "629e1ed68777fa8ba56ef614",
+                "629e1f3e8777fa8ba56ef618",
+                "629e1e2a8777fa8ba56ef611",
+                "629e203b8777fa8ba56ef626"
+            ],
+            "_id": "629e217f8777fa8ba56ef62d",
             "__v": 0
         }
         
@@ -88,6 +113,7 @@
     }
    
     
+    629ded73559c11ee4931b925 - Show my investments in stocks.                    *******action investments Stock(must be leaf)
     62876ea1bea1fe4ea1156c0b - How much does Groww charge for stocks?{
 
         6287805cbea1fe4ea1156c16 - Why is my buy/sell disabled for certain stocks?
@@ -123,11 +149,10 @@
         }
 
     }
-     629b2d1c793de3751df9cb95 - What is the market price of the stock? *****action get price{
-     }
-     629b39e0793de3751df9cc23 - What is the market capital of the stock?**** action get market capital
-     62876c61bea1fe4ea1156c09 - Show my investments in stocks.                        *******action investments stocks(must be leaf)   
-
+     629b2d1c793de3751df9cb95 - What is the market price of the stock?        *****action get price
+     629b39e0793de3751df9cc23 - What is the market capital of the stock?      **** action get market capital
+     62876c61bea1fe4ea1156c09 - Show my investments in stocks.                *******action investments Stock(must be leaf)   
+     629dda4248455ed9cbcac2ef - Show my previous investments in this stock.   ******action insvestments Id
 
 
     62998f4b6a3a6c5dc64fe8ed - How to start a SIP on Groww?{
@@ -160,8 +185,12 @@
           62999ad76a3a6c5dc64fe912 - If I cancel my track request, will my imported funds be removed from my dashboard?
        }
     }
-    6299b2a41b08520f2d5f846a - Show my investments in mutual-funds. *******action orders mutual-funds(must be leaf)
+    6299b2a41b08520f2d5f846a - Show my investments in mutual-funds. *******action investments Mutual-Fund(must be leaf)
 
+    629e1b258777fa8ba56ef5fb - What is the fund size of the mutual fund?  ****get fundSize
+    629e1be88777fa8ba56ef60a - What is the minimum SIP amount for the mutual fund? ****action get minSipAmount
+    629e1d4a8777fa8ba56ef60e - Show my investments in mutual-funds. *******action investments Mutual-Fund(must be leaf)
+    629e20ca8777fa8ba56ef628 - Show my previous investments in this Mutual-Fund.   ******action insvestments Id
 
 
     6299b9d0e0590ac5e94a8d8a - How to access to FD investing on Groww?(add action get phone number of people who wants FD) {
@@ -202,6 +231,11 @@
         6299c06ee0590ac5e94a8dab - How to withdraw/redeem my fixed deposit?
         6299c0e6e0590ac5e94a8dad - Can I withdraw a tax-saver FD before the maturity date?
     }
-    6299c2b9e0590ac5e94a8dcd - Show my orders in fixed-deposits. *******action orders deposits(must be leaf)
+    6299c2b9e0590ac5e94a8dcd - Show my previous investments in fixed-deposits. *******action investments Fixed-Deposit(must be leaf)
 
+
+    629e1ed68777fa8ba56ef614 - What is the rate of interest of the FD?  ****get roi
+    629e1f3e8777fa8ba56ef618 - What is the duration of the FD? ****action get time
+    629e1e2a8777fa8ba56ef611 - Show my previous investments in fixed-deposits. *******action investments Fixed-Deposit(must be leaf)
+    629e203b8777fa8ba56ef626 - Show my previous investments in this Fixed-Deposit.   ******action insvestments Id
 }

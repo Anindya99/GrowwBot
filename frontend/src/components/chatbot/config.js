@@ -5,6 +5,7 @@ import Levelone from "./questionlevel/level.one";
 import Kyc from "./action/Kyc";
 import Avatar from "./Avatar";
 import OrderStock from "./action/OrderStock"
+import OrderId from "./action/OrderId"
 
 const botName = "GrowwBot";
 const config = {
@@ -26,6 +27,8 @@ const config = {
     state: {
         currentQues: [],
         ques_id: "",
+        productType: "",
+        productId:"",
     },
     widgets: [
         /* {
@@ -40,20 +43,27 @@ const config = {
         {
             widgetName: "levelzero",
             widgetFunc: (props) => <Levelzero {...props} />,
-            mapStateToProps: ["currentQues", "ques_id"],
+            mapStateToProps: ["currentQues", "ques_id","productType","productId"],
         },
         {
             widgetName: "levelone",
             widgetFunc: (props) => <Levelone {...props} />,
-            mapStateToProps: ["currentQues", "ques_id"],
+            mapStateToProps: ["currentQues", "ques_id","productType","productId"],
         },
         {
             widgetName: "Kyc",
-            widgetFunc: (props)=> <Kyc {...props}/>
+            widgetFunc: (props)=> <Kyc {...props}/>,
+            mapStateToProps: ["currentQues", "ques_id","productType","productId"],
         },
         {
             widgetName: "investments",
-            widgetFunc: ()=> <OrderStock />
+            widgetFunc: (props)=> <OrderStock {...props}/>, //it is used to get all investment of stock,mutual-fund,FD respectively in cahtbot
+            mapStateToProps: ["currentQues", "ques_id","productType","productId"],
+        },
+        {
+            widgetName: "investmentsId",
+            widgetFunc: (props)=> <OrderId {...props}/>, //it is used to get all investment by product Id in cahtbot
+            mapStateToProps: ["currentQues", "ques_id","productType","productId"],
         },
     ],
     customComponents: {

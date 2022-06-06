@@ -71,7 +71,7 @@ export default function OrderTable() {
               <StyledTableCell >Comapny Name</StyledTableCell>
               <StyledTableCell >Type</StyledTableCell>
               <StyledTableCell >Investment info.</StyledTableCell>
-              <StyledTableCell >Price</StyledTableCell>
+              <StyledTableCell >Amount</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>

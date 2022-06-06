@@ -48,6 +48,7 @@ const getAllbyId= async(id)=>{
   }     
 }
 
+//type in getStock should be equal to the type defined in productRoutes
 const getStock= async(id,type)=>{
   try {
     let response= await fetch(`/api/v1/${type}/${id}`,{

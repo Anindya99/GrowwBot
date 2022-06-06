@@ -10,7 +10,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import AuthStore from "../../../middleware/authstore";
-import { getInvestments } from "../../../api/investment.api";
+import { getInvestmentsbyId } from "../../../api/investment.api";
 const moment = require("moment");
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -49,7 +49,7 @@ export default function OrderTable(props) {
   const [loading,setLoading]= useState(true);
   useEffect(() => {
     const apiCall = async () => {
-      getInvestments(token,userId,props.productType).then(data=>{
+        getInvestmentsbyId(token,userId,props.productId).then(data=>{
         if(!data.hasOwnProperty('message')) setRows(data.orders);
         setLoading(false);
       });
@@ -61,13 +61,13 @@ export default function OrderTable(props) {
   if(!rows.length){
     return(
        
-       <div style={{ backgroundColor:'white',fontSize:'small',height:'40px',paddingTop:'20px',paddingLeft:'37px' }} className='success'>
-           <h5>You have not made any investment.</h5>
+       <div style={{ backgroundColor:'white',fontSize:'small',height:'40px',paddingTop:'20px',paddingLeft:'28px' }} className='success'>
+           <h5>You have not invested in this {props.productType}.</h5>
        </div>
     ) 
  }
  else{
-  return (
+    return (
         <div
           style={{
             marginLeft: "0px",
@@ -89,7 +89,6 @@ export default function OrderTable(props) {
                   <StyledTableRow key={row._id}>
                     <StyledTableCell component="th" scope="row">
                       {moment(row.date).format("DD/MM/YY")}<br/>
-                      {row.name}<br/>
                       {row.quantity}<br/>
                     </StyledTableCell>
                     <StyledTableCell >₹{row.total}</StyledTableCell>
@@ -100,5 +99,6 @@ export default function OrderTable(props) {
           </TableContainer>
         </div>
       );
-  }
+  
+    }
 }

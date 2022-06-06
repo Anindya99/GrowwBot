@@ -65,18 +65,34 @@ const Levelone = (props) => {
                         //else handlezero
                         if(ques.action==='kyc') props.actionProvider.handleKyc(ques.answer);
                         else if(ques.action.split(" ")[0]==='get'){
-                          
+            
+                            //getStock works for all types as we are sending the product type
+                            //we are fetching entire stock(or MutualFund,FD) data using the id of the product
+                            //here the productType should be same as routes defined in productController 
+                            //(stocks/mutual-funds/fixed-deposits) 
                             getStock(localStorage.getItem("productID"),localStorage.getItem("productType")).then(val=>{
-                              //console.log(val[`${ques.action.split(" ")[1]}`]);
-                              const updAns= ques.answer.replace(`{${ques.action.split(" ")[1]}}`,val[`${ques.action.split(" ")[1]}`]);
-                              props.actionProvider.handleLevelzero(updAns);
-                            })
-                        }
-                        else if(ques.action.split(" ")[0]==='investments'){
-                           props.actionProvider.handleLevelInvestments(ques.answer); 
-                        }
-                        else props.actionProvider.handleLevelzero(ques.answer);
-                      }
+                                //console.log(val[`${ques.action.split(" ")[1]}`]);
+                                const updAns= ques.answer.replace(`{${ques.action.split(" ")[1]}}`,val[`${ques.action.split(" ")[1]}`]);
+                                props.actionProvider.handleLevelzero(updAns);
+                              })
+                          }
+                          else if(ques.action.split(" ")[0]==='investments'){
+                             //console.log(ques.action.split(" ")[1])
+                             if(ques.action.split(" ")[1]==='Id'){
+                               //here the productType should the type we stored in investment schema(also used in output )
+                               //(Stock/Mutual-Fund/Fixed-Deposit)
+                                setState(state=>({...state,productType:ques.question.split(" ").slice(-2)[0],productId:localStorage.productID}));
+                                props.actionProvider.handleInvestmentsbyID(ques.answer); 
+                             }
+                             else{
+                               //here the productType should the type we stored in investment schema(also it is used as ouptut) 
+                               //(Stock/Mutual-Fund/Fixed-Deposit)
+                                setState(state=>({...state,productType:ques.action.split(" ")[1]}));
+                                props.actionProvider.handleInvestments(ques.answer); 
+                             }
+                          }
+                          else props.actionProvider.handleLevelzero(ques.answer);
+                    }
                       else props.actionProvider.handleLevelzero(ques.answer)
 
                 }}

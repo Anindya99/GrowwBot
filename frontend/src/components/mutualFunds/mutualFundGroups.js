@@ -28,6 +28,8 @@ const StockGroup = () => {
                         id={mf._id}
                         title={mf.title}
                         image={mf.image}
+                        roi={mf.roi}
+                        time={mf.time}
                     />
                 ))}
             </div>

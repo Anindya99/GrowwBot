@@ -68,9 +68,9 @@ export default function OrderTable() {
           <TableHead>
             <TableRow>
               <StyledTableCell >Order Date</StyledTableCell>
-              <StyledTableCell >Stock Name</StyledTableCell>
+              <StyledTableCell >Comapny Name</StyledTableCell>
               <StyledTableCell >Type</StyledTableCell>
-              <StyledTableCell >Quantity/ROI</StyledTableCell>
+              <StyledTableCell >Investment info.</StyledTableCell>
               <StyledTableCell >Price</StyledTableCell>
             </TableRow>
           </TableHead>

@@ -104,7 +104,7 @@ const StockDetails = () => {
                     <img
                         className="product__logo"
                         alt="product-image"
-                        src="https://groww.in/images/partners/icici_groww.svg"
+                        src="https://assets-netstorage.groww.in/stock-assets/logos/INE481Y01014.png"
                     />
                     <div>
                         <IconButton className="add__sicon">
@@ -173,7 +173,7 @@ const StockDetails = () => {
                         </div>
                     </div>
                 </div>
-                <div className="product__about">
+                {/* <div className="product__about">
                     <h3>About Hero MotoCorp</h3>
                     <p>{stock.about}</p>
                     <div style={{ display: "flex", margin: "1rem 0rem" }}>
@@ -236,7 +236,7 @@ const StockDetails = () => {
                             src="https://assets-netstorage.groww.in/stock-assets/brand_logo/INE158A01026/Hero%20Glamour/1.%20hero-glamour-fi-techno-blue.png"
                         />
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className="product__form">
                 <div className="button__type">

@@ -135,9 +135,12 @@ const Levelzero = (props) => {
              }
           }
 
-          else props.actionProvider.handleLevelzero(ques.answer);//just in case any action not handled
+          else props.actionProvider.handleLevelzero(ques.answer);//just in case any action is not handled
         
         }
+
+
+
         else props.actionProvider.handleLevelzero(ques.answer)
       
       }}

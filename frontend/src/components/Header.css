@@ -31,8 +31,9 @@
     text-transform: capitalize !important;
     font-size: 16px !important;
     letter-spacing: 0.3px !important;
-    color: #44475b !important;
+    /* color: #44475b !important; */
     margin-top: 5px !important;
+    font-size: medium !important;
 }
 
 .header_explore:hover {

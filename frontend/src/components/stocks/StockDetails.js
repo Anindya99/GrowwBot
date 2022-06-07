@@ -55,7 +55,7 @@ const StockDetails = () => {
                     if(!data.kyc){
     
                         setsnacktype("error");
-                        setsnackmsg("Sorry, you cannot invest in the stock now, as your KYC is incomplete.");
+                        setsnackmsg("Sorry, you cannot invest in the stock now, as your KYC is pending.");
                         setsnack(true);
                     }
                     else{

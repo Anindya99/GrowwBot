@@ -162,7 +162,7 @@
      629b2d1c793de3751df9cb95 - What is the market price of the stock?        *****action get price
      629b39e0793de3751df9cc23 - What is the market capital of the stock?      **** action get market capital
      62876c61bea1fe4ea1156c09 - Show my investments in stocks.                *******action investments Stock(must be leaf)   
-     629dda4248455ed9cbcac2ef - Show my previous investments in this stock.   ******action insvestments Id
+     629dda4248455ed9cbcac2ef - Show my previous investments in this stock .   ******action insvestments Id(space after each word imp.)
 
 
     62998f4b6a3a6c5dc64fe8ed - How to start a SIP on Groww?{
@@ -200,7 +200,7 @@
     629e1b258777fa8ba56ef5fb - What is the fund size of the mutual fund?  ****get fundSize
     629e1be88777fa8ba56ef60a - What is the minimum SIP amount for the mutual fund? ****action get minSipAmount
     629e1d4a8777fa8ba56ef60e - Show my investments in mutual-funds. *******action investments Mutual-Fund(must be leaf)
-    629e20ca8777fa8ba56ef628 - Show my previous investments in this Mutual-Fund.   ******action insvestments Id
+    629e20ca8777fa8ba56ef628 - Show my previous investments in this mutual-fund .   ******action insvestments Id(space after each word imp.)
 
 
     6299b9d0e0590ac5e94a8d8a - How to access to FD investing on Groww?(add action get phone number of people who wants FD) {
@@ -247,7 +247,7 @@
     629e1ed68777fa8ba56ef614 - What is the rate of interest of the FD?  ****get roi
     629e1f3e8777fa8ba56ef618 - What is the duration of the FD? ****action get time
     629e1e2a8777fa8ba56ef611 - Show my previous investments in fixed-deposits. *******action investments Fixed-Deposit(must be leaf)
-    629e203b8777fa8ba56ef626 - Show my previous investments in this Fixed-Deposit.   ******action insvestments Id
+    629e203b8777fa8ba56ef626 - Show my previous investments in this fixed-deposit .   ******action insvestments Id(space after each word imp.)
 
 
 

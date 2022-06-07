@@ -14,6 +14,10 @@ import { SearchOutlined } from "@material-ui/icons";
 const Header = ({ loggedin }) => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+  const [colorStocks,setcolorStocks]= useState(true);
+  const [colorFunds,setcolorFunds]= useState(false);
+  const [colorDeposits,setcolorDeposits]= useState(false);
+  const [colorInvestments,setcolorInvestments]= useState(false);
   const logout = async () => {
     AuthStore.clearJWT();
     window.location.href = "/";
@@ -86,7 +90,7 @@ const Header = ({ loggedin }) => {
                 onClick={logout}
                 className="user_image"
                 src={user.picture}
-                alt="user image"
+                alt="user-img"
               />
             )}
           </div>
@@ -96,25 +100,53 @@ const Header = ({ loggedin }) => {
         <div className="header__two">
           <Button
             className="header_explore"
-            onClick={() => navigate("/stocks/user/explore")}
+            onClick={() => {
+              setcolorStocks(true)
+              setcolorFunds(false)
+              setcolorDeposits(false)
+              setcolorInvestments(false)
+              navigate("/stocks/user/explore")
+            }}
+            style={{color: colorStocks? "#15e2af":"#44475b"}}
           >
             Stocks{" "}
           </Button>
           <Button
             className="header_explore"
-            onClick={() => navigate("/mutual-funds/user/explore")}
+            onClick={() => {
+              setcolorStocks(false)
+              setcolorFunds(true)
+              setcolorDeposits(false)
+              setcolorInvestments(false)
+              navigate("/mutual-funds/user/explore")
+            }}
+            style={{color: colorFunds? "#15e2af":"#44475b"}}
           >
             mutual Funds{" "}
           </Button>
           <Button
             className="header_explore"
-            onClick={() => navigate("/deposits/user/explore")}
+            onClick={() => {
+              setcolorStocks(false)
+              setcolorFunds(false)
+              setcolorDeposits(true)
+              setcolorInvestments(false)
+              navigate("/deposits/user/explore")
+            }}
+            style={{color: colorDeposits? "#15e2af":"#44475b"}}
           >
             Fixed Deposits{" "}
           </Button>
           <Button
             className="header_explore"
-            onClick={() => navigate("/user/investments")}
+            onClick={() => {
+              setcolorStocks(false)
+              setcolorFunds(false)
+              setcolorDeposits(false)
+              setcolorInvestments(true)
+              navigate("/user/investments")
+            }}
+            style={{color: colorInvestments? "#15e2af":"#44475b"}}
           >
             Investments{" "}
           </Button>

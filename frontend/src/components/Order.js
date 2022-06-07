@@ -45,50 +45,65 @@ export default function OrderTable() {
   const userId= AuthStore.getUserDetail()._id;
   const token= localStorage.jwToken;
   const [rows, setRows] = useState([]);
+  const [loading,setLoading]= useState(true);
   useEffect(() => {
     const apiCall = async () => {
       
       getInvestments(token,userId,"all").then(data=>{
         if(!data.hasOwnProperty('message')) setRows(data.orders);
+        setLoading(false);
       });
       
     };
     apiCall();
   }, []);
+
+  if(loading) return null;
+  if(!rows.length){
+    return(
+       
+       <div style={{ backgroundColor:'white',fontSize:'medium',height:'120px',paddingTop:'8%',paddingLeft:'38%' }} className='success'>
+           <h2>Your dashboard is empty.</h2>
+       </div>
+    ) 
+ }
+ else{
   return (
-    <div
-      style={{
-        marginLeft: "220px",
-        marginTop: "30px",
-        width: "50%",
-      }}
-    >
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell >Order Date</StyledTableCell>
-              <StyledTableCell >Comapny Name</StyledTableCell>
-              <StyledTableCell >Type</StyledTableCell>
-              <StyledTableCell >Investment info.</StyledTableCell>
-              <StyledTableCell >Amount</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <StyledTableRow key={row._id}>
-                <StyledTableCell component="th" scope="row">
-                  {moment(row.date).format("DD/MM/YY")}
-                </StyledTableCell>
-                <StyledTableCell /* align="" */>{row.name}</StyledTableCell>
-                <StyledTableCell >{row.type}</StyledTableCell>
-                <StyledTableCell >{row.quantity}</StyledTableCell>
-                <StyledTableCell >₹{row.total}</StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </div>
-  );
+        <div
+          style={{
+            marginLeft: "220px",
+            marginTop: "30px",
+            width: "55%",
+          }}
+        >
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 700 }} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell >Order Date</StyledTableCell>
+                  <StyledTableCell >Comapny Name</StyledTableCell>
+                  <StyledTableCell >Type</StyledTableCell>
+                  <StyledTableCell >Investment info.</StyledTableCell>
+                  <StyledTableCell >Amount</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <StyledTableRow key={row._id}>
+                    <StyledTableCell component="th" scope="row">
+                      {moment(row.date).format("DD/MM/YY")}
+                    </StyledTableCell>
+                    <StyledTableCell /* align="" */>{row.name}</StyledTableCell>
+                    <StyledTableCell >{row.type}</StyledTableCell>
+                    <StyledTableCell >{row.quantity}</StyledTableCell>
+                    <StyledTableCell >₹{row.total}</StyledTableCell>
+                  </StyledTableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
+      );
+  }
+
 }

@@ -82,6 +82,16 @@
             "_id": "629e217f8777fa8ba56ef62d",
             "__v": 0
         }
+        {
+            "routeName": "investments-user-invest",
+            "qlist": [
+                "629f28929cb4c54dc2882252",
+                "629f28bd9cb4c54dc2882255",
+                "629f28e29cb4c54dc2882258"
+            ],
+            "_id": "629f28f19cb4c54dc288225a",
+            "__v": 0
+        }
         
 }
 {
@@ -238,4 +248,11 @@
     629e1f3e8777fa8ba56ef618 - What is the duration of the FD? ****action get time
     629e1e2a8777fa8ba56ef611 - Show my previous investments in fixed-deposits. *******action investments Fixed-Deposit(must be leaf)
     629e203b8777fa8ba56ef626 - Show my previous investments in this Fixed-Deposit.   ******action insvestments Id
+
+
+
+    629f28929cb4c54dc2882252 - Show my investments in stocks. ******action Stock
+    629f28bd9cb4c54dc2882255 - Show my investments in mutual-funds. *******action investments Mutual-Fund
+    629f28e29cb4c54dc2882258 - Show my previous investments in fixed-deposits. *******action investments Fixed-Deposit
+
 }

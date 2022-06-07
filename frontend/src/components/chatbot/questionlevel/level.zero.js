@@ -120,9 +120,13 @@ const Levelzero = (props) => {
 
              //getting history of particular stock/fund/deposit
              if(ques.action.split(" ")[1]==='Id'){
-               //here the productType should the type we stored in investment schema(also used in output )
+               //here the productType should the type we stored in investment schema(here only used in output )
                //(Stock/Mutual-Fund/Fixed-Deposit)
-                setState(state=>({...state,productType:ques.question.split(" ").slice(-2)[0],productId:localStorage.productID}));
+                setState(state=>({...state,productType:ques.question.split(" ")
+                                                                    .slice(-2)[0].split("-")
+                                                                    .map(word=>word.charAt(0).toUpperCase()+word.slice(1))
+                                                                    .join("-"),
+                                           productId:localStorage.productID}));
                 props.actionProvider.handleInvestmentsbyID(ques.answer); 
              }
 

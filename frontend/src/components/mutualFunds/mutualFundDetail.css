@@ -13,6 +13,10 @@
     width: 100%;
     text-align: left;
 }
+.mf__rate {
+    font-size: 2rem;
+    font-weight: 700;
+}
 
 h2 {
     margin-left: 0;

@@ -27,6 +27,7 @@ const MutualFundDetail = () => {
                 const data = await fetch(`/api/v1/mutual-funds/${id}`);
                 const mfData = await data.json();
                 setMf((mf) => mfData);
+                //setSip(mfData.minSipAmount);
             } catch (err) {
                 setMf((mf) => {});
             }
@@ -47,9 +48,8 @@ const MutualFundDetail = () => {
                             "Sorry, you cannot invest in the stock now, as your KYC is incomplete."
                         );
                         setsnack(true);
-                    } else {
-                        buyMutualFund();
-                    }
+                    } 
+                    else buyMutualFund();
                 }
             });
         } else {
@@ -69,9 +69,9 @@ const MutualFundDetail = () => {
             userId,
             id,
             mf.title,
-            "Mutual Fund",
-            `${sip} Per month`,
-            sip
+            "Mutual-Fund",
+            `₹${sip}/month at ${mf.roi}% (${mf.time}Y)`,
+             sip
         ).then((data) => {
             if (data.hasOwnProperty("msg") && data["msg"] === "Success") {
                 setSip(1);
@@ -117,6 +117,9 @@ const MutualFundDetail = () => {
                 </div>
                 <div className="mf__title">
                     <h2>{mf.title}</h2>
+                    <p className="mf__rate">
+                    {mf.roi}% ({mf.time}Y)
+                </p>
                 </div>
                 <div className="mf__tags">
                     {/* {mf && mf.tags.map((tag) => <button>{tag}</button>)} */}
@@ -148,7 +151,7 @@ const MutualFundDetail = () => {
                         <label>SIP Amount</label>
                         <input
                             type="number"
-                            min="100"
+                            min={mf.minSipAmount}
                             step="100"
                             val={sip}
                             onChange={(e) => {

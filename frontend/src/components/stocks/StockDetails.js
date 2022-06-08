@@ -68,6 +68,7 @@ const StockDetails = () => {
             setsnacktype("error");
             setsnackmsg("Quantity of shares must be greater than zero.");
             setsnack(true);
+            setquantity(1);
         }
     }
     const buyStocks= ()=>{

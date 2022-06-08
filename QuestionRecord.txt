@@ -246,6 +246,7 @@
 
     629e1ed68777fa8ba56ef614 - What is the rate of interest of the FD?  ****get roi
     629e1f3e8777fa8ba56ef618 - What is the duration of the FD? ****action get time
+    62a0e2f7f551107ab0ca1577 - What is minimum amount to be deposited in this FD?
     629e1e2a8777fa8ba56ef611 - Show my previous investments in fixed-deposits. *******action investments Fixed-Deposit(must be leaf)
     629e203b8777fa8ba56ef626 - Show my previous investments in this fixed-deposit .   ******action insvestments Id(space after each word imp.)
 

@@ -1,0 +1,78 @@
+.fd-group-head{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+
+.fd-group{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* cursor: pointer; */
+    /* background-color: aquamarine; */
+}
+
+#fd_form{
+    width: 20%;
+    border: 1px solid rgb(241, 236, 236);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+}
+
+#fd_form p{
+    font-size: 0.9rem;
+    color: rgb(88, 86, 86);
+}
+
+#fd_form label{
+    color: rgb(88, 87, 87);
+}
+
+#fd_form input{
+    width: 100px;
+}
+
+.fd__controls{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+.fd__metadata{
+    width: 105%;
+    height: 100px;
+    background-color: rgb(222, 245, 227);
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+
+.fd__metadata h4 {
+    margin: 10px 10px;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.fd__metadata p{
+    margin: 10px 10px;
+    color: rgb(157, 161, 163);
+}
+
+.select_fd{
+    width: 20%;
+    height: 30%;
+    display: block;
+    color: rgb(180, 174, 165);
+    font-size: 1.8rem;
+}

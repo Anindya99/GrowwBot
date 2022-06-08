@@ -48,8 +48,7 @@ const MutualFundDetail = () => {
                             "Sorry, you cannot invest in the stock now, as your KYC is incomplete."
                         );
                         setsnack(true);
-                    } 
-                    else buyMutualFund();
+                    } else buyMutualFund();
                 }
             });
         } else {
@@ -71,10 +70,10 @@ const MutualFundDetail = () => {
             mf.title,
             "Mutual-Fund",
             `₹${sip}/month at ${mf.roi}% (${mf.time}Y)`,
-             sip
+            sip
         ).then((data) => {
             if (data.hasOwnProperty("msg") && data["msg"] === "Success") {
-                setSip(1);
+                setSip(0);
                 setsnacktype("success");
                 setsnackmsg("Your investment is successful.");
                 setsnack(true);
@@ -118,8 +117,8 @@ const MutualFundDetail = () => {
                 <div className="mf__title">
                     <h2>{mf.title}</h2>
                     <p className="mf__rate">
-                    {mf.roi}% ({mf.time}Y)
-                </p>
+                        {mf.roi}% ({mf.time}Y)
+                    </p>
                 </div>
                 <div className="mf__tags">
                     {/* {mf && mf.tags.map((tag) => <button>{tag}</button>)} */}
@@ -153,7 +152,7 @@ const MutualFundDetail = () => {
                             type="number"
                             min={mf.minSipAmount}
                             step="100"
-                            val={sip}
+                            value={sip}
                             onChange={(e) => {
                                 setSip(e.target.value);
                             }}

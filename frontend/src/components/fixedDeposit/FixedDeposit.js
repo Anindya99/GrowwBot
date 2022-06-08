@@ -1,27 +1,28 @@
-import React from 'react';
-import Box from './Box';
+import React, { useState } from "react";
+import "./FixedDeposit.css";
 
-const FixedDeposit = () => {
-    localStorage.setItem("route","deposits-user-explore");
+const FixedDeposit = (props) => {
+    localStorage.setItem("route", "deposits-user-explore");
+    const fd = props.fd;
+    const clickHandler = () => {
+        props.onClick[0](fd);
+    };
     return (
-        <div className="group__head">
-            <div
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    marginLeft: '0.5rem',
-                }}
-            >
+        <div className="fd_box" onClick={clickHandler}>
+            <div className="fd_title_logo">
                 <img
                     className="product__logo"
-                    src="https://assets-netstorage.groww.in/app-assets/others/axisBank.svg"
+                    src={
+                        fd.image ||
+                        "https://assets-netstorage.groww.in/app-assets/others/axisBank.svg"
+                    }
                 />
-                <h3>Axis Bank FDs</h3>
+                <p>{`${fd.title} FDs`}</p>
             </div>
-            <div className="group__body">
-                <Box />
-                <Box />
-                <Box />
+            <div className="fd_body">
+                <h2>{`${fd.roi}%`}</h2>
+                <span></span>
+                <p>{`${fd.time} Years`}</p>
             </div>
         </div>
     );

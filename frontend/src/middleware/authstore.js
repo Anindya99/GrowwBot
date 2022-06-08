@@ -4,9 +4,13 @@ import decode from "jwt-decode";
 
 const AuthStore = {
      isAuthenticated() {
-        if (localStorage.jwToken) {
-            return decode(localStorage.jwToken);
-        } else return false;
+        try{
+            if (localStorage.jwToken) {
+                return decode(localStorage.jwToken);
+            } else return false;
+        }catch(err){
+            console.log(err);
+        }
     },
     storeJWT(jwToken) {
         localStorage.setItem("jwToken", JSON.stringify(jwToken));
@@ -17,7 +21,12 @@ const AuthStore = {
         //console.log(localStorage);
     },
     getUserDetail() {
-        return decode(localStorage.jwToken);
+        try{
+            return decode(localStorage.jwToken);
+        }catch(err){
+            console.log(err)
+        }
+        
     },
 };
 

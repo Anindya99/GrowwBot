@@ -21,9 +21,7 @@ mongoose
   .then(() => console.log("Mongoose connected..."))
   .catch((err) => console.log(err));
 
-app.use("/",(req,res)=>{
-  res.send("GrowwBot server working...")
-});
+
 app.use("/api/Oauth", require("./routes/Oauth.route.js"));
 app.use("/api/verify", require("./routes/verifyJWT.route.js"));
 app.use("/api/questions", require("./routes/questions.route.js"));

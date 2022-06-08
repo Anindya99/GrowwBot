@@ -41,6 +41,7 @@ function App() {
     if (localStorage.getItem("jwToken")) {
       verify(localStorage.getItem("jwToken")).then((res) => {
         //if(!res.ok) {AuthStore.clearJWT();setLoggedin( false);}
+        //console.log(res);
         if (res.msg === "verified") setLoggedin(true);
         else {
           AuthStore.clearJWT();

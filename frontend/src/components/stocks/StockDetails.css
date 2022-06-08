@@ -133,6 +133,10 @@ form {
     margin: 30px 0px;
 }
 
+.form__controls label{
+    margin-right: 13px;
+}
+
 .form__input {
     font-family: "Roboto", sans-serif;
     color: #333;

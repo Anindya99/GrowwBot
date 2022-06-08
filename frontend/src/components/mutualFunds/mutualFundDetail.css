@@ -36,3 +36,8 @@ h2 {
     cursor: pointer;
     color: rgb(114, 109, 109);
 }
+
+.wrapper form{
+    position: relative;
+    top: 0;
+}

@@ -4,13 +4,13 @@ const fixedDepositSchema = new mongoose.Schema({
     title: {
         type: String,
     },
-    roi:{
+    roi: {
         type: Number,
-        description: "stores the return percentage"
+        description: "stores the return percentage",
     },
-    time:{
+    time: {
         type: Number,
-        description: "stores the time for which investment is made"
+        description: "stores the time for which investment is made",
     },
     minAmt: {
         type: Number,

@@ -1,0 +1,36 @@
+.fd_box{
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;  
+    box-shadow: 2px 2px 4px rgba(150, 149, 149, 0.4);
+    border: 1px solid rgb(248, 241, 241);
+    cursor: pointer;
+
+}
+
+.fd_title_logo{
+    display: flex;
+    align-items: center;
+    justify-content:baseline;
+    padding: 0.3rem;
+    border-bottom: 1px solid rgb(236, 230, 230);
+}
+
+.fd_body{
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+    justify-content: space-around;
+}
+
+.fd_body h2{
+    margin: 1rem;
+}
+.fd_body p{
+    margin: 1rem;
+}
+.fd_body span{
+    width: 100%;
+    border: 0.1px solid rgb(243, 237, 237);
+}

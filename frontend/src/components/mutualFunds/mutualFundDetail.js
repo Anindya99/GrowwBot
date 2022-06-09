@@ -69,7 +69,7 @@ const MutualFundDetail = () => {
             id,
             mf.title,
             "Mutual-Fund",
-            `₹${sip}/month at ${mf.roi}% (${mf.time}Y)`,
+            `Payable monthly for ${mf.time} years`,
             sip
         ).then((data) => {
             if (data.hasOwnProperty("msg") && data["msg"] === "Success") {
@@ -93,86 +93,100 @@ const MutualFundDetail = () => {
     return (
         <div className="wrapper" style={{ width: "100%", minHeight: "100vh" }}>
             <div className="mutual_fund">
-                <div className="product__header">
-                    <img
-                        className="product__logo"
-                        alt="product-image"
-                        src={
-                            mf.image ||
-                            "https://groww.in/images/partners/icici_groww.svg"
-                        }
-                    />
-                    <div>
-                        <IconButton className="add__sicon">
-                            <BookmarkAddOutlinedIcon
-                                style={{ margin: "0px 10px" }}
-                                fontSize="large"
-                            />
-                        </IconButton>
-                        <IconButton className="add__iscon">
-                            <ShareIcon fontSize="large" />
-                        </IconButton>
-                    </div>
-                </div>
-                <div className="mf__title">
-                    <h2>{mf.title}</h2>
-                    <p className="mf__rate">
-                        {mf.roi}% ({mf.time}Y)
-                    </p>
-                </div>
-                <div className="mf__tags">
-                    {/* {mf && mf.tags.map((tag) => <button>{tag}</button>)} */}
-                </div>
-                <div className="fundamental">
-                    <div className="fundamental__box">
-                        <div className="fundamental_item">
-                            <p className="field">Nav: 20 May 2022</p>
-                            <p className="value">₹{mf.nav}</p>
-                        </div>
-                        <div className="fundamental_item">
-                            <p className="field">Min SIP amount</p>
-                            <p className="value">₹{mf.minSipAmount}</p>
-                        </div>
-                    </div>
-                    <div className="fundamental__box">
-                        <div className="fundamental_item">
-                            <p className="field">Ratings</p>
-                            <p className="value">{mf.rating}</p>
-                        </div>
-                        <div className="fundamental_item">
-                            <p className="field">Fund Size</p>
-                            <p className="value">₹{mf.fundSize}Cr</p>
-                        </div>
-                    </div>
-                </div>
-                <form>
-                    <div className="form__controls">
-                        <label>SIP Amount</label>
-                        <input
-                            type="number"
-                            min={mf.minSipAmount}
-                            step="100"
-                            value={sip}
-                            onChange={(e) => {
-                                setSip(e.target.value);
-                            }}
-                            className="form__input"
-                            required
+                <div className="product__overview">
+                    <div className="product__header">
+                        <img
+                            className="product__logo"
+                            alt="product-image"
+                            src={
+                                mf.image ||
+                                "https://groww.in/images/partners/icici_groww.svg"
+                            }
                         />
+                        <div>
+                            <IconButton className="add__sicon">
+                                <BookmarkAddOutlinedIcon
+                                    style={{ margin: "0px 10px" }}
+                                    fontSize="large"
+                                />
+                            </IconButton>
+                            <IconButton className="add__iscon">
+                                <ShareIcon fontSize="large" />
+                            </IconButton>
+                        </div>
                     </div>
-                    <div className="form__controls">
-                        <Button
-                            variant="contained"
-                            style={{ backgroundColor: "rgb(46, 221, 136)" }}
-                            fullWidth={true}
-                            size="large"
-                            onClick={checkUser}
-                        >
+                    <div className="mf__title">
+                        <h2>{mf.title}</h2>
+                        <p className="mf__rate">
+                            {mf.roi}% ({mf.time}Y)
+                        </p>
+                    </div>
+                    <div className="mf__tags">
+                        {/* {mf && mf.tags.map((tag) => <button>{tag}</button>)} */}
+                    </div>
+                    <div className="fundamental">
+                        <div className="fundamental__box">
+                            <div className="fundamental_item">
+                                <p className="field">Nav: 20 May 2022</p>
+                                <p className="value">₹{mf.nav}</p>
+                            </div>
+                            <div className="fundamental_item">
+                                <p className="field">Min SIP amount</p>
+                                <p className="value">₹{mf.minSipAmount}</p>
+                            </div>
+                        </div>
+                        <div className="fundamental__box">
+                            <div className="fundamental_item">
+                                <p className="field">Ratings</p>
+                                <p className="value">{mf.rating}</p>
+                            </div>
+                            <div className="fundamental_item">
+                                <p className="field">Fund Size</p>
+                                <p className="value">₹{mf.fundSize}Cr</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="product__form__fund">
+                    <div className="button__type">
+                        <Button style={{ marginRight: "1rem",color:"black" }} size="large">
                             BUY
                         </Button>
+                        {/* <Button size="large">SELL</Button> */}
                     </div>
-                    <p className="foot">100% SAFE AND SECURE</p>
-                </form>
+                    <form>
+                        <div className="form__controls">
+                            <label>SIP Amount</label>
+                            <input
+                                type="number"
+                                min={mf.minSipAmount}
+                                step="100"
+                                value={sip}
+                                onChange={(e) => {
+                                    setSip(e.target.value);
+                                }}
+                                className="form__input"
+                                required
+                            />
+                        </div>
+                        <div className="form__controls">
+                        <p>Payable</p>
+                        <p className="p__dark">Monthly</p>
+                        </div>
+                        <div className="form__controls">
+                            <Button
+                                variant="contained"
+                                style={{ backgroundColor: "rgb(46, 221, 136)" }}
+                                fullWidth={true}
+                                size="large"
+                                onClick={checkUser}
+                            >
+                                BUY
+                            </Button>
+                        </div>
+                        <p className="foot">100% SAFE AND SECURE</p>
+                    </form>
+                </div>
             </div>
             {snackopen && (
                 <Snackbars

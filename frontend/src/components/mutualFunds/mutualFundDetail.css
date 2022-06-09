@@ -1,12 +1,16 @@
 .mutual_fund {
-    width: 50%;
+    /* width: 50%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 200px;
     padding: 1rem;
-    border: 1px solid rgb(242, 234, 234);
+    border: 1px solid rgb(242, 234, 234); */
+
+        width: 100%;
+        display: flex;
+    
 }
 
 .mf__title {
@@ -41,7 +45,61 @@ h2 {
     color: rgb(114, 109, 109);
 }
 
+.product__form__fund {
+    width: 24%;
+    height: 375px ;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    border: 1px solid rgb(235, 233, 233);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.button__type {
+    width: 100%;
+    padding: 0px 0px;
+    border-bottom: 1px solid rgb(233, 231, 231);
+    
+}
 .wrapper form{
     position: relative;
     top: 0;
+}
+.form__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0px;
+}
+
+.form__controls label{
+    margin-right: 13px;
+}
+
+.form__input {
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 0.4rem 0.3rem;
+    border-radius: 0.2rem;
+    background-color: rgb(165, 244, 175);
+    border: none;
+    width: 170px;
+    height: 25px;
+    display: block;
+    border: 0.3px solid rgb(235, 232, 232);
+    transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+}
+
+.form__input:focus {
+    outline: none;
 }

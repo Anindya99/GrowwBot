@@ -20,7 +20,7 @@ const StockDetails = () => {
     const [snackopen,setsnack]=useState(false);
     const [snackmsg,setsnackmsg]=useState('');
     const [snacktype,setsnacktype]= useState('success');
-    const [quantity,setquantity]= useState(1);
+    const [quantity,setquantity]= useState(0);
 
     const { id } = useParams();
     const userId= AuthStore.getUserDetail()._id;
@@ -241,10 +241,10 @@ const StockDetails = () => {
             </div>
             <div className="product__form">
                 <div className="button__type">
-                    <Button style={{ marginRight: "1rem" }} size="large">
+                    <Button style={{ marginRight: "1rem",color:"black" }} size="large">
                         BUY
                     </Button>
-                    <Button size="large">SELL</Button>
+                    {/* <Button size="large">SELL</Button> */}
                 </div>
                 <form>
                     <div className="form__controls">

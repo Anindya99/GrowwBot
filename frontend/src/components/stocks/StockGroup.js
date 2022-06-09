@@ -16,7 +16,7 @@ const StockGroup = () => {
         };
         apiCall();
     }, []);
-    console.log(stocks);
+    //console.log(stocks);
     /* const fun = () => {
         console.log("sfdsdfsf");
     }; */

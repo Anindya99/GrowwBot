@@ -11,13 +11,15 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import "./Header.css";
 import { SearchOutlined } from "@material-ui/icons";
 
-const Header = ({ loggedin }) => {
+const Header = ({loggedin}) => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [colorStocks,setcolorStocks]= useState(true);
   const [colorFunds,setcolorFunds]= useState(false);
   const [colorDeposits,setcolorDeposits]= useState(false);
   const [colorInvestments,setcolorInvestments]= useState(false);
+  
+
   const logout = async () => {
     AuthStore.clearJWT();
     window.location.href = "/";
@@ -90,7 +92,8 @@ const Header = ({ loggedin }) => {
                 onClick={logout}
                 className="user_image"
                 src={user.picture}
-                alt="user-img"
+                alt="Logout"
+                title="Logout"
               />
             )}
           </div>

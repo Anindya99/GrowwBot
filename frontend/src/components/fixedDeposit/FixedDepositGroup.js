@@ -31,10 +31,11 @@ const FixedDepositGroup = () => {
     const clickHandler = (fd) => {
         setForm(true);
         setSelectedFd(fd);
+        //setInvestmentAmount(fd.minAmt);
     };
 
     const checkUser = () => {
-        if (investmentAmount >= 1000) {
+        if (investmentAmount >= selectedFd.minAmt) {
             getUser(token, userId).then((data) => {
                 if (data.hasOwnProperty("msg")) {
                     AuthStore.clearJWT();
@@ -52,9 +53,9 @@ const FixedDepositGroup = () => {
                 }
             });
         } else {
-            console.log("error");
+            //console.log("error");
             setsnacktype("error");
-            setsnackmsg(`Sorry, SIP amount must be grater than 1000!!`);
+            setsnackmsg(`Sorry, SIP amount must be grater than ${selectedFd.minAmt}!!`);
             setsnack(true);
         }
     };
@@ -67,7 +68,7 @@ const FixedDepositGroup = () => {
             selectedFd._id,
             selectedFd.title,
             "Fixed-Deposit",
-            `${selectedFd.roi}% Per Anum`,
+            `Compunding ${selectedFd.compounding} at ${selectedFd.roi}% p.a.(${selectedFd.time}Y)`,
             investmentAmount
         ).then((data) => {
             if (data.hasOwnProperty("msg") && data["msg"] === "Success") {
@@ -127,6 +128,18 @@ const FixedDepositGroup = () => {
                     <div className="fd__controls">
                         <p>Time Period</p>
                         <p>{selectedFd.time * 12} months</p>
+                    </div>
+                    <div className="fd__controls">
+                        <p>Minimum Amount</p>
+                        <p>₹{selectedFd.minAmt}</p>
+                    </div>
+                    <div className="fd__controls">
+                        <p>Compunding</p>
+                        <p>{selectedFd.compounding}</p>
+                    </div>
+                    <div className="fd__controls">
+                        <p>Premature Withdrawal</p>
+                        <p>{selectedFd.withdrawal}</p>
                     </div>
                     <div className="fd__controls">
                         <Button

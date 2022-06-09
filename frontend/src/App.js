@@ -60,6 +60,7 @@ function App() {
               path="/"
               element={
                 loggedin ? (
+                  
                   <Navigate replace to="/stocks/user/explore" />
                 ) : (
                   <>
@@ -75,7 +76,7 @@ function App() {
                 loggedin ? (
                   <>
                     <StockGroup />
-                  </>
+                  </> 
                 ) : (
                   <Navigate replace to="/" />
                 )
@@ -85,6 +86,7 @@ function App() {
               path="/mutual-funds/user/explore"
               element={
                 loggedin ? (
+                 
                   <>
                     <MutualFundGroup />
                   </>
@@ -97,6 +99,7 @@ function App() {
               path="/deposits/user/explore"
               element={
                 loggedin ? (
+                  
                   <>
                     <FixedDepositGroup />
                   </>
@@ -109,6 +112,7 @@ function App() {
               path="/user/investments"
               element={
                 loggedin ? (
+                  
                   <>
                     <OrderTable />
                   </>
@@ -121,6 +125,7 @@ function App() {
               path="/stocks/:id"
               element={
                 loggedin ? (
+                  
                   <>
                     <StockDetails />
                   </>
@@ -129,8 +134,7 @@ function App() {
                 )
               }
             />
-            <Route path="/mutual-funds/:id" element={<MutualFundDetail />} />
-            <Route path="/mutual-funds/:id" element={<MutualFundDetail />} />
+            <Route path="/mutual-funds/:id" element={ <MutualFundDetail />} />
             <Route path="/deposits/:id" element={<StockDetails />} />
           </Routes>
         </div>

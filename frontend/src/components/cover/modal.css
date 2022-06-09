@@ -8,10 +8,15 @@
     width: 400px;
     padding-top: 50px ;
     padding-left: 25px;
+    
     background-image: url(https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/patternImg.0edf5760.svg);
 }
-.div-left h2{
+.div-left h1{
+  margin-left: 10px;
   color: white !important;
+}
+#first_header{
+  margin-top: 40px;
 }
 .icon{
     padding-left: 375px;

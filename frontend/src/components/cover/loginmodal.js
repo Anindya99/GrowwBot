@@ -66,8 +66,8 @@ const Loginmodal = ({close}) => {
         <Box sx={style}>
           <div className='modal-container'>
             <div className='div-left'>
-                <h2>Simple,Free</h2>
-                <h2>Investing.</h2>
+                <h1 id="first_header">Simple,Free</h1>
+                <h1>Investing.</h1>
             </div>
             <div className='div-right'>
                 <div className='icon'><CloseIcon className='close-icon' style={{ fontSize: 22 }} onClick={handleClose}/></div>

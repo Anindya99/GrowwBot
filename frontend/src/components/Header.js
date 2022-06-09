@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginModal from "./cover/loginmodal";
 import { Button, IconButton } from "@material-ui/core";
@@ -19,7 +19,33 @@ const Header = ({loggedin}) => {
   const [colorDeposits,setcolorDeposits]= useState(false);
   const [colorInvestments,setcolorInvestments]= useState(false);
   
-
+  useEffect(()=>{
+    const currpage= localStorage.route.split("-")[0];
+    if(currpage==='stocks') {
+              setcolorStocks(true);
+              setcolorFunds(false);
+              setcolorDeposits(false);
+              setcolorInvestments(false);
+    }
+    else if(currpage==='mutual') {
+              setcolorStocks(false)
+              setcolorFunds(true)
+              setcolorDeposits(false)
+              setcolorInvestments(false)
+    }
+    else if(currpage==='deposits'){
+              setcolorStocks(false)
+              setcolorFunds(false)
+              setcolorDeposits(true)
+              setcolorInvestments(false)
+    }
+    else if(currpage==='investments'){
+              setcolorStocks(false)
+              setcolorFunds(false)
+              setcolorDeposits(false)
+              setcolorInvestments(true)
+    }
+  },[]);
   const logout = async () => {
     AuthStore.clearJWT();
     window.location.href = "/";

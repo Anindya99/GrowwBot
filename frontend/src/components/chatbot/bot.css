@@ -1,9 +1,11 @@
 
 .react-chatbot-kit-chat-container {
+    
     position: fixed; 
     /* bottom: 6vw; left: 65vw; */
     right: 35px;bottom: 100px;
     width: 19.5em;
+    min-width: 368px;
 }
 
 .react-chatbot-kit-chat-inner-container {
@@ -18,10 +20,13 @@
 }
 
 .react-chatbot-kit-chat-input-container {
-    right: -0.5em;
-    bottom: -0.8em;
-    width: 20.5em;
     
+    right: -0.55em ;
+    bottom: -0.75em;
+    /* width: 20.5em;
+    max-width: 22.5em; */
+    width: 20.5em;
+    min-width: 386px;
 }
 
 .react-chatbot-kit-chat-message-container {
@@ -48,12 +53,12 @@
 }
 
 .react-chatbot-kit-chat-btn-send {
-    min-width: 0;
     
     width: 3vw;
     border-radius: 4px;
     /* pointer-events: none;
     cursor: not-allowed !important;  */
+    min-width: 3vw;
 }
 
 .react-chatbot-kit-chat-btn-send-icon {
@@ -139,5 +144,4 @@
 .growwLogo{
     width: 42px !important;
     height: 43px !important;
-    
 }

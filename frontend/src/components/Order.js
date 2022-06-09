@@ -94,7 +94,7 @@ export default function OrderTable() {
                       {moment(row.date).format("DD/MM/YY")}
                     </StyledTableCell>
                     <StyledTableCell /* align="" */>{row.name}</StyledTableCell>
-                    <StyledTableCell >{row.type}</StyledTableCell>
+                    <StyledTableCell >{row.type.split("-").join(" ")}</StyledTableCell>
                     <StyledTableCell >{row.quantity}</StyledTableCell>
                     <StyledTableCell >₹{row.total}</StyledTableCell>
                   </StyledTableRow>

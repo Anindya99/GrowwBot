@@ -80,7 +80,7 @@ export default function OrderTable(props) {
             <Table sx={{ minWidth: 70 }} aria-label="customized table">
             <TableHead>
                 <TableRow>
-                  <StyledTableCell >{props.productType} Info</StyledTableCell>
+                  <StyledTableCell >{props.productType.split("-").join(" ")} Info</StyledTableCell>
                   <StyledTableCell >Amount</StyledTableCell>
                 </TableRow>
               </TableHead>

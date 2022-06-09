@@ -2,7 +2,7 @@
 const verify= async (token)=>{
     try{
         let response= await fetch(
-            "/api/verify/token",
+            "https://groww-bot-2022.herokuapp.com/api/verify/token",
             {
                 method: "GET",
                 headers:{

@@ -24,7 +24,7 @@ const MutualFundDetail = () => {
     useEffect(() => {
         const apiCall = async () => {
             try {
-                const data = await fetch(`/api/v1/mutual-funds/${id}`);
+                const data = await fetch(`https://groww-bot-2022.herokuapp.com/api/v1/mutual-funds/${id}`);
                 const mfData = await data.json();
                 setMf((mf) => mfData);
                 //setSip(mfData.minSipAmount);

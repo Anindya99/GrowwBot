@@ -33,7 +33,7 @@ const StockDetails = () => {
         const apiCall = async () => {
             try {
                 const apiData = await fetch(
-                    `/api/v1/stocks/${id}`
+                    `https://groww-bot-2022.herokuapp.com/api/v1/stocks/${id}`
                 );
                 const stockData = await apiData.json();
                 setStock(stockData);

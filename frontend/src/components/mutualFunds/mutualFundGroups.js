@@ -10,7 +10,7 @@ const StockGroup = () => {
         const apiCall = async () => {
             try {
                 const data = await fetch(
-                    "/api/v1/mutual-funds"
+                    "https://groww-bot-2022.herokuapp.com/api/v1/mutual-funds"
                 );
                 const mfData = await data.json();
                 setMfs((mfs) => mfData.mfs);

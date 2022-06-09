@@ -3,7 +3,7 @@
 const getDefault= async()=>{
     
     try {
-        let response= await fetch("/api/questions/default",{
+        let response= await fetch("https://groww-bot-2022.herokuapp.com/api/questions/default",{
           method: "GET",
           headers:{
             Accept: "application/json",
@@ -19,7 +19,7 @@ const getDefault= async()=>{
 const getDefaultQlist= async(route,kyc)=>{
     
   try {
-      let response= await fetch(`/api/questions/default/${route}/${kyc}`,{
+      let response= await fetch(`https://groww-bot-2022.herokuapp.com/api/questions/default/${route}/${kyc}`,{
         method: "GET",
         headers:{
           Accept: "application/json",
@@ -35,7 +35,7 @@ const getDefaultQlist= async(route,kyc)=>{
 
 const getAllbyId= async(id)=>{
   try {
-    let response= await fetch(`/api/questions/all/${id}`,{
+    let response= await fetch(`https://groww-bot-2022.herokuapp.com/api/questions/all/${id}`,{
       method: "GET",
       headers:{
         Accept: "application/json",
@@ -51,7 +51,7 @@ const getAllbyId= async(id)=>{
 //type in getStock should be equal to the type defined in productRoutes
 const getStock= async(id,type)=>{
   try {
-    let response= await fetch(`/api/v1/${type}/${id}`,{
+    let response= await fetch(`https://groww-bot-2022.herokuapp.com/api/v1/${type}/${id}`,{
       method: "GET",
       headers:{
         Accept: "application/json",

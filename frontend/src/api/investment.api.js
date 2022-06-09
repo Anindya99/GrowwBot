@@ -1,7 +1,7 @@
 
 const getInvestments= async(token,userId,type)=>{
     try{
-        let response= await fetch(`/api/v1/invest/productbyType/${type}/${userId}`,{
+        let response= await fetch(`https://groww-bot-2022.herokuapp.com/api/v1/invest/productbyType/${type}/${userId}`,{
             method: "GET",
             headers:{
                 Accept: "application/json",
@@ -18,7 +18,7 @@ const getInvestments= async(token,userId,type)=>{
 
 const getInvestmentsbyId= async(token,userId,productId)=>{
     try{
-        let response= await fetch(`/api/v1/invest/productbyId/${productId}/${userId}`,{
+        let response= await fetch(`https://groww-bot-2022.herokuapp.com/api/v1/invest/productbyId/${productId}/${userId}`,{
             method: "GET",
             headers:{
                 Accept: "application/json",
@@ -35,7 +35,7 @@ const getInvestmentsbyId= async(token,userId,productId)=>{
 
 const makeInvestment= async(token,user,stock,name,type,quantity,total)=>{
     try{
-        let response= await fetch("/api/v1/invest",{
+        let response= await fetch("https://groww-bot-2022.herokuapp.com/api/v1/invest",{
             method: "POST",
             headers:{
                 Accept: "application/json",

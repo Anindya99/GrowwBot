@@ -21,7 +21,7 @@ const FixedDepositGroup = () => {
 
     useEffect(() => {
         const apiCall = async () => {
-            const data = await fetch("/api/v1/fixed-deposits");
+            const data = await fetch("https://groww-bot-2022.herokuapp.com/api/v1/fixed-deposits");
             const fds = await data.json();
             setFixedDeposits(fds.FD);
         };

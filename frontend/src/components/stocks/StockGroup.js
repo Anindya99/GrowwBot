@@ -8,7 +8,7 @@ const StockGroup = () => {
     const [stocks, setStocks] = useState([]);
     useEffect(() => {
         const apiCall = async () => {
-            const data = await fetch("/api/v1/stocks");
+            const data = await fetch("https://groww-bot-2022.herokuapp.com/api/v1/stocks");
             const stocksData = await data.json();
             setStocks((prevStocks) => {
                 return stocksData.stocks;

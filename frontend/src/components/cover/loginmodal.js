@@ -31,7 +31,7 @@ const Loginmodal = ({close}) => {
     //dont send something directly in the body, send as object here key is sendToken(can be anything) 
     //and the token is res.tokenId
        Axios
-      .post('/api/Oauth/google',{sendToken:response.credential})
+      .post('https://groww-bot-2022.herokuapp.com/api/Oauth/google',{sendToken:response.credential})
       .then(res=>{
         AuthStore.storeJWT(res.data.token)    
         window.location.href = "/stocks/user/explore";

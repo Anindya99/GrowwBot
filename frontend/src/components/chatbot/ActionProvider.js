@@ -34,7 +34,12 @@ handleClientmsg= (question)=>{
   );
   this.updateChatbotState(message);
 }
-
+handlePlanetext= (answer)=>{
+  const message = this.createChatBotMessage(
+    `${answer}`,
+  );
+  this.updateChatbotState(message);
+}
 handleLevelzero = (answer) => {
   const message = this.createChatBotMessage(
     `${answer}`,

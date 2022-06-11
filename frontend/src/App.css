@@ -9,6 +9,8 @@
 
 .content{
   display: flex;
+  
+  min-height: 100vh;
 }
 .boticon{
   position: fixed; 

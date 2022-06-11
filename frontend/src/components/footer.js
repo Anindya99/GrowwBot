@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 function Footer() {
     return (
-        <div className="footer">
+        <footer className="footer">
             <div className="footer__inner">
                 <div className="footer__col1">
                     <img src="#" alt="" />
@@ -137,7 +137,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }
 

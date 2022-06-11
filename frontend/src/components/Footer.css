@@ -1,10 +1,14 @@
 .footer{
     background-color: #1e2232;
-    width: 100vw;
-    height: 450px;
+    height: 500px;
     padding-top: 30px;
     padding-bottom: 30px;
-    margin-top: 32vh;
+    
+   margin-top: auto;
+   bottom:0;
+   width:100%;
+   min-width: 1000px;
+  
 }
 
 .footer__inner{

@@ -20,12 +20,14 @@ exports.getDefaultQlist= async(req,res)=>{
         //const kyc= req.headers["info"].split(" ")[1];
         const route= req.params.route;
         const kyc= req.params.kyc;
-        let q1= await defaultQues.find({routeName:route});
+        let q1= await defaultQues.find({routeName:route}).select({_id:0,qlist:1});
         if(!q1) throw Error('No data in the given route');
+        //console.log(q1)
         //console.log(route.split("-").pop())
         q1= q1[0]['qlist'];
         if(kyc==='false' && route.split("-").pop()!=='none'){
-            const q2= await defaultQues.find({routeName:`kyc-${route.split("-").pop()}`});
+            
+            const q2= await defaultQues.find({routeName:`kyc-${route.split("-").pop()}`}).select({_id:0,qlist:1});
             if(!q2) throw Error(`No data in /kyc/${route.split("-").pop()}`);
 
             q1= q1.concat(q2[0]['qlist']);

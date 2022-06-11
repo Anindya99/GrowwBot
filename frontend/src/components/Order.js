@@ -71,9 +71,10 @@ export default function OrderTable() {
   return (
         <div
           style={{
-            marginLeft: "220px",
+            marginLeft: "215px",
             marginTop: "30px",
             width: "55%",
+            minWidth: "800px"
           }}
         >
           <TableContainer component={Paper}>

@@ -28,10 +28,11 @@ const Levelone = (props) => {
             getAllbyId(qid).then((data) => {
                 //console.log(data)
                 setqlist((oldqlist) => [...oldqlist, data]);
+                setState(state=>({...state,questionStore: [...state.questionStore,data]}));
             });
             return qid;
         });
-        setqlist(qlist.sort());
+        
     }, [load]);
     //console.log(qlist);
 
@@ -54,6 +55,7 @@ const Levelone = (props) => {
                         ...state,
                         currentQues: [],
                         ques_id: ques._id,
+                        questionStore:[],
                     }));
                     setshowList(false);
                     props.actionProvider.handleClientmsg(ques.question);

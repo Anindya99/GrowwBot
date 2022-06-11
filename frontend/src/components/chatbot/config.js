@@ -6,6 +6,7 @@ import Kyc from "./action/Kyc";
 import Avatar from "./Avatar";
 import OrderStock from "./action/OrderStock"
 import OrderId from "./action/OrderId"
+import UserInput from "./questionlevel/UserInput"
 
 const botName = "GrowwBot";
 const config = {
@@ -29,6 +30,7 @@ const config = {
         ques_id: "",
         productType: "",
         productId:"",
+        questionStore: [],
     },
     widgets: [
         /* {
@@ -43,12 +45,17 @@ const config = {
         {
             widgetName: "levelzero",
             widgetFunc: (props) => <Levelzero {...props} />,
-            mapStateToProps: ["currentQues", "ques_id","productType","productId"],
+            mapStateToProps: ["currentQues", "ques_id","productType","productId","questionStore"],
         },
         {
             widgetName: "levelone",
             widgetFunc: (props) => <Levelone {...props} />,
-            mapStateToProps: ["currentQues", "ques_id","productType","productId"],
+            mapStateToProps: ["currentQues", "ques_id","productType","productId","questionStore"],
+        },
+        {
+            widgetName: "userinput",
+            widgetFunc: (props) => <UserInput {...props} />,
+            mapStateToProps: ["currentQues", "ques_id","productType","productId","questionStore"],
         },
         {
             widgetName: "Kyc",

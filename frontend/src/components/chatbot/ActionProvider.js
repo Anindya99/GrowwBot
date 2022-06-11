@@ -30,13 +30,16 @@ updateChatbotState(message) {
 }
 handleClientmsg= (question)=>{
   const message= this.createClientMessage(
-    `${question}`
+    `${question}`,
   );
   this.updateChatbotState(message);
 }
 handlePlanetext= (answer)=>{
   const message = this.createChatBotMessage(
     `${answer}`,
+    {
+      widget: "userinput",
+    }
   );
   this.updateChatbotState(message);
 }
@@ -84,6 +87,12 @@ handleInvestmentsbyID=(answer)=>{
     {
       widget: "investmentsId",
     }
+  );
+  this.updateChatbotState(message);
+}
+handleNoQues=(answer)=>{
+  const message= this.createChatBotMessage(
+    `${answer}`,
   );
   this.updateChatbotState(message);
 }

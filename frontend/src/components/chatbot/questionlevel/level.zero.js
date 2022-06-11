@@ -66,13 +66,14 @@ const Levelzero = (props) => {
       getAllbyId(qid).then(data=>{
         //console.log(data)
         setqlist(oldqlist=>[...oldqlist,data]);
+        setState(state=>({...state,questionStore: [...state.questionStore,data]}));
       })
       return qid;
     })
 
   },[props.currentQues]);
-  //console.log(qlist);
-
+  //console.log(props.questionStore);
+  
   //set the currentQues when default has been added its length greater than zero and create the ques answer list with id
     const questionsMarkup = qlist.sort((a, b) => {
 
@@ -90,7 +91,7 @@ const Levelzero = (props) => {
       className="question-list"
       key={ques._id}
       onClick={()=>{
-        setState(state=>({...state,currentQues:[],ques_id:ques._id}))
+        setState(state=>({...state,currentQues:[],ques_id:ques._id,questionStore:[],}))
         setshowList(false)
         props.actionProvider.handleClientmsg(ques.question)
 

@@ -4,7 +4,7 @@
     position: fixed; 
     /* bottom: 6vw; left: 65vw; */
     right: 35px;bottom: 100px;
-     width: 20.0em;    
+     width: 20.0em; 
     min-width: 395px;
 }
 
@@ -21,11 +21,11 @@
 
 .react-chatbot-kit-chat-input-container {
     
-    right: -0.55em ;
-    bottom: -0.75em;
+    right: -0.57em ;
+    bottom: -0.73em;
     
-     width: 21.1em;  
-    min-width: 416px;
+    width: 21.05em; 
+    min-width: 415px;
 }
 .react-chatbot-kit-chat-bot-message {
      /* left: -4.7em; */ 
@@ -38,7 +38,6 @@
 .react-chatbot-kit-chat-input {
    
     background-color: rgb(251, 237, 237);
-   
     /* cursor: not-allowed !important;
      pointer-events: none ;  */
 }
@@ -46,6 +45,7 @@
 .react-chatbot-kit-chat-btn-send {
     
     width: 3vw;
+    
     border-radius: 4px;
     /* pointer-events: none;
     cursor: not-allowed !important;  */

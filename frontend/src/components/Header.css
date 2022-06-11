@@ -7,6 +7,7 @@
     /* margin-left: 200px; */
     /* background-color: red; */
     width: 100%;
+    min-width: 1050px;
     position: sticky;
     border-bottom: 1px solid rgb(234, 229, 229);
 }
@@ -34,6 +35,7 @@
     /* color: #44475b !important; */
     margin-top: 5px !important;
     font-size: medium !important;
+    
 }
 
 .header_explore:hover {
@@ -86,12 +88,14 @@
 
 .header__two {
     width: 38%;
+    min-width: 500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-left: 210px;
     margin-top: 15px;
     font-size: larger;
+    
 }
 
 .user_image {

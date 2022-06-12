@@ -29,8 +29,8 @@ const Kyc = (props) => {
     const validationSchema = Yup.object().shape({
             acc_no: Yup.string()
             .required("Account no. is required")
-            .min(11, "Account no. must be at least 11 digits.")
-            .max(16,"Account no. must be at most 16 digits.")
+            .min(11, "Account no. must be atleast 11 digits.")
+            .max(16,"Account no. must be atmost 16 digits.")
             .matches(phoneRegExp, 'Acc no. must contain numbers only.'),
             phone_no: Yup.string()
             .required("Phone no. is required")

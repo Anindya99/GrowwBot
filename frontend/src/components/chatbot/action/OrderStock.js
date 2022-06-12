@@ -60,8 +60,9 @@ export default function OrderTable(props) {
   if(loading) return null;
   if(!rows.length){
     return(
-       
-       <div style={{ backgroundColor:'white',fontSize:'small',height:'40px',paddingTop:'20px',paddingLeft:'37px' }} className='success'>
+       //paddingLeft:'37px',paddingTop:'20px',fontSize:'medium',display:'flex',alignItems:'center',justifyContent:'left'
+       <div style={{ backgroundColor:'white',fontSize:'medium',height:'40px',paddingBottom:'5px',
+       display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center' }} className='success'>
            <h5>You have not made any investment.</h5>
        </div>
     ) 

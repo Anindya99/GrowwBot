@@ -1,6 +1,6 @@
 .form-container{
     background-color: white;
-    padding-left: 10px;
+    padding-left: 20px;
     height: 250px;
 }
 .input-container{
@@ -11,12 +11,13 @@
     background-color: rgb(221, 86, 74) !important;
 }
 .success{
-    height:60px;
-    padding-left: 20px;
-    padding-top: 10px;
+    height:60px !important;
+    /* padding-left: 20px; */
+    /* padding-top: 10px; */
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
     background-color: antiquewhite;
-    
-}
-.success-icon{
-    padding-left: 40%;
+    padding-bottom: 5px;
 }

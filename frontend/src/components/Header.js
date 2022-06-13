@@ -45,8 +45,15 @@ const Header = ({loggedin}) => {
               setcolorDeposits(false)
               setcolorInvestments(true)
     }
+    else{
+              setcolorStocks(true);
+              setcolorFunds(false);
+              setcolorDeposits(false);
+              setcolorInvestments(false);
+    }
   },[]);
   const logout = async () => {
+    localStorage.setItem("route","stocks-user-explore");
     AuthStore.clearJWT();
     window.location.href = "/";
   };

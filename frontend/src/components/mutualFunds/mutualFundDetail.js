@@ -55,7 +55,7 @@ const MutualFundDetail = () => {
             console.log("error");
             setsnacktype("error");
             setsnackmsg(
-                `Sorry, SIP amount must be grater than ${mf.minSipAmount}!!`
+                `Sorry, minimum SIP amount for this mutual fund is ₹${mf.minSipAmount}!!`
             );
             setsnack(true);
         }

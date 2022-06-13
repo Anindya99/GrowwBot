@@ -60,8 +60,8 @@ export default function OrderTable(props) {
   if(loading) return null;
   if(!rows.length){
     return(
-       
-       <div style={{ backgroundColor:'white',fontSize:'small',height:'40px',paddingTop:'20px',paddingLeft:'28px' }} className='success'>
+       //paddingTop:'20px',paddingLeft:'28px' 
+       <div style={{ backgroundColor:'white',fontSize:'medium',height:'40px',paddingBottom:'5px'}} className='success'>
            <h5>You have not invested in this {props.productType}.</h5>
        </div>
     ) 

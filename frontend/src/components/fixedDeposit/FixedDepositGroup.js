@@ -55,7 +55,7 @@ const FixedDepositGroup = () => {
         } else {
             //console.log("error");
             setsnacktype("error");
-            setsnackmsg(`Sorry, SIP amount must be grater than ${selectedFd.minAmt}!!`);
+            setsnackmsg(`Sorry, minimum SIP amount for this fixed deposit is ₹${selectedFd.minAmt}!!`);
             setsnack(true);
         }
     };

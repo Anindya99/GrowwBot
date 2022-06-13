@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import LoginModal from "./cover/loginmodal";
 import { Button, IconButton } from "@material-ui/core";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
@@ -18,9 +18,10 @@ const Header = ({loggedin}) => {
   const [colorFunds,setcolorFunds]= useState(false);
   const [colorDeposits,setcolorDeposits]= useState(false);
   const [colorInvestments,setcolorInvestments]= useState(false);
+  const currpage= useLocation().pathname.split("/")[1].split("-")[0];
   
   useEffect(()=>{
-    const currpage= localStorage.route.split("-")[0];
+    
     if(currpage==='stocks') {
               setcolorStocks(true);
               setcolorFunds(false);
@@ -39,7 +40,7 @@ const Header = ({loggedin}) => {
               setcolorDeposits(true)
               setcolorInvestments(false)
     }
-    else if(currpage==='investments'){
+    else if(currpage==='user'){
               setcolorStocks(false)
               setcolorFunds(false)
               setcolorDeposits(false)
@@ -53,7 +54,6 @@ const Header = ({loggedin}) => {
     }
   },[]);
   const logout = async () => {
-    localStorage.setItem("route","stocks-user-explore");
     AuthStore.clearJWT();
     window.location.href = "/";
   };

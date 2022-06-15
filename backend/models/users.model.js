@@ -48,12 +48,7 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  stocksBought: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: "Stock",
-    },
-  ],
+  
 });
 
 const User = mongoose.model("User", UserSchema);

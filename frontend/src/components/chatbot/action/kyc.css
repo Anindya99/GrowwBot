@@ -6,6 +6,9 @@
 .input-container{
     padding-bottom: 15px !important;
 }
+.input-container input{
+    width: 280px;
+}
 .submit-button{
     padding-top: 5px;
     background-color: rgb(221, 86, 74) !important;

@@ -62,7 +62,7 @@ export default function OrderTable() {
   if(!rows.length){
     return(
        
-       <div style={{ backgroundColor:'white',fontSize:'medium',height:'120px',paddingTop:'8%',paddingLeft:'38%',marginBottom:'200px' }} className='success'>
+       <div style={{ backgroundColor:'white',fontSize:'medium',height:'120px',paddingTop:'8%',paddingLeft:'38%',marginBottom:'300px' }} className='success'>
            <h2>Your dashboard is empty.</h2>
        </div>
     ) 

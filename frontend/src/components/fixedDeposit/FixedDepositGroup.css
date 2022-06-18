@@ -24,7 +24,7 @@
   }
 #fd_form{
     
-    width: 22%;
+    width: 350px;
     border: 1px solid rgb(241, 236, 236);
     display: flex;
     flex-direction: column;
@@ -76,7 +76,8 @@
 }
 
 .select_fd{
-    width: 23.2%;
+    
+    width: 370px;
     height: 30%;
     display: block;
     color: rgb(180, 174, 165);

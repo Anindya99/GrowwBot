@@ -4,7 +4,7 @@
     padding-top: 30px;
     padding-bottom: 30px;
     
-   margin-top: 950px;
+   /* margin-top: 950px; */
    bottom:0;
    width:100%;
    min-width: 1050px;
@@ -110,7 +110,7 @@
     width: 300px;
 }
 
-@media only screen and (max-width:700px){
+/* @media only screen and (max-width:700px){
     .footer{
          margin-top: 1200px;   
     }
@@ -120,3 +120,4 @@
          margin-top: 1800px;   
     }
 }
+ */

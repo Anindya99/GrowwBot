@@ -3,7 +3,8 @@
 Team Members: Anindya Sadhukhan &amp; Manish Kumar
 
 > Groww is online investment platform where users can invest in stocks, mututal funds, fixed deposits etc. \
-> This application aims at easing their life by allowing them to track their overall cash flow in one place, along with viewing and organizing historical data to look for patterns that can help them improve their business processes. Since most of these small businesses work on micro-credit, monitoring their overall cash flow regularly in one place is a boon.
+> This application smoothens user experience by providing integrated chat bot that has FAQs and other functionalities. \
+> The users can access features like completion of KYC, check investment history along with other FAQs based on the page they browsing all through the cht bot.
  
 ## [Demo](https://youtu.be/q7-mkxzhY9Q)
 
@@ -16,6 +17,7 @@ Team Members: Anindya Sadhukhan &amp; Manish Kumar
 5. KYC completion through chat bot.
 6. Investment in stocks, mutual funds and fixed deposits.
 7. Dynamic answers in chat bot based on user's investmentments. 
+8. This a basic clone on **[Groww](https://groww.in/) website. 
 
 ## Installation and Usage
 

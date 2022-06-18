@@ -12,6 +12,7 @@
   display: flex;
   position: relative;
   /* min-height: 100vh; */
+  min-width: 960px;
 }
 .boticon{
   position: fixed; 

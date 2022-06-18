@@ -90,6 +90,27 @@
     background-color: yellow;
 }
 
+@media only screen and (max-width:1000px){
+    .react-chatbot-kit-chat-btn-send {
+    
+        width: 6vw;
+        
+        border-radius: 4px;
+        /* pointer-events: none;
+        cursor: not-allowed !important;  */
+    }
+}
+@media only screen and (max-width:600px){
+    .react-chatbot-kit-chat-btn-send {
+    
+        width: 12vw;
+        
+        border-radius: 4px;
+        /* pointer-events: none;
+        cursor: not-allowed !important;  */
+    }
+}
+
 /* .react-chatbot-kit-chat-bot-message-arrow {
     
 } */

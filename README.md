@@ -50,3 +50,20 @@ $ cd backend
 $ npm run dev
 ```
 If you change the backend server port make sure to change it in setupProxy.js located at frontend/src
+
+
+## Screenshots
+
+![Dashboard](/screenshots/1.png)
+![Dashboard](/screenshots/2.png)
+![Dashboard](/screenshots/3.png)
+![Dashboard](/screenshots/4.png)
+![Dashboard](/screenshots/5.png)
+![Dashboard](/screenshots/6.png)
+![Dashboard](/screenshots/7.png)
+![Dashboard](/screenshots/8.png)
+
+## Developers
+
+**[Anindya Sadhukhan](https://github.com/Anindya99)** \
+**[Manish Kumar](https://gitlab.crio.do/manishgiri562)**

@@ -67,5 +67,5 @@ If you change the backend server port make sure to change it in setupProxy.js lo
 
 ## Developers
 
-**[Anindya Sadhukhan](https://gitlab.crio.do/anindyasadhukhan1999)** \
+**[Anindya Sadhukhan](https://github.com/Anindya99)** \
 **[Manish Kumar](https://gitlab.crio.do/manishgiri562)**

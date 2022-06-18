@@ -16,3 +16,9 @@
     margin: 0;
     /* background-color: bisque; */
 }
+
+@media only screen and (max-width:1000px){
+    .group__head{
+        margin-left: 50px;
+    }
+}

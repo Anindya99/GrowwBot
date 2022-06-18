@@ -34,3 +34,9 @@
     width: 100%;
     border: 0.1px solid rgb(243, 237, 237);
 }
+
+@media only screen and (max-width:700px){
+    .fd_box{
+        height: 220px;
+    }
+}

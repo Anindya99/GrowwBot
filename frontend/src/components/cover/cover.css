@@ -43,3 +43,18 @@
     margin-top: 70px;
     margin-bottom: 125px;
 }
+
+
+@media only screen and (max-width:1000px){
+    .leftcover{
+        margin-left: 10vw;
+    }
+}
+@media only screen and (max-width:700px){
+    .leftcover{
+        margin-left: 12vw;
+    }
+    .rightcover{
+        margin-left: 200px;
+    }
+}

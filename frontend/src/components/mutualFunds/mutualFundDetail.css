@@ -46,7 +46,7 @@ h2 {
 }
 
 .product__form__fund {
-    width: 24%;
+    width: 28%;
     height: 375px ;
     margin-top: 1rem;
     display: flex;
@@ -102,4 +102,16 @@ h2 {
 
 .form__input:focus {
     outline: none;
+}
+
+
+@media only screen and (max-width:1000px){
+    
+    .product__overview{
+        margin-left: 50px;
+        min-width: 500px;
+    }
+    .product__form__fund{
+        min-width: 300px;
+    }
 }

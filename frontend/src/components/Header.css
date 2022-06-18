@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-left: 200px;
+    margin-left: 190px;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -103,4 +103,13 @@
     height: 30px;
     border-radius: 1.4rem;
     cursor: pointer;
+}
+
+@media only screen and (max-width:1000px){
+    .header__one{
+        margin-left: 50px;
+    }
+    .header__two{
+        margin-left: 50px;
+    }
 }

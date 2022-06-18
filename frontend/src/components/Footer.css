@@ -109,3 +109,9 @@
     margin: 10px;
     width: 300px;
 }
+
+@media only screen and (max-width:1000px){
+    .footer{
+        display: none;
+    }
+}

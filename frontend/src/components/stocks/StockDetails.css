@@ -104,7 +104,7 @@ h3 {
 }
 
 .product__form {
-    width: 24%;
+    width: 28%;
     height: 450px ;
     margin-top: 1rem;
     display: flex;
@@ -145,7 +145,7 @@ form {
     border-radius: 0.2rem;
     background-color: rgb(165, 244, 175);
     border: none;
-    width: 170px;
+    width: 150px;
     height: 25px;
     display: block;
     border: 0.3px solid rgb(235, 232, 232);
@@ -171,4 +171,17 @@ form {
 .p__dark {
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+@media only screen and (max-width:1000px){
+    .product__baap{
+       display: flex;
+    }
+    .product__overview{
+        margin-left: 50px;
+        min-width: 500px;
+    }
+    .product__form{
+        min-width: 300px;
+    }
 }

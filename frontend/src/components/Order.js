@@ -71,7 +71,7 @@ export default function OrderTable() {
   return (
         <div
           style={{
-            marginLeft: "215px",
+            marginLeft: "11.5%",
             marginTop: "30px",
             width: "55%",
             minWidth: "800px"

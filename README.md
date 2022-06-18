@@ -17,7 +17,7 @@ Team Members: Anindya Sadhukhan &amp; Manish Kumar
 5. KYC completion through chat bot.
 6. Investment in stocks, mutual funds and fixed deposits.
 7. Dynamic answers in chat bot based on user's investmentments. 
-8. This a basic clone on **[Groww](https://groww.in/) website. 
+8. This a basic clone on [Groww](https://groww.in/) website. 
 
 ## Installation and Usage
 

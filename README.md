@@ -22,7 +22,7 @@ Team Members: Anindya Sadhukhan &amp; Manish Kumar
 ## Installation and Usage
 
 Make sure you have Nodejs and React scripts installed globally.
-If you want to use a local database then install mongodb as well.
+If you want to use a local database then install MongoDB as well.
 
 ### Backend
 

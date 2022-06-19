@@ -9,6 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import AuthStore from "../middleware/authstore";
 import { getInvestments } from "../api/investment.api";
+import "./Header.css";
 const moment = require("moment");
 
 
@@ -71,11 +72,11 @@ export default function OrderTable() {
   return (
         <div
           style={{
-            marginLeft: "11.5%",
             marginTop: "30px",
             width: "55%",
             minWidth: "800px"
           }}
+          className="investment__table"
         >
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">

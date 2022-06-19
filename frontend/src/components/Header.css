@@ -16,8 +16,8 @@
     width: 80%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-left: 190px;
+    justify-content: space-between;
+    margin-left: 214px;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -92,7 +92,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 210px;
+    margin-left: 205px;
     margin-top: 15px;
     font-size: larger;
     
@@ -104,12 +104,17 @@
     border-radius: 1.4rem;
     cursor: pointer;
 }
-
-@media only screen and (max-width:1000px){
+.investment__table{
+    margin-left: 214px;
+}
+@media only screen and (max-width:1100px){
     .header__one{
         margin-left: 50px;
     }
     .header__two{
+        margin-left: 50px;
+    }
+    .investment__table{
         margin-left: 50px;
     }
 }

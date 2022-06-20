@@ -37,7 +37,7 @@
      /* background-color: aqua;   */
     padding: 0; 
     width: 50%;
-    margin-left: 215px;
+    margin-left: 217px;
 
     padding-top: 288px;
 }
@@ -49,7 +49,7 @@
 
 @media only screen and (max-width:1100px){
     .leftcover{
-        margin-left: 55px;
+        margin-left: 57px;
     }
     .rightcover{
         margin-left: 50px;

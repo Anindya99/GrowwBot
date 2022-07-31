@@ -48,7 +48,10 @@ function App() {
           window.location.href = "/";
         }
       });
-    } else setLoggedin(false);
+    } else {
+      const data = await fetch("https://groww-bot-2022.herokuapp.com/api/dummy");
+      setLoggedin(false);
+    }
   }, [location]);
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENTID}>

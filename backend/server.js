@@ -21,7 +21,9 @@ mongoose
   .then(() => console.log("Mongoose connected..."))
   .catch((err) => console.log(err));
 
-
+app.use("/api/dummy",function(req,res){
+  res.status(200).json({msg:"dummy call to backend"})
+});
 app.use("/api/Oauth", require("./routes/Oauth.route.js"));
 app.use("/api/verify", require("./routes/verifyJWT.route.js"));
 app.use("/api/questions", require("./routes/questions.route.js"));

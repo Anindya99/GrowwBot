@@ -49,7 +49,10 @@ function App() {
         }
       });
     } else {
-      const data = await fetch("https://groww-bot-2022.herokuapp.com/api/dummy");
+      const apicall=async ()=>{
+        const data = await fetch("https://groww-bot-2022.herokuapp.com/api/dummy");
+      }
+      apicall();
       setLoggedin(false);
     }
   }, [location]);
